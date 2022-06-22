@@ -1,0 +1,12 @@
+<div class="other">
+    <div class="other-up">
+        <div class="other-qita text-wbd">相关文章</div>
+        <div class="xian"></div>
+    </div>
+    <div class="list">
+        {{ $related := (where (.Site.RegularPages.Related .) "Type" "posts") | first .Site.Params.page.maxPageRelatedCount }}
+        {{ range $related }}
+            {{ partial "widgets/post-card-small.html" . }}
+        {{ end }}
+    </div>
+</div>

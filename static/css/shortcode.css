@@ -1,0 +1,167 @@
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 1em 0;
+}
+.has-shadow {
+    box-shadow: 3px 5px 25px 2px rgba(100, 100, 100, 0.3);
+}
+figcaption {
+    text-align: center;
+    color: rgb(120, 120, 120) !important;
+    margin-bottom: 20px;
+}
+figure h4 {
+    font-size: 0.9em;
+}
+.code-box {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 4px 4px 4px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 1px 1px 3px 2px rgba(120, 120, 120, 0.1);
+}
+
+.code-header {
+    height: 30px;
+    margin-bottom: -4px;
+    line-height: 30px;
+    color: rgb(130, 130, 130);
+    display: flex; 
+}
+.code-content {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 4px;
+    border-radius: 9px;
+    box-shadow: 1px 1px 3px 1px rgba(100, 100, 100, 0.1) inset;
+    background-color: rgb(242, 242, 242);
+}
+.for-slidetoggle {
+    width: 100%;
+    padding-left: 10px;
+}
+.for-copy {
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.for-copy:hover {
+    color: var(--primary);
+}
+.note{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 0 4px 4px 4px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px 2px rgba(120, 120, 120, 0.1);
+}
+.note .fa {
+    color: var(--white-m);
+}
+.note-close {
+    display: none;
+}
+.note-header {
+    height: 30px;
+    padding: 0px 10px;
+    margin-bottom: -4px;
+    line-height: 30px;
+    color: var(--white-m);
+    display: flex;
+    justify-content: space-between;
+}
+.for-slidetoggle span {
+    font-family: var(--font-sans-serif);
+}
+.note-content{
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, .2);
+    background-color: var(--bgc-2);
+}
+.note span {
+    text-shadow: 0 0;
+}
+.default-content {
+    color: var(--default);
+    text-shadow: 1px 1px 3px var(--default-shadow);
+}
+.default-box {
+    background-color: var(--default);
+}
+.danger-content {
+    color: var(--danger);
+    text-shadow: 1px 1px 3px var(--danger-shadow);
+}
+.danger-box {
+    background-color: var(--danger);
+}
+.tip-content {
+    color: var(--tip);
+    text-shadow: 1px 1px 3px var(--tip-shadow);
+}
+.tip-box {
+    background-color: var(--tip);
+}
+.success-content {
+    color: var(--success);
+    text-shadow: 1px 1px 3px var(--success-shadow);
+}
+.success-box {
+    background-color: var(--success);
+}
+.warning-content {
+    color: var(--warning);
+    text-shadow: 1px 1px 3px var(--warning-shadow);
+}
+.warning-box {
+    background-color: var(--warning);
+}
+.primary-content {
+    color: var(--primary);
+    text-shadow: 1px 1px 3px var(--primary-shadow);
+}
+.primary-box {
+    background-color: var(--primary);
+}
+
+.label {
+    padding: 0px 5px 1px 5px;
+    font-size: 0.9em;
+    font-family: var(--font-sans-serif);
+    border-radius: 5px;
+    color: var(--white-m);
+    white-space: nowrap;
+}
+.label a {
+    color: var(--white-m);
+}
+.label-primary {
+    background-color: var(--primary);
+}
+.label-danger {
+    background-color: var(--danger);
+}
+.label-tip {
+    background-color: var(--tip);
+}
+.label-success{
+    background-color: var(--success);
+}
+.label-default{
+    background-color: var(--default);
+}
+.label-warning {
+    background-color: var(--warning);
+}

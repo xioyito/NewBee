@@ -1,0 +1,79 @@
+
+
+{{ $num_params := len .Params }}
+{{ $content := .Inner }}
+{{ $icon_note := "fa-circle-o" }}
+{{/*  默认有3个参数  */}}
+{{ $type := .Get 0 }}
+{{ $title := .Get 1 }}
+{{ $status := .Get 2 }}
+
+{{ if eq $num_params 0 }}
+    {{ $type = "default" }}
+    {{ $title = "" }}
+    
+{{ else if eq $num_params 1 }}
+    {{/*  如果是类型  */}}
+    {{ if eq (.Get 0) (or "default" "primary" "tip" "success" "danger" "warning") }}
+        {{ $type := .Get 0 }}
+        {{ $title := "" }}
+        
+    {{/*  如果是关闭  */}}
+    {{ else if eq (.Get 0) "close" }}
+        {{ $type := "default" }}
+        {{ $title := "" }}
+        {{ $status := "close" }}
+    {{/*  标题  */}}
+    {{ else }}
+        {{ $type := "default" }}
+        {{ $title := .Get 0 }}       
+    {{ end }}
+
+{{ else if eq $num_params 2 }}
+    {{ if eq (.Get 0) (or "default" "primary" "tip" "success" "danger" "warning") }}
+        {{ if eq (.Get 1) "close" }}
+            {{ $type := .Get 0 }}
+            {{ $title := "" }}
+            {{ $status := "close" }}
+        {{ else }}
+            {{ $type := .Get 0 }}
+            {{ $title := .Get 1 }}            
+        {{ end }}
+    {{ else }}
+        {{ $type := "default" }}
+        {{ $title := .Get 0 }}
+        {{ $status := "close" }}
+    {{ end }}
+
+{{ else if gt $num_params 3 }}
+    {{ errorf "params over 3 : %s" .Position }}
+{{ end }}
+
+{{ if eq $type "danger" }}
+    {{ $icon_note = "fa-close" }}
+{{ else if eq $type "warning" }}
+    {{ $icon_note = "fa-exclamation-circle" }} 
+{{ else if eq $type "success" }}
+    {{ $icon_note = "fa-check" }}
+{{ else if eq $type "default" }}
+    {{ $icon_note = "fa-circle-o" }}
+{{ else if eq $type "tip" }}
+    {{ $icon_note = "fa-lightbulb-o" }}
+{{ end }}
+
+<div class="note {{ $type }}-box">
+    <div class="note-header">
+        <div>
+            <i class="fa {{ $icon_note }}"></i>
+            <span class="title-note">{{ $title }}</span>
+        </div>
+        <div>
+            <span><i class="fa fa-angle-down"></i></span>
+        </div>
+    </div>
+    <div class="note-content {{ $type }}-content {{ with $status }}note-{{ . }}{{ end }}">
+
+        {{ $content }}
+    </div>
+</div>
+    

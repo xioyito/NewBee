@@ -1,0 +1,43 @@
+{{ $len_btn := len .Site.Menus.appreciate }}
+{{ $num_appre := 1 }}
+<div class="appreciate">
+    <div class="appreciate-self">
+        <div class="appreciate-title">赞赏</div>
+        <div class="appreciate-btn">
+            {{ range .Site.Menus.appreciate }}
+                {{ if eq $len_btn 2 }}
+                    {{ if eq $num_appre 1 }}
+                        <div class="appre-btn-{{ $num_appre }} border-r">{{ .Name }}</div>
+                    {{ else }}
+                        <div class="appre-btn-{{ $num_appre }} border-l">{{ .Name }}</div>
+                    {{ end }}
+                {{ else if eq $len_btn 3 }}
+                    {{ if eq $num_appre 1 }}
+                        <div class="appre-btn-{{ $num_appre }} border-r">{{ .Name }}</div>
+                    {{ else if eq $num_appre 2 }}
+                        <div class="appre-btn-{{ $num_appre }} border-m">{{ .Name }}</div>
+                    
+                    {{ else }}
+                        <div class="appre-btn-{{ $num_appre }} border-l">{{ .Name }}</div>
+                    {{ end }}
+                {{ else }}
+                    <div class="appre-btn-{{ $num_appre }}">{{ .Name }}</div>
+                {{ end }}
+
+                {{ $num_appre = (add $num_appre 1) }}
+            {{ end }}
+        </div>
+        {{ $num_appre := 1 }}
+        <div class="appreciate-img">
+            {{ range .Site.Menus.appreciate }}
+                {{ if eq $num_appre 1 }}
+                    <img class="appre-img-{{ $num_appre }}" src="{{ .URL }}" alt="">
+                {{ else }}
+                    <img class="appre-img-{{ $num_appre }}" src="{{ .URL }}" alt="" style="display: none;">
+                {{ end }}
+                {{ $num_appre = (add $num_appre 1) }}
+            {{ end }}
+        </div>
+        <div class="cancel efct-button">取消</div>
+    </div>
+</div>

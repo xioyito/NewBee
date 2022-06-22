@@ -1,0 +1,21 @@
+
+
+<figure>
+    <img src="{{ .Get 0 }}" alt="" 
+    {{ with (.Get 2) }}
+        {{ if eq . "shadow" }}
+            class="has-{{ . }}"
+        {{ end }}
+    {{ else }}
+        {{ with (.Get 1) }}
+            {{ if eq . "shadow" }}
+                class="has-{{ . }}"
+            {{ end }}
+        {{ end }} 
+    {{ end }} >
+    {{ with (.Get 1) }}
+        {{ if ne . "shadow" }}
+            <figcaption>{{ . }}</figcaption>
+        {{ end }}
+    {{ end }}
+</figure>

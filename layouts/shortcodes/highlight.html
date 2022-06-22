@@ -1,0 +1,15 @@
+{{ $input := .Inner }}
+{{ $lang := .Get 0 }}
+{{ $status := .Get 1 }}
+<div class="code-box">
+    <div class="code-header">
+        <span class="for-slidetoggle">
+            <i class="fa fa-angle-down"></i>
+            <span>{{$lang}}</span>
+        </span>
+        <span class="for-copy"><i class="fa fa-copy"></i></span>
+    </div>
+    <div class="code-content {{ with $status }}note-{{ . }}{{ end }}">
+        {{ transform.Highlight $input $lang }}
+    </div>
+</div>

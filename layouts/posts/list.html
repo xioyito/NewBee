@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="hero">
+    <!-- 1.1 特色图片 -->
+    {{ with .Site.Params.page.archivesTopImg }}
+        <div class="hero-img">
+            <img src="{{ . }}" alt="">
+        </div>
+    {{ end }}
+    <div class="hero-content">
+            <!-- 文章标题 -->
+            <h1 class="hero-title">所有文章</h1>
+            <div>{{ .Site.Params.page.archivesDes }}</div>
+    </div>
+</div>
+<!-- 2 主体 -->
+<div class="zhuti-0">
+    <div class="container">
+        <div class="zhuti">
+            <!-- 2.1 左栏 -->
+            <div class="zhuti-l">
+                <div class="year-body">
+                    <div class="long">
+                        <!-- 圆键 -->
+                        <button class="tosides-1 text-wbd" type="button">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                        <button class="tosides-2 text-wbd" type="button">
+                            <i class="fa fa-arrow-left"></i>
+                        </button>
+                        <!-- <button href="#slip-up"> -->
+                        <button class="toup text-wbd">
+                            <i class="fa fa-arrow-up"></i>
+                        </button>
+                        <!-- </button> -->
+                    </div>
+                    <div>
+                        {{ partial "widgets/archives.html" . }}
+                    </div>
+                </div>
+            </div>
+            <!-- 2.2 右栏 -->
+            <div class="zhuti-r">
+                {{ partial "widgets/zhuti-r-list.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

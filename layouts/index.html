@@ -1,0 +1,50 @@
+{{ define "main" }}
+<!-- 1 页首图片 -->
+<div class="hero">
+    <!-- 1.1 特色图片 -->
+    {{ with .Site.Params.page.homeTopImg }}
+    <div class="hero-img-home">
+        <img src="{{ . }}" alt="">
+    </div>
+    {{ end }}
+    <!-- hero内容 -->
+    <div class="hero-content">
+                {{ $hometitlefontsize := .Site.Params.page.homeTitleFontSize }}
+                {{ $homecontentfontsize := .Site.Params.page.homeContentFontSize }}
+                {{ with .Site.Params.page.homeTitle }}
+                    <div class="hometitle" style="font-size: {{ $hometitlefontsize }}px; margin-bottom: 20px;">{{ . | markdownify }}</div>
+                {{ end }}
+                {{ with .Site.Params.page.homeContent }}
+                    <div class="homecontent" style="font-size: {{ $homecontentfontsize }}px;">{{ . | markdownify }}</div>
+                {{ end }}
+            <button class="todown" type="button">
+                <i class="fa fa-angle-down fa-3x"></i>
+            </button>
+    </div>
+</div>
+<div class="zhuti-0">
+    <div class="container">
+        <div class="zhuti">
+            <!-- 2.1 左栏 -->
+            <div class="zhuti-l zhuti-l-home">
+                <div class="zuixin">
+                    <div class="xian-l"></div>
+                    <h3>最新文章</h3>
+                    <div class="xian-r"></div>
+                </div>
+                <!-- 卡片 -->
+                <div class="taxo-row">
+                    {{ range first .Site.Params.page.maxHomePostCount .Site.RegularPages }}
+                    <div class="taxo-root">
+                        {{ partial "widgets/post-card.html" . }}
+                    </div>
+                    {{ end }}
+                </div>
+                <div class="more-posts">
+                    <a href="/posts" class="efct-button">所有文章</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

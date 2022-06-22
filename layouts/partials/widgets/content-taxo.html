@@ -1,0 +1,22 @@
+<div class="taxo-body">
+    <!-- 圆键 -->
+    <div class="long">
+        <button class="tosides-1 text-wbd">
+            <i class="fa fa-arrow-right"></i>
+        </button>
+        <button class="tosides-2 text-wbd">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="toup text-wbd">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+    </div>
+    <!-- 卡片 -->
+    <div class="taxo-row">
+        {{ range .Pages }}
+        <div class="taxo-root">
+            {{ partial "widgets/post-card.html" . }}
+        </div>
+        {{ end }}
+    </div>
+</div>

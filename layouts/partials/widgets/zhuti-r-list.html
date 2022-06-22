@@ -1,0 +1,27 @@
+
+<div class="zhuti-r-0">
+    <!-- relative -->
+    <div class="zhuti-r-1">
+        {{ if and .Site.Params.Valine.enable (eq .Section "about") }}
+            <div class="button-r">
+                <button class="button-mulu efct-button" type="button"><span><i class="fa fa-bars"></i></span><span class="bars-text"> 目录</span></button>
+                <button class="button-comment efct-button" type="button"><span><i class="fa fa-comment"></i></span><span class="comment-text"> 评论</span></button>
+            </div>
+        {{ end }}
+        <div id="r1">
+            <!-- 2.2.1 作者信息 -->
+            {{ partial "widgets/author-card.html" . }}
+            <!-- 2.2.2 目录 -->
+            {{ partial "widgets/mulu.html" . }}
+            <!-- 2.2.3 最新文章 -->
+            {{ partial "widgets/newest.html" . }}
+            <!-- </div> -->
+        </div>
+        {{ if and .Site.Params.Valine.enable (eq .Section "about") }}
+            <div id="r2">
+                <!-- 评论 -->
+                {{ partial "comments.html" . }}
+            </div>
+        {{ end }}
+    </div>
+</div>

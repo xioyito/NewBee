@@ -1,0 +1,14 @@
+<!-- 2.2.3 其他文章 -->
+<div class="other">
+    <div class="other-up">
+        <div class="other-qita text-wbd">最新文章</div>
+        <div class="xian"></div>
+    </div>
+    <div class="list">
+        {{ range first .Site.Params.page.maxPageNewestCount .Site.RegularPages }}
+        <a href="{{ .Permalink }}" class="">
+            {{ partial "widgets/post-card-small.html" . }}
+        </a>
+        {{ end }}
+    </div>
+</div>

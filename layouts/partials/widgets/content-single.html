@@ -1,0 +1,48 @@
+
+<div class="content-root">
+    <div class="long">
+        <!-- 圆键 -->
+        <button class="tosides-1 text-wbd">
+            <i class="fa fa-arrow-right"></i>
+        </button>
+        <button class="tosides-2 text-wbd">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="toup text-wbd">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+    </div>
+    <!-- 2.1.2 文章内容 -->
+    <div class="content">
+        <div class="content-self">
+            {{ .Content }}
+        </div>
+        <div class="tags">
+            {{ range $tag := .Params.tags }}
+            <span class="down-type-item">
+                <div class="type-text">
+                    <a href='{{ "tags/" | relURL }}{{ $tag | urlize }}'>
+                    <i class="fa fa-tag"></i> {{ . }}
+                </a>
+                </div>
+            </span>
+            {{ end }}
+        </div>
+    </div>
+    <!-- 3 上下篇 -->
+    {{ if or .PrevInSection .NextInSection }}
+        <div class="pre-next">
+            {{ partial "widgets/pre-next.html" . }}
+        </div>
+    {{ end }}
+</div>
+<div class="content-last">
+    <button class="aixin content-last-item efct-button">
+        <i class="fa fa-heart"></i>
+    </button>
+    {{ if .Site.Params.valine.enable }}
+        <button class="pinglun content-last-item efct-button">
+            <i class="fa fa-comment"></i>
+        </button>
+    {{ end }}
+</div>

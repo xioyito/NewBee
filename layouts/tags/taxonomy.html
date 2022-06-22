@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="hero">
+    <!-- 1.1 特色图片 -->
+    {{ $firstChild := index .Pages 0 }}
+        {{ with $firstChild.Params.image }}
+            <div class="hero-img">
+                <img src="{{ . }}" alt="">
+            </div>
+        {{ else }}
+            <div class="hero-img">
+                <img src="{{ .Site.Params.page.postsTopImg }}" alt="">
+            </div>
+        {{ end }}
+    <div class="hero-content">
+        <!-- 文章标题 -->
+        <h1 class="hero-title">标签：{{ .Title }}</h1>
+    </div>
+</div>
+<!-- 2 主体 -->
+<div class="zhuti-0">
+    <div class="container">
+        <div class="zhuti">
+            <!-- 2.1 左栏 -->
+            <div class="zhuti-l">
+                {{ partial "widgets/content-taxo.html" . }}
+            </div>
+            <!-- 2.2 右栏 -->
+            <div class="zhuti-r">
+                <!-- stiky -->
+                {{ partial "widgets/zhuti-r-list.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

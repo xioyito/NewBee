@@ -1,0 +1,9 @@
+{{ $len_params := len .Params }}
+
+{{ if eq $len_params 1 }}
+    <span class="label label-default">{{ .Get 0 | markdownify }}</span>
+{{ else if eq $len_params 2 }}
+    <span class="label label-{{ .Get 0 }}">{{ .Get 1 | markdownify }}</span>
+{{ else }}
+    <span>label参数输入有误</span>
+{{ end }}

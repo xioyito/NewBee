@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="hero">
+    <!-- 1.1 特色图片 -->
+    {{ with .Params.images }}
+        <div class="hero-img">
+            <img src="{{ . }}" alt="">
+        </div>
+    {{ else }}
+        <div class="hero-img">
+            <img src="{{ .Site.Params.page.aboutTopImg }}" alt="">
+        </div>
+    {{ end }}
+    <div class="hero-content">
+        <!-- 文章标题 -->
+        <div class="hero-title">关于</div>
+    </div>
+</div>
+<div class="zhuti-0">
+    <div class="container">
+        <div class="zhuti">
+            <!-- 2.1 左栏 -->
+            <div class="zhuti-l">
+                <!-- relative -->
+                <div class="content-root">
+                    <div class="long">
+                        <!-- 圆键 -->
+                        <button class="tosides-1 text-wbd" type="button">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                        <button class="tosides-2 text-wbd" type="button">
+                            <i class="fa fa-arrow-left"></i>
+                        </button>
+                        <!-- <button href="#slip-up"> -->
+                        <button class="toup text-wbd">
+                            <i class="fa fa-arrow-up"></i>
+                        </button>
+                        <!-- </button> -->
+                    </div>
+                    <!-- 2.1.2 文章内容 -->
+                    <div class="content">
+                        <div class="content-self">
+                            {{ .Content }}
+                        </div>
+                    </div>
+                </div>
+                <div class="content-last">
+                    <button class="aixin content-last-item efct-button">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    {{ if .Site.Params.valine.enable }}
+                        <button class="pinglun content-last-item efct-button">
+                            <i class="fa fa-comment"></i>
+                        </button>
+                    {{ end }}
+                </div>
+            </div>
+            <!-- 2.2 右栏 -->
+            <div class="zhuti-r">
+                <!-- stiky -->
+                {{ partial "widgets/zhuti-r-list.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ partial "widgets/appreciate.html" . }}
+{{ end }}

@@ -1,0 +1,44 @@
+<div class="down-type">
+    {{ range $tag := .Params.tags }}
+    <span class="down-type-item">
+        <div class="shuxian-root">
+            <div class="shuxian"></div>
+        </div>
+        <div class="type-text">
+            <a href='{{ "tags/" | relURL }}{{ $tag | urlize }}'>
+                <i class="fa fa-tag"></i> {{ . }}
+            </a>
+        </div>
+    </span>
+    {{ end }}
+</div>
+<div class="card-large">
+    <div class="card-large-img">
+
+        {{ with .Params.image }}
+                <img src="{{ . }}" alt="">
+        {{ else }}
+                <img src="{{ .Site.Params.page.postsTopImg }}" alt="">
+        {{ end }}
+    </div>
+    <div class="card-large-content">
+        <div class="up-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+        <div class="up-date">
+            <span><i class="fa fa-calendar"></i></span> 发布于: {{ .PublishDate.Format "2006-1-2" }} &nbsp;
+            <span><i class="fa fa-folder"></i></span>
+            {{ with .Params.categories }}收录于:{{ else }}未收录{{ end }}
+            {{ range $idx, $category := .Params.categories }}
+            {{- if ne $idx 0 }}, {{ end }}
+            <a href='{{ "categories/" | relURL }}{{ $category | urlize }}'>
+                {{ $category }}
+            </a>
+            {{- end }}
+        </div>
+        <div class="down-summary">{{ .Summary }}</div>
+    </div>
+    <div class="card-readmore">
+        <a href="{{ .Permalink }}">
+            <span><i class="fa fa-arrow-right"></i></span>
+        </a>
+    </div>
+</div>

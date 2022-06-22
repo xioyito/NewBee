@@ -1,0 +1,48 @@
+<header>
+    <nav class="navbar">
+        <!-- logo -->
+        <div class="navbar-brand">
+            <!-- logo文字 -->
+            <a href="/">
+                <span class="logo">{{ .Site.Title }}</span>
+            </a>
+        </div>
+        <!-- 菜单 -->
+        <div class="navbar-menu">
+            <!-- 菜单项 -->
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}">
+                <div class="menu-item">
+                    <div class="hengtiao-root">
+                        <!-- 横条 -->
+                        <div class="hengtiao"></div>
+                        <div class="name text-wbd-reverse">{{ .Pre }} {{ .Name }}</div>
+                    </div>
+                </div>
+            </a>
+            {{ end }}
+            
+            <!-- 菜单按钮 -->
+            <div class="navbar-burger">
+                <div class="burger-btn"><span><i class="fa fa-navicon"></i></span></div>
+            </div>
+            <div class="mode">
+                <span class="sun"><i class="fa fa-sun-o"></i></span>
+                <span class="moon"><i class="fa fa-moon-o"></i></span>
+            </div>
+        </div>
+
+    </nav>
+    
+    <div class="burger-items">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">
+            <div class="burger-item">
+                {{ .Pre }} {{ .Name }}
+            </div>
+        </a>
+        {{ end }}
+    </div>
+    <div class="header-rest"></div> 
+</header>
+

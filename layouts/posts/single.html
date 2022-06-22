@@ -1,0 +1,58 @@
+{{ define "main" }}
+<!-- 1 页首图片 -->
+<div class="hero">
+    <!-- 1.1 特色图片 -->
+    {{ with .Params.image }}
+        <div class="hero-img">
+            <img src="{{ . }}" alt="">
+        </div>
+    {{ else }}
+        <div class="hero-img">
+            <img src="{{ .Site.Params.page.postsTopImg }}" alt="">
+        </div>
+    {{ end }}
+    <div class="hero-content">
+        <!-- 文章标题 -->
+        <div class="hero-title">{{ .Title }}</div>
+        <div class="hero-subtitle">{{ .Params.subtitle }}</div>
+        <!-- 1.3 发布日期 -->
+        <div class="hero-date">
+            <!-- 1.4 文章发布日期 -->
+            <div class="hero-categories">
+                <span><i class="fa fa-calendar"></i></span> 发布于: {{ .PublishDate.Format "2006-1-2" }} &nbsp;
+                <span><i class="fa fa-calendar-check-o"></i></span> 更新于: {{ .Lastmod.Format "2006-1-2" }} &nbsp;
+                <span><i class="fa fa-folder"></i></span>
+                {{ with .Params.categories }}收录于:{{ else }}未收录{{ end }}
+                {{ range $idx, $category := .Params.categories }}
+                {{- if ne $idx 0 }}, {{ end }}
+                <a href='{{ "categories/" | relURL }}{{ $category | urlize }}'>
+                    {{ $category }}
+                </a>
+                {{- end }}    
+            </div>
+        </div>
+        <div class="timelong">
+            <!-- {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }} -->
+            <span><i class="fa fa-pencil"></i> 本文字数: {{ .WordCount }} &nbsp;</span>
+            <span><i class="fa fa-clock-o"></i> 阅读时长: {{ .ReadingTime }} 分钟 &nbsp;</span>
+            <span><i class="fa fa-eye"></i></span> 阅读量: <span id="busuanzi_value_page_pv"></span>  
+        </div>
+    </div>
+</div>
+<div class="zhuti-0">
+    <div class="container">
+        <div class="zhuti">
+            <!-- 2.1 左栏 -->
+            <div class="zhuti-l">
+                <!-- relative -->
+                {{ partial "widgets/content-single.html" . }}
+            </div>
+            <!-- 2.2 右栏 -->
+            <div class="zhuti-r">
+                {{ partial "widgets/zhuti-r-single.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ partial "widgets/appreciate.html" . }}
+{{ end }}
