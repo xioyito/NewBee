@@ -1,9 +1,9 @@
-baseURL = 'http://example.com/'
+baseURL = 'http://xxx.xxx/'
 languageCode = 'en-us'
 
 # website title
 # 网站标题
-title = 'xioyito'
+title = 'NewBee'
 # theme
 # 主题
 theme = "NewBee"

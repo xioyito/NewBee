@@ -59,7 +59,7 @@ First, you need to create a new site(e.g. my-blog) by Hugo:
 ~ % hugo new site my-blog
 ```
 
-You have 3 methods to install NewBee after creating a new site:
+You have 2 methods to install NewBee after creating a new site:
 #### Method 1
 
 download the theme manually by going to <https://github.com/xioyito/NewBee> and pasting it to `themes` in your root directory.
@@ -69,13 +69,6 @@ download the theme manually by going to <https://github.com/xioyito/NewBee> and 
 clone it directly to `themes`:
 ``` bash
 my-blog % git clone https://github.com/xioyito/NewBee.git themes/NewBee
-```
-#### Method 3
-To update theme easily, you can include it as a git submodule:
-``` bash
-~ % cd my-blog
-my-blog % git init
-my-blog % git submodule add https://github.com/xioyito/NewBee.git themes/NewBee
 ```
 
 ### configuration
@@ -98,11 +91,6 @@ go to <http://localhost:1313/> in your browser. From now your browser will refre
 
 ## Customize NewBee
 if you want to override some of the styles, just create a file `static/css/_custom.css` and add your own styles into this file.
-
-## Update NewBee
-``` bash
-my-blog % git submodule update --rebase --remote
-```
 
 ## Help NewBee be better
 ### Found a bug?

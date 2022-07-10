@@ -59,7 +59,7 @@
 ~ % hugo new site my-blog
 ```
 
-在创建完新的网站后你有3种方法来安装 NewBee：
+在创建完新的网站后你有2种方法来安装 NewBee：
 #### 方法 1
 
 从 <https://github.com/xioyito/NewBee> 下载 NewBee 主题，然后放到根目录里 `themes` 文件夹中。
@@ -69,13 +69,6 @@
 将主题克隆到 `themes` 目录下。
 ``` bash
 my-blog % git clone https://github.com/xioyito/NewBee.git themes/NewBee
-```
-#### 方法 3
-为了方便更新主题，你可以将其作为你网站的子模块来安装：
-``` bash
-~ % cd my-blog
-my-blog % git init
-my-blog % git submodule add https://github.com/xioyito/NewBee.git themes/NewBee
 ```
 
 ### 配置
@@ -98,11 +91,6 @@ my-blog % hugo server -D
 
 ## 自定义 NewBee
 如果你想更改某些样式，只需要在 `static/css` 目录里创建一个文件 `_custom.css` ，然后在里面加入你自己的样式即可。
-
-## 更新 NewBee
-``` bash
-my-blog % git submodule update --rebase --remote
-```
 
 ## 帮助 NewBee 变得更好
 ### 发现问题？
