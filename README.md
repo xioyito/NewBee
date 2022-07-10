@@ -3,10 +3,10 @@ English | [简体中文](https://github.com/xioyito/NewBee/blob/master/README.zh
 
 ## Preview
 ---
-![NewBee-Preview-1](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-1.png)
-![NewBee-Preview-2](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-2.png)
-![NewBee-Preview-3](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-3.png)
-![NewBee-Preview-4](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-4.png)
+![NewBee-Preview-1](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-1.png "light-mode")
+![NewBee-Preview-2](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-2.png "dark-mode")
+![NewBee-Preview-3](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-3.png "categories taxonomy")
+![NewBee-Preview-4](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-4.png "local search")
 
 ## Demo Site
 You can see this theme in action on [demo site](https://xioyito.top).
