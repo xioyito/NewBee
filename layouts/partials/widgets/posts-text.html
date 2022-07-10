@@ -1,0 +1,21 @@
+
+{{ $postsCount := len .Site.RegularPages }}
+{{ $arrPosts := slice }}
+
+{{ range .Site.RegularPages }}
+    {{ $thePost := dict "title" .Title "pubDate" (.PublishDate.Format "2006-01-02") "plain" .Plain "link" .Permalink }}
+    {{ $arrPosts = $arrPosts | append $thePost }}
+{{ end }}
+
+
+
+<script type="text/javascript">
+    var postsCount = {{ $postsCount }};
+    var arrPosts = {{ $arrPosts }};
+    
+
+</script>
+
+
+
+

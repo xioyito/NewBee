@@ -1,0 +1,22 @@
+{{ $newOrRelated_text := "最新文章" }}
+{{ $newOrRelated := first .Site.Params.page.maxPageNewestCount .Site.RegularPages }}
+
+{{ if eq .Kind "page" }}
+    {{ $newOrRelated = (where (.Site.RegularPages.Related .) "Type" "posts") | first .Site.Params.page.maxPageRelatedCount }}
+    {{ $newOrRelated_text = "相关文章" }}
+{{ end }}
+
+<!-- 其他文章 -->
+<div class="other">
+    <div class="other-up">
+        <div class="other-qita text-wbd">{{ $newOrRelated_text }}</div>
+        <div class="xian"></div>
+    </div>
+    <div class="list">
+        {{ range $newOrRelated }}
+            <a href="{{ .Permalink }}" class="">
+                {{ partial "widgets/post-card-small.html" . }}
+            </a>
+        {{ end }}
+    </div>
+</div>

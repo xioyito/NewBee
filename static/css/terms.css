@@ -1,125 +1,262 @@
-
 .terms-body {
     position: relative;
 }
 .terms-row {
+    margin-top: -20px;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    margin: 0 -10px;
+    justify-content: center;
 }
-.terms-col {
-    padding: 10px 15px;
-    border-radius: 10px;
+
+.terms-root {
+    flex: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    position: relative;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 20px;
     box-sizing: border-box;
 }
-.terms-card {
-    border-radius: 20px;
-    box-sizing: border-box;
-    padding: 5px 10px 0 10px;
-    transition: all 0.3s;
+.card-large {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
     position: relative;
 }
-.terms-img {
-    width: var(--width-img-category);
-    height: calc(var(--width-img-category) * var(--ratio-img));
-    border: 2px solid var(--bgc-1);
-    box-sizing: border-box;
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    box-shadow: 0px 2px 5px 2px rgba(50, 50, 50, .2);
-    transform: translateY(-10px);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 0.3s;
+.card-large:hover {
+    transform: translateY(3px);
 }
-.terms-card:hover .terms-img {
-    transform: translateY(-20px);
-    box-shadow: 0px 2px 5px 3px rgba(50, 50, 50, .2);
+.card-large a {
+    color: aliceblue;
 }
-.terms-text {
-    height: 40px;
-    color: var(--color);
-    text-align: center;
-    line-height: 40px;
-    transition: all 0.2s;
-}
-.read-all{
+.card-large-img {
     width: 100%;
-    height: 20px;
-    font-size: 20px;
-    line-height: 20px;
-    text-align: center;
-    color: rgb(255, 255, 255);
+    height: 100%;
     position: absolute;
-    bottom: 38px;
+    border: 4px solid var(--bgc-1);
+    border-radius: 30px;
     transition: all 0.3s;
-    display: none;
-}
-.terms-card:hover .terms-text {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-.tag-terms-card {
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    border: 2px solid var(--bgc-1);
     box-sizing: border-box;
-    padding: 0 15px;
+    overflow: hidden;
     box-shadow:
-        2px 2px 6px 1px rgba(0, 0, 0, .1),
-        -2px -2px 5px 1px var(--bgc-1);
-    transition: all 0.2s;
+        4px 4px 8px 1px rgba(50, 50, 50, 0.2);
+}
+.card-large:hover .card-large-img {
+    box-shadow:
+        4px 4px 8px 1px rgba(50, 50, 50, 0.1);
+}
+.card-large-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-large-content {
+    color: var(--white-s);
+    width: 75%;
+    padding: 10px;
+    border-radius: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    transition: all 0.3s;
 }
-.tag-terms-card:hover {
-    box-shadow:
-        1px 1px 2px 1px rgba(0, 0, 0, .1),
-        -1px -1px 1px 1px var(--bgc-1),
-        2px 2px 4px 2px rgba(100, 100, 100, 0.2) inset,
-        -2px -2px 4px 2px var(--bgc-1) inset;
-}
-.tag-terms-text {
-    color: var(--color);
-    text-align: center;
-    text-shadow: 1px 1px 1px white;
+.content-up {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
     transition: all 0.2s;
 }
-.tag-terms-card:hover .tag-terms-text {
-    text-shadow: 1px 1px 3px rgba(var(--primary-oppo-rgb), 0.2);
-    color: var(--primary-oppo);
-}
-.folder-rear {
+.up-title {
     width: 100%;
-    height: 80%;
-    border: 2px solid var(--bgc-1);
-    border-radius: 10px;
-    box-sizing: border-box;
-    background: linear-gradient( rgba(240,240,240,.5),  rgba(240,240,240,1) 60% );
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0px 2px 5px 2px rgba(50, 50, 50, .1);
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 5px;
+    transition: all 0.2s;
+    overflow: hidden; 
+	display:-webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3; 
 }
-.folder-front {
-    width: 100%;
-    height: 80%;
-    border: 2px solid var(--bgc-1);
-    border-radius: 10px;
-    box-sizing: border-box;
-    background: linear-gradient( rgba(240,240,240,.5),  rgba(240,240,240,1) 70% );
+.up-title a {
+    color: var(--white-s);
+    line-height: 1em;
+    transition: all 0.2s;
+    border-radius: 20px;
+}
+.up-title a:hover {
+    color: var(--primary);
+    text-shadow: 1px 1px 3px rgba(var(--primary-rgb), .5);
+}
+.up-date {
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.up-date a {
+    color: var(--white-s);
+    transition: all 0.2s;
+}
+.up-date a:hover {
+    color: var(--primary);
+    text-shadow: 1px 1px 3px rgba(var(--primary-rgb), .5);
+    
+}
+.down-summary {
+    font-size: 14px;
+    max-width: 100%;
+    text-align: center;
+    overflow: hidden; 
+	display:-webkit-box; 
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; 
+}
+.down-summary p {
+    margin: 0;
+}
+.card-readmore {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 65px;
+    right: -28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    filter: opacity(0);
+    background-color: var(--bgc-2);
+    box-sizing: border-box;
+    box-shadow:
+        -8px -8px 5px 1px rgba(100, 100, 100, 0.1) inset,
+        2px 2px 8px 1px rgba(50, 50, 50, 0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.card-readmore i {
+    color: rgb(100, 100, 100);
+    transition: all 0.2s;
+    transform: scale(1.2);
+    text-shadow: 1px 1px 0 var(--bgc-1);
+}
+.card-readmore:hover i {
+    transform: translateX(8px) scale(1.5);
+}
+.card-large:hover .card-readmore {
+    filter: opacity(1);
+}
+.card-readmore a {
+    display: block;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-origin: 50% 100%;
+}
+.dang {
+    width: 35px;
+    height: 200px;
+    position: absolute;
+    top: 20px;
+    right: -14px;
+    user-select: none;
+}
+.card-large:hover ~ .dang {
+    display: none;
+}
+.down-type {
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    line-height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    text-align: right;
+    overflow: visible;
+}
+.down-type-item {
+    display: inline-block;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.type-text {
+    border: 1px solid var(--primary-oppo);
+    border-radius: 5px;
+    padding: 0 5px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 2px 2px 2px 0px rgba(var(--primary-rgb), .2);
+    background-color: var(--bgc-2);
     transition: all 0.2s;
 }
-.terms-card:hover .folder-front {
-    transform: perspective(300px) rotateX(-45deg); 
+.type-text a {
+    color: var(--primary-oppo);
+    text-shadow: 1px 1px 5px rgba(var(--primary-oppo-rgb), .3);
+}
+.down-type-item:hover .type-text {
+    animation: dang 0.8s;
+}
+@keyframes dang {
+    0% {
+        transform: perspective(100px) rotateY(0deg);
+    }
+    25% {
+        transform: perspective(100px) rotateY(30deg);
+    }
+    50% {
+        transform: perspective(100px) rotateY(0deg);
+    }
+    75% {
+        transform: perspective(100px) rotateY(15deg);
+    }
+    100% {
+        transform: perspective(100px) rotateY(0deg);
+    };
+
+}
+.shuxian-root {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+}
+.shuxian {
+    width: 1px;
+    height: 50px;
+    background-color: rgb(200, 200, 200);
+}
+@media only screen and (max-width: 768px) {
+    .card-large {
+        height: 150px;
+    }
+    .card-large-img {
+        border-radius: 20px;
+    }
+    .up-title {
+        -webkit-line-clamp: 1; 
+    }
+    .card-readmore {
+        top: 45px;
+    }
+    
+}
+
+@media only screen and (min-width: 1408px) {
+    .terms-root {
+        flex: 50%;
+        max-width: 50%;
+    }
 }

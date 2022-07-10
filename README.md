@@ -3,27 +3,22 @@ English | [简体中文](https://github.com/xioyito/NewBee/blob/master/README.zh
 
 ## Preview
 ---
-![NewBee Preview](https://raw.githubusercontent.com/xioyito/NewBee/main/images/desktop-preview.png)
+![NewBee-Preview-1](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-1.png)
+![NewBee-Preview-2](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-2.png)
+![NewBee-Preview-3](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-3.png)
+![NewBee-Preview-4](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-4.png)
 
 ## Demo Site
-You can see this theme in action on [demo site](https://xioyito.github.io).
-
-## Browser support
-These browsers support NewBee perfectly now：
-
-* Chrome
-* Edge
-
-More browser supports are coming.
+You can see this theme in action on [demo site](https://xioyito.top).
 
 ## Features
 * Functions
+    * local search without any configuration
     * Syntax Highlight
     * Custom Header
     * Custom footer
     * night mode
     * A sidebar can be open or close at all times
-    * Back top
     * Extended Shortcodes
     * Valine comment
     * Music player based on Aplayer and MetingJS
@@ -38,7 +33,7 @@ More browser supports are coming.
     * sponsor
 * Other
     * Responsive
-    * Light Neumorphism style
+    * Light-Neumorphism style
     * High interaction
     * Smooth transitions
 
@@ -102,7 +97,7 @@ my-blog % hugo server -D
 go to <http://localhost:1313/> in your browser. From now your browser will refresh automatically when the files in your site changes , so you don’t need to refresh your browser every time.
 
 ## Customize NewBee
-if you want to override some of the styles, just create a file `static/css/_custom.css` and add your own styles into this file, it will work.
+if you want to override some of the styles, just create a file `static/css/_custom.css` and add your own styles into this file.
 
 ## Update NewBee
 ``` bash
@@ -125,7 +120,7 @@ If you like the theme and support my work, just do:
 Thank you.
 
 ## License
-Copyright © 2022 xioyito
+Copyright © 2022 [xioyito](https://github.com/xioyito)
 
 NewBee theme is released under the MIT License, see more: <https://github.com/xioyito/NewBee/blob/master/LICENSE>
 

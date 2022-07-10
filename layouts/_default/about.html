@@ -1,20 +1,5 @@
 {{ define "main" }}
-<div class="hero">
-    <!-- 1.1 特色图片 -->
-    {{ with .Params.images }}
-        <div class="hero-img">
-            <img src="{{ . }}" alt="">
-        </div>
-    {{ else }}
-        <div class="hero-img">
-            <img src="{{ .Site.Params.page.aboutTopImg }}" alt="">
-        </div>
-    {{ end }}
-    <div class="hero-content">
-        <!-- 文章标题 -->
-        <div class="hero-title">关于</div>
-    </div>
-</div>
+{{ partial "widgets/hero.html" . }}
 <div class="zhuti-0">
     <div class="container">
         <div class="zhuti">
@@ -57,7 +42,7 @@
             <!-- 2.2 右栏 -->
             <div class="zhuti-r">
                 <!-- stiky -->
-                {{ partial "widgets/zhuti-r-list.html" . }}
+                {{ partial "widgets/zhuti-r.html" . }}
             </div>
         </div>
     </div>

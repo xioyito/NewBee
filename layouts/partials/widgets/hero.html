@@ -1,0 +1,147 @@
+
+{{ $hero_img := .Site.Params.page.postsTopImg }}
+{{ $hero_title := "" }}
+{{ $hero_des := "" }}
+
+{{ if eq .Kind "section" }}
+    {{ if eq .Section "posts" }}
+        {{ $hero_img = .Site.Params.page.archivesTopImg }}
+        {{ $hero_title = "所有文章" }}
+        {{ $hero_des = .Site.Params.page.archivesDes }}
+    {{ else if eq .Section "about" }}
+        {{ $hero_img = .Site.Params.page.aboutTopImg }}
+        {{ $hero_title = "关于" }}
+        {{ $hero_des = .Site.Params.page.aboutDes }}
+    {{ end }}
+
+{{ else if eq .Kind "taxonomy" }}
+    {{ if eq .Section "categories" }}
+        {{ $hero_img = .Site.Params.page.categoryTopImg }}
+        {{ $hero_title = "分类" }}
+        {{ $hero_des = .Site.Params.page.categoryDes }}
+    {{ else if eq .Section "tags" }}
+        {{ $hero_img = .Site.Params.page.tagTopImg }}
+        {{ $hero_title = "标签" }}
+        {{ $hero_des = .Site.Params.page.tagDes }}
+    {{ else if eq .Section "series" }}
+        {{ $hero_img = .Site.Params.page.seriesTopImg }}
+        {{ $hero_title = "系列" }}
+        {{ $hero_des = .Site.Params.page.seriesDes }}
+    {{ end }}
+
+{{ else if eq .Kind "term" }}
+    {{ if eq .Section "categories" }}
+        {{ $hero_title = "分类：" }}
+    {{ else if eq .Section "tags" }}
+        {{ $hero_title = "标签：" }}
+    {{ else if eq .Section "series" }}
+        {{ $hero_title = "系列：" }}
+    {{ end }}
+
+{{ else if eq .Kind "home" }}
+    {{ $hero_img = .Site.Params.page.homeTopImg }}
+    {{ $hero_title = .Site.Params.page.homeTitle }}
+    {{ $hero_des = .Site.Params.page.homeContent }}
+{{ end }}
+
+{{ if eq .Kind "home" }}
+    <div class="hero">
+        <!-- 1.1 特色图片 -->
+        {{ with .Site.Params.page.homeTopImg }}
+        <div class="hero-img-home">
+            <img src="{{ . }}" alt="">
+        </div>
+        {{ end }}
+        <!-- hero内容 -->
+        <div class="hero-content">
+                    {{ $hometitlefontsize := .Site.Params.page.homeTitleFontSize }}
+                    {{ $homecontentfontsize := .Site.Params.page.homeContentFontSize }}
+                    {{ with $hero_title }}
+                        <div class="hometitle" style="font-size: {{ $hometitlefontsize }}px; margin-bottom: 20px;">{{ . | markdownify }}</div>
+                    {{ end }}
+                    {{ with $hero_des }}
+                        <div class="homecontent" style="font-size: {{ $homecontentfontsize }}px;">{{ . | markdownify }}</div>
+                    {{ end }}
+                <button class="todown" type="button">
+                    <i class="fa fa-angle-down fa-3x"></i>
+                </button>
+        </div>
+    </div>
+
+{{ else if eq .Kind "page" }}
+    <div class="hero">
+        <!-- 1.1 特色图片 -->
+        {{ with .Params.image }}
+            <div class="hero-img">
+                <img src="{{ . }}" alt="">
+            </div>
+        {{ else }}
+            <div class="hero-img">
+                <img src="{{ $hero_img }}" alt="">
+            </div>
+        {{ end }}
+        <div class="hero-content">
+            <!-- 文章标题 -->
+            <div class="hero-title">{{ .Title }}</div>
+            <div class="hero-subtitle">{{ .Params.subtitle }}</div>
+            <!-- 1.3 发布日期 -->
+            <div class="hero-date">
+                <!-- 1.4 文章发布日期 -->
+                {{/*  <div class="hero-categories">  */}}
+                    <span class="no-wrap"><i class="fa fa-calendar"></i> 发布于: {{ .PublishDate.Format "2006-1-2" }} &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> 更新于: {{ .Lastmod.Format "2006-1-2" }} &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-folder"></i>
+                        {{ with .Params.categories }}收录于:{{ else }}未收录{{ end }}
+                        {{ range $idx, $category := .Params.categories }}
+                            {{- if ne $idx 0 }}, {{ end }}
+                            <a href='{{ "categories/" | relURL }}{{ $category | urlize }}'>
+                                {{ $category }}
+                            </a>
+                        {{- end }}
+                    </span>    
+                {{/*  </div>  */}}
+            </div>
+            <div class="timelong">
+                <!-- {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }} -->
+                <span class="no-wrap"><i class="fa fa-pencil"></i> 本文字数: {{ .WordCount }} &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-clock-o"></i> 阅读时长: {{ .ReadingTime }} 分钟 &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-eye"></i> 阅读量: <span id="busuanzi_value_page_pv"></span></span> 
+            </div>
+        </div>
+    </div>
+
+{{ else if or (eq .Kind "section") (eq .Kind "taxonomy") }}
+    <div class="hero">
+        {{ with $hero_img }}
+            <div class="hero-img">
+                <img src="{{ . }}" alt="">
+            </div>
+        {{ end }}
+        <div class="hero-content">
+            <!-- 文章标题 -->
+            <div class="hero-title">{{ $hero_title }}</div>
+            <div>{{ $hero_des }}</div>
+        </div>
+    </div>
+
+{{ else if eq .Kind "term" }}
+    <div class="hero">
+        <!-- 1.1 特色图片 -->
+        {{ $firstChild := index .Pages 0 }}
+            {{ with $firstChild.Params.image }}
+                <div class="hero-img">
+                    <img src="{{ . }}" alt="">
+                </div>
+            {{ else }}
+                <div class="hero-img">
+                    <img src="{{ $hero_img }}" alt="">
+                </div>
+            {{ end }}
+        <div class="hero-content">
+            <!-- 文章标题 -->
+            <h1 class="hero-title">{{ $hero_title }}{{ .Title }}</h1>
+        </div>
+    </div>
+
+{{ end }}
+

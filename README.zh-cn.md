@@ -3,32 +3,26 @@
 简体中文 | [English](https://github.com/xioyito/NewBee/blob/master/README.md)
 
 ## 预览
-![NewBee Preview](https://raw.githubusercontent.com/xioyito/NewBee/main/images/desktop-preview.png)
+![NewBee-Preview-1](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-1.png)
+![NewBee-Preview-2](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-2.png)
+![NewBee-Preview-3](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-3.png)
+![NewBee-Preview-4](https://raw.githubusercontent.com/xioyito/NewBee/main/images/preview-4.png)
 
 ## 示例网站
-查看 [示例网站](https://xioyito.github.io)。
-
-## 浏览器支持
-完美支持的浏览器：
-
-* Chrome
-* Edge
-
-其他浏览器支持待优化中。
+查看 [示例网站](https://xioyito.top)。
 
 ## 特性
 * 功能
+    * 本地搜索功能（无需任何配置）
     * 代码高亮
     * 自定义导航栏
     * 自定义页脚
     * 深色模式
     * 可随时打开和关闭的侧边栏
-    * 文章页面返回顶部
     * 扩展的 Shortcodes
     * Valine 评论系统
     * 基于 APlayer 和 MetingJS 的音乐播放器
     * 站点访客数和站点访问量统计
-    * 赞赏
 * 组件
     * 归档（文章）页面
     * 分类页面
@@ -127,7 +121,7 @@ my-blog % git submodule update --rebase --remote
 谢谢。
 
 ## License
-Copyright © 2022 xioyito
+Copyright © 2022 [xioyito](https://github.com/xioyito)
 
 NewBee 主题遵循 MIT 协议，详情请移步：<https://github.com/xioyito/NewBee/blob/master/LICENSE>
 

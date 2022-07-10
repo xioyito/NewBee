@@ -1,68 +1,39 @@
 :root {
-    --bgc-1: rgb(80, 80, 80);
     --bgc-1-rgb: 80, 80, 80;
-    --bgc-2: rgb(60, 60, 60);
     --bgc-2-rgb: 60, 60, 60;
-    --bgc-3: rgb(40, 40, 40);
     --bgc-3-rgb: 40, 40, 40;
 
-    --white-s: rgb(230, 230, 230);
-    --white-m: rgb(235, 235, 235);
-    --white-m-rgb: 235, 235, 235;
-    --white-l: rgb(240, 240, 235);
-
-    --primary: rgb(217, 80, 119);
     --primary-rgb: 217, 80, 119;
-    --primary-shadow: rgb(248, 170, 192);
-    --primary-light: rgb(249, 109, 151);
-    
-    --primary-l1: rgb(230, 147, 129);
-    --primary-r2: rgb(245, 122, 231);
-
-    --primary-oppo: rgb(250, 116, 80);
     --primary-oppo-rgb: 250, 116, 80;
-
-    --color-f1: rgb(240, 240, 240);
-    --color: rgb(220, 220, 220);
-    --color-2: rgb(200, 200, 200);
-    --color-s: rgb(80, 80, 80);
-
-    --scroll-bgc: rgb(80, 80, 80);
-    --scroll-thumb: rgb(100, 100, 100);
-
-    --blue-nb: rgb(0, 174, 254);
-    --unobvious-0: rgb(80, 80, 80);
-    --unobvious-1: rgb(120, 120, 120);
-
-    --default: rgb(100, 100, 100);
-    --default-shadow: rgb(212, 212, 212);
-
-    --danger: rgb(217, 87, 87);
+    --default-rgb: 100, 100, 100;
     --danger-rgb: 217, 87, 87;
-    --danger-shadow: rgb(231, 161, 159);
-
-    --tip: rgb(102, 158, 204);
-    --tip-l: rgb(60, 152, 227);
     --tip-rgb: 102, 158, 204;
-    --tip-shadow: rgb(165, 219, 241);
-
-    --success: rgb(85, 153, 73);
     --success-rgb: 85, 153, 73;
-    --success-shadow: rgb(181, 222, 100);
-    --ddd: 143, 198, 34;
+    --warning-rgb: 191, 141, 25;
+    --quote-rgb: 255, 234, 195;
 
-    --warning: rgb(191, 141, 25);
-    --warning-shadow: rgba(224, 166, 29, .3);
 
-    --quote: rgb(255, 234, 195);
-    --quote-shadow: rgb(255, 234, 195);
+
+    /* --- */
 
     --bs-1: rgba(0,0,0,.1);
     --bs-2: rgba(0,0,0,.2);
     --bs-3: rgba(0,0,0,.3);
 
+    --white-s: rgb(230, 230, 230);
+    --white-m-rgb: 235, 235, 235;
+    --white-m: rgb(var(--white-m-rgb));
+    --white-l: rgb(240, 240, 235);
+    --blue-nb: rgb(0, 174, 254);
+
+    --color: rgb(200, 200, 200);
+    --color-s: rgb(80, 80, 80);
+
+    --scroll-bgc: rgb(80, 80, 80);
+    --scroll-thumb: rgb(100, 100, 100);
 
     /* else */
+
     --efct-button-bs:
         2px 2px 3px 1px rgba(0, 0, 0, 0.2),
         -2px -2px 3px 1px var(--bgc-1);
@@ -73,18 +44,8 @@
         2px 2px 3px 1px rgba(0, 0, 0, 0.3) inset,
         -1px -1px 3px 2px var(--bgc-1) inset;
     --efct-button-hover-ts: 2px 2px 3px rgba(0, 0, 0, 0.2);
-    --width-img-category: 150px;
 }
-.lntable::-webkit-scrollbar {
-    background: var(--scroll-bgc);
-}
-.lntable::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: var(--scroll-thumb);
-}
-.lntable::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(var(--primary-rgb), .5);
-}
+
 body:after {
     background-color: var(--scroll-bgc);
 }
@@ -102,7 +63,7 @@ hr {
     text-shadow: 0 0 3px rgb(255, 188, 2);
 
 }
-.hero-img img, .hero-img-home img, figure img, .appreciate-img, .card-large-img img {
+.hero-img img, .hero-img-home img, figure img, .appreciate-img, .card-large-img img, .mermaid {
     filter: brightness(0.8);
 }
 .loading-long {
@@ -127,7 +88,8 @@ hr {
 .zhuti {
     box-shadow: -1px 0 20px 2px rgba(0, 0, 0, 0.1);
 }
-.zhuti-r {
+
+.zhuti-r::after {
     border-left: 1px solid var(--bgc-3);
 }
 .toup, .tosides-1, .tosides-2 {
@@ -177,11 +139,13 @@ hr {
     text-shadow: 2px 2px 5px rgba(0, 169, 0, 0.4);
 }
 
+.button-r-add {
+    text-shadow: 0 0 5px rgba(var(--primary-rgb), .8);
+}
+
 .follow {
     box-shadow:
-        /* 1px 2px 5px 1px rgba(0, 0, 0, .2), */
         0px 0px 10px 0px rgba(var(--primary-rgb), .6);
-    
     border: 1px solid rgb(100, 100, 100);
     text-shadow: -1px -1px 2px rgba(0, 0, 0, .2);
 }
@@ -196,7 +160,7 @@ hr {
     background-color: var(--bgc-3);
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3) inset,
         0px -4px 5px 0px var(--bgc-1),
-        0px 4px 4px 0px rgba(50, 50, 50, 0.3);
+        0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 .zhi {
     background-image: linear-gradient(
@@ -350,7 +314,7 @@ hr {
 
 .code-box {
     background-color: var(--bgc-1);
-    box-shadow: 1px 1px 3px 1px rgba(100, 100, 100, 0.1);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
 }
 .code-header {
     color: var(--color);
@@ -368,16 +332,41 @@ hr {
     background-color: transparent !important;
 }
 
-/* taxonomy */
+/* terms */
+.card-large-img {
+    box-shadow:
+        4px 4px 8px 1px rgba(0, 0, 0, 0.1);
+}
+.card-large:hover .card-large-img {
+    box-shadow:
+        4px 4px 8px 1px rgba(20, 20, 20, 0.1);
+}
 .shuxian {
     background-color: rgb(100, 100, 100);
 }
 .card-readmore {
-    box-shadow: 2px 2px 5px 1px rgba(30, 30, 30, 0.2);
+    position: absolute;
+    top: 65px;
+    right: -28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    filter: opacity(0);
+    background-color: var(--bgc-1);
+    box-sizing: border-box;
+    box-shadow:
+        -8px -8px 5px 1px rgba(0, 0, 0, 0.1) inset,
+        0px 0px 8px 1px rgba(50, 50, 50, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.card-readmore i {
+    color: var(--color);
+    text-shadow: 0 0 0;
 }
 
 
-/* terms */
+/* taxonomy */
 .folder-rear {
     background: linear-gradient( rgba(var(--bgc-2-rgb), 0.5),  var(--bgc-2) 60% );
     box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.2);
@@ -385,25 +374,33 @@ hr {
 .folder-front {
     background: linear-gradient( rgba(var(--bgc-2-rgb), 0.5),  var(--bgc-2) 70% );
 }
-.tag-terms-card {
+.tag-taxo-card {
     box-shadow:
         2px 2px 6px 1px rgba(0, 0, 0, .2),
         -2px -2px 5px 0px var(--bgc-1);
 }
-.tag-terms-card:hover {
+.tag-taxo-card:hover {
     box-shadow:
         1px 1px 2px 1px rgba(0, 0, 0, .2),
         -1px -1px 1px 0px rgba(var(--bgc-1-rgb), 1),
         2px 2px 4px 2px rgba(0, 0, 0, 0.2) inset,
         -2px -2px 4px 0px rgba(var(--bgc-1-rgb), 1) inset;
 }
-.tag-terms-text {
+.tag-taxo-text {
     text-shadow: 0 0 0;
 }
-.tag-terms-card:hover .tag-terms-text {
+.tag-taxo-card:hover .tag-taxo-text {
     text-shadow: 0px 0px 3px rgba(var(--primary-oppo-rgb), 0.5);
     color: var(--primary-oppo);
 }
+
+
+/* footer */
+.footer a:hover {
+    text-shadow: 0px 0px 3px rgba(var(--primary-rgb), .3);
+}
+
+
 
 
 
@@ -413,3 +410,47 @@ hr {
         3px 3px 8px 3px rgba(0, 0, 0, .4),
         -2px -2px 10px 8px var(--bgc-1);
 }
+
+/* search */
+.sheader {
+    box-shadow: 
+        2px 2px 5px 3px rgba(0, 0, 0, 0.1);
+}
+.sheader input:focus, .sheader input:hover {
+    box-shadow: 
+        2px 2px 3px 1px rgba(0, 0, 0, 0.2) inset,
+        -1px -1px 3px 1px rgba(255, 255, 255, 0.1) inset;
+    text-shadow: 2px 2px 3px rgba(0,0,0, 0.2);
+}
+.sh-r button:hover {
+    box-shadow: 
+        1px 2px 3px 1px rgba(0, 0, 0, 0.2) inset,
+        -1px -1px 3px 2px rgba(255, 255, 255, 0.1) inset;
+    text-shadow: 2px 2px 3px rgba(var(--primary-rgb), 0.2);
+}
+.sbody {
+    box-shadow: 
+        2px 2px 8px 3px rgba(0, 0, 0, 0.2);
+}
+.post {
+    box-shadow:
+        4px 4px 8px 1px rgba(0, 0, 0, 0.2);
+}
+.post-root:hover .post {
+    box-shadow:
+        4px 4px 5px 0px rgba(20, 20, 20, 0.2);
+}
+
+.mermaid {
+    border-radius: 10px;
+    
+    background-color: rgb(240, 240, 240);
+    /* background-color: var(--color); */
+}
+/* .mermaid .messageText {
+    fill: var(--white-m) !important;
+}
+.mermaid .messageLine0 {
+    stroke: var(--white-m) !important;
+} */
+

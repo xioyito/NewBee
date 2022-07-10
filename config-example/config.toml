@@ -1,9 +1,9 @@
-baseURL = 'http://xioyito.github.io/'
+baseURL = 'http://example.com/'
 languageCode = 'en-us'
 
 # website title
 # 网站标题
-title = 'NewBee'
+title = 'xioyito'
 # theme
 # 主题
 theme = "NewBee"
@@ -21,6 +21,9 @@ enableGitInfo = true
 summaryLength = 50
 
 hasCJKLanguage = true
+
+
+
 [author]
     name = "xioyito"
     description = "Be Water, My Friend."
@@ -42,9 +45,6 @@ hasCJKLanguage = true
     # page configuration
     # 页面配置  
     [params.page]
-        # site font
-        # 网站字体
-        font = ""
 
         # top image in home page, note that the "/" in path is necessary, the same applies below
         # 主页的顶部图，路径开头”/“是必需的。下同
@@ -112,7 +112,7 @@ hasCJKLanguage = true
     # Valine评论（详情请移步：https://valine.js.org/）
     [params.valine]
         # 是否开启Valine评论系统
-        enable = true
+        enable = false
         # appid，具体请参考：https://valine.js.org/configuration.html#appId
         appid = 'sPMvdUAhmPSPXV6UDU5ojUn2-gzGzoHsz'
         # appKey，具体请参考：https://valine.js.org/configuration.html#appKey
@@ -139,7 +139,7 @@ hasCJKLanguage = true
         # wheher to enable count of visitor and view
         visitor = true
         # wheher to enable theme information
-        themeAndHugo = true
+        themeInfo = true
 
     # aplayer, se  more: https://aplayer.js.org/#/zh-Hans/
     # 音乐播放器配置，详情请移步：https://aplayer.js.org/#/zh-Hans/
@@ -198,7 +198,7 @@ hasCJKLanguage = true
         pre = "<i class='fa fa-info-circle'></i>"
 
     # social entries
-    # 博主卡片社交链接，最多不超过6个
+    # 作者卡片社交链接，最多6个
     [[menus.social]]
         name = "GitHub"
         url = "https://github.com/xioyito"
@@ -277,6 +277,9 @@ hasCJKLanguage = true
 
     # enable the following code if there are html statements in your md file
     # 如果md文件中有html语句，请启用以下代码
-    # [markup.goldmark]
-    #     [markup.goldmark.renderer]
-    #         unsafe = true
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+
+  

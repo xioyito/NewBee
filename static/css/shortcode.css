@@ -6,7 +6,7 @@ figure img {
     margin: 1em 0;
 }
 .has-shadow {
-    box-shadow: 3px 5px 25px 2px rgba(100, 100, 100, 0.3);
+    box-shadow: 3px 5px 20px 1px rgba(100, 100, 100, 0.2);
 }
 figcaption {
     text-align: center;
@@ -18,12 +18,13 @@ figure h4 {
 }
 .code-box {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 10px 0;
     padding: 0 4px 4px 4px;
     border-radius: 13px;
     box-sizing: border-box;
     background-color: rgb(247, 247, 247);
     box-shadow: 1px 1px 3px 2px rgba(120, 120, 120, 0.1);
+    text-shadow: 0 0 0;
 }
 
 .code-header {
@@ -44,13 +45,20 @@ figure h4 {
 .for-slidetoggle {
     width: 100%;
     padding-left: 10px;
+    
+}
+.code-box .fa::before {
+    color: rgb(130, 130, 130);
 }
 .for-copy {
     padding: 0 10px;
     cursor: pointer;
+    
+}
+.for-copy i::before {
     transition: all 0.2s;
 }
-.for-copy:hover {
+.for-copy:hover i::before {
     color: var(--primary);
 }
 .note{
@@ -81,7 +89,7 @@ figure h4 {
 .for-slidetoggle span {
     font-family: var(--font-sans-serif);
 }
-.note-content{
+.note-content {
     width: 100%;
     padding: 10px;
     margin-top: 4px;
@@ -89,10 +97,11 @@ figure h4 {
     border-radius: 9px;
     box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, .2);
     background-color: var(--bgc-2);
-}
-.note span {
     text-shadow: 0 0;
+    line-height: 1.5em;
 }
+
+
 .default-content {
     color: var(--default);
     text-shadow: 1px 1px 3px var(--default-shadow);
@@ -164,4 +173,12 @@ figure h4 {
 }
 .label-warning {
     background-color: var(--warning);
+}
+
+/* mermaid */
+.mermaid {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
 }

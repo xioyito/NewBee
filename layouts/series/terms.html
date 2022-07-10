@@ -1,30 +1,3 @@
 {{ define "main" }}
-<div class="hero">
-    <!-- 1.1 特色图片 -->
-    <div class="hero-img">
-        <img src="{{ .Site.Params.page.seriesTopImg }}" alt="">
-    </div>
-    <div class="hero-content">
-        <!-- 文章标题 -->
-        <h1 class="hero-title">系列</h1>
-        {{ .Site.Params.page.seriesDes | markdownify }}
-    </div>
-</div>
-<!-- 2 主体 -->
-<div class="zhuti-0">
-    <div class="container">
-        <div class="zhuti">
-            <!-- 2.1 左栏 -->
-            <div class="zhuti-l">
-                {{ partial "widgets/content-categories-terms.html" . }}
-            </div>
-            <!-- 2.2 右栏 -->
-            <div class="zhuti-r">
-                <!-- stiky -->
-                {{ partial "widgets/zhuti-r-list.html" . }}
-            </div>
-        </div>
-    </div>
-</div>
+    {{ partial "widgets/taxoAndTerms.html" . }}
 {{ end }}
-

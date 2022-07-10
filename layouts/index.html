@@ -1,27 +1,6 @@
 {{ define "main" }}
 <!-- 1 页首图片 -->
-<div class="hero">
-    <!-- 1.1 特色图片 -->
-    {{ with .Site.Params.page.homeTopImg }}
-    <div class="hero-img-home">
-        <img src="{{ . }}" alt="">
-    </div>
-    {{ end }}
-    <!-- hero内容 -->
-    <div class="hero-content">
-                {{ $hometitlefontsize := .Site.Params.page.homeTitleFontSize }}
-                {{ $homecontentfontsize := .Site.Params.page.homeContentFontSize }}
-                {{ with .Site.Params.page.homeTitle }}
-                    <div class="hometitle" style="font-size: {{ $hometitlefontsize }}px; margin-bottom: 20px;">{{ . | markdownify }}</div>
-                {{ end }}
-                {{ with .Site.Params.page.homeContent }}
-                    <div class="homecontent" style="font-size: {{ $homecontentfontsize }}px;">{{ . | markdownify }}</div>
-                {{ end }}
-            <button class="todown" type="button">
-                <i class="fa fa-angle-down fa-3x"></i>
-            </button>
-    </div>
-</div>
+{{ partial "widgets/hero.html" . }}
 <div class="zhuti-0">
     <div class="container">
         <div class="zhuti">
@@ -33,9 +12,9 @@
                     <div class="xian-r"></div>
                 </div>
                 <!-- 卡片 -->
-                <div class="taxo-row">
+                <div class="terms-row">
                     {{ range first .Site.Params.page.maxHomePostCount .Site.RegularPages }}
-                    <div class="taxo-root">
+                    <div class="terms-root">
                         {{ partial "widgets/post-card.html" . }}
                     </div>
                     {{ end }}

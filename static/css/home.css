@@ -5,7 +5,7 @@
 }
 .zuixin {
     text-align: center;
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;

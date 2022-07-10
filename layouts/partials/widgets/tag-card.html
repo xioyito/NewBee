@@ -2,10 +2,10 @@
 {{ range .Data.Terms.ByCount }}
 {{ $pageTitle := .Page.Title }}
 {{ $pageCount := .Count }}
-<div class="terms-col">
+<div class="taxo-col taxo-col-tag">
     <a href="{{ .Page.Permalink }}">
-        <div class="tag-terms-card">
-            <div class="tag-terms-text">
+        <div class="tag-taxo-card">
+            <div class="tag-taxo-text">
                 <span><i class="fa fa-tag"></i></span>
                 {{ $pageTitle }}
             </div>

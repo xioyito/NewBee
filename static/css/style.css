@@ -1,64 +1,66 @@
 :root {
-    --bgc-1: rgb(255, 255, 255);
     --bgc-1-rgb: 255, 255, 255;
-    --bgc-2: rgb(245, 245, 245);
     --bgc-2-rgb: 245, 245, 245;
-    --bgc-3: rgb(220, 220, 220);
     --bgc-3-rgb: 220, 220, 220;
 
-    --white-s: rgb(255, 255, 255);
-    --white-m: rgb(245, 245, 245);
-    --white-m-rgb: 245, 245, 245;
-    --white-l: rgb(240, 240, 235);
-
-    --primary: rgb(245, 90, 135);
     --primary-rgb: 245, 90, 135;
-    --primary-shadow: rgb(248, 170, 192);
-    --primary-light: rgb(245, 90, 135);
-    
-    --primary-l1: rgb(230, 147, 129);
-    --primary-r2: rgb(245, 122, 231);
-
-    --primary-oppo: rgb(250, 116, 80);
     --primary-oppo-rgb: 250, 116, 80;
-
-    --color: rgb(55, 49, 49);
-    --color-s: rgb(80, 80, 80);
-
-    --scroll-bgc: rgb(250, 250, 250);
-    --scroll-thumb: rgb(210, 210, 210);
-
-    --blue-nb: rgb(0, 174, 254);
-    --unobvious-0: rgb(80, 80, 80);
-    --unobvious-1: rgb(120, 120, 120);
-
-    --default: rgb(170, 170, 170);
-    --default-shadow: rgb(212, 212, 212);
-
-    --danger: rgb(253, 100, 100);
-    --danger-shadow: rgb(231, 161, 159);
-
-    --tip: rgb(117, 182, 236);
-    --tip-l: rgb(60, 152, 227);
+    --default-rgb: 170, 170, 170;
+    --danger-rgb: 253, 100, 100;
     --tip-rgb: 117, 182, 236;
-    --tip-shadow: rgb(165, 219, 241);
+    --success-rgb: 106, 180, 91;
+    --warning-rgb: 224, 166, 29;
+    --quote-rgb: 255, 234, 195;
 
-    --success: rgb(106, 191, 91);
-    --success-rgb: 106, 191, 91;
-    --success-shadow: rgb(181, 222, 100);
-    --ddd: 143, 198, 34;
+    /* 自定义样式建议对上面的参数修改，下面的尽量别动 */
 
-    --warning: rgb(224, 166, 29);
-    --warning-shadow: rgba(224, 166, 29, .3);
+    --bgc-1: rgb(var(--bgc-1-rgb));
+    --bgc-2: rgb(var(--bgc-2-rgb));
+    --bgc-3: rgb(var(--bgc-3-rgb));
 
-    --quote: rgb(255, 234, 195);
-    --quote-shadow: rgb(255, 234, 195);
+    --primary: rgb(var(--primary-rgb));
+    --primary-shadow: rgba(var(--primary-rgb), .4);
+
+    --primary-oppo: rgb(var(--primary-oppo-rgb));
+
+    --default: rgb(var(--default-rgb));
+    --default-shadow: rgba(var(--default-rgb), .4);
+
+    --danger: rgb(var(--danger-rgb));
+    --danger-shadow: rgba(var(--danger-rgb), .4);
+
+    --tip: rgb(var(--tip-rgb));
+    --tip-shadow: rgba(var(--tip-rgb), .4);
+
+    --success: rgb(var(--success-rgb));
+    --success-shadow: rgba(var(--success-rgb), .4);
+
+    --warning: rgb(var(--warning-rgb));
+    --warning-shadow: rgba(var(--warning-rgb), .4);
+
+    --quote: rgb(var(--quote-rgb));
+    --quote-shadow: rgba(var(--quote-rgb), .5);
+
+    /* --- */
 
     --bs-1: rgba(100, 100, 100, .1);
     --bs-2: rgba(80, 80, 80, 0.1);
     --bs-3: rgba(60, 60, 60, 0.1);
 
+    --white-s: rgb(255, 255, 255);
+    --white-m-rgb: 245, 245, 245;
+    --white-m: rgb(var(--white-m-rgb));
+    --white-l: rgb(240, 240, 235);
+    --blue-nb: rgb(0, 174, 254);
+
+    --color: rgb(70, 70, 70);
+    --color-s: rgb(90, 90, 90);
+
+    --scroll-bgc: rgb(250, 250, 250);
+    --scroll-thumb: rgb(210, 210, 210);
+
     /* else */
+
     --ratio-img: 0.75;
     --font-sans-serif: sans-serif, Arial;
     --efct-button-bs:
@@ -70,7 +72,10 @@
         -1px -1px 1px 0px rgba(255, 255, 255, 1),
         2px 2px 3px 1px rgba(100, 100, 100, 0.3) inset,
         -1px -1px 3px 2px rgba(255, 255, 255, 1) inset;
-    --efct-button-hover-ts: 2px 2px 3px rgba(25, 25, 25, 0.2);
+    --efct-button-hover-bs-inset:
+        0px 2px 5px 1px rgba(100, 100, 100, 0.1) inset,
+        0px -1px 5px 1px rgba(100, 100, 100, 0.1) inset;
+    --efct-button-hover-ts: 2px 2px 3px rgba(25, 25, 25, 0.1);
     --width-img-category: 150px;
 
     --myfont: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
@@ -126,14 +131,6 @@ p {
     text-shadow: 0px 0px 3px rgba(var(--tip-rgb), .5);
 }
 
-@font-face {
-    font-family: YaHei-Consolas;
-    src: url('/fonts/YaHei-Consolas.ttf');
-}
-@font-face {
-    font-family: foxi;
-    src: url('/fonts/Slidefu-Regular.ttf');
-}
 body {
     overflow-x: hidden;
     min-height: 100vh;
@@ -149,8 +146,10 @@ p > code {
     background-color: rgb(221, 221, 221);
 }
 .chroma code {
-    font-size: 0.9em;
-    font-family: YaHei-Consolas;
+    font-size: 14px;
+    font-family: monospace, 'Courier New', Courier;
+
+
     color: var(--color);
 }
 ul, ol {
@@ -167,7 +166,7 @@ ul > li {
     list-style-position: inside;
 }
 ::marker {
-    color: var(--tip-l);
+    color: var(--blue-nb);
     
 }
 li p {
@@ -262,16 +261,11 @@ button {
 @keyframes loop {
     0% {
         background-color: var(--success);
-        -webkit-transform: translateX(0);
         transform: translateX(0);
-    }
-    45% {
-        width: 50px;
     }
     100% {
         background-color: var(--danger);
-        -webkit-transform: translateX(166px);
-        transform: translateX(166px);
+        transform: translateX(165px);
     }
 }
 
@@ -295,6 +289,18 @@ body::-webkit-scrollbar-thumb:hover, .zhuti-r-0::-webkit-scrollbar-thumb:hover {
     border-radius: 5px;
     background-color: var(--scroll-thumb);
 }
+.lntable::-webkit-scrollbar {
+    height: 8px;
+    background: var(--scroll-bgc);
+}
+.lntable::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--scroll-thumb);
+}
+.lntable::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--primary-rgb), .5);
+}
+
 
 .container {
     margin: 0 auto;
@@ -334,20 +340,23 @@ header {
     background-color: rgba(var(--bgc-2-rgb), .9);
     
 }
+
 .logo {
+    font-family: var(--myfont);
+    font-weight: bold;
+    font-size: 1.2em;
     color: var(--color);
-    font-family: Impact, foxi, var(--myfont);
-    font-size: 1.5em;
 }
 .navbar-menu {
     height: inherit;
     display: flex;
     align-items: center;
 }
+
 .navbar-burger {
     align-self: start;
 }
-.header-rest, .zz-search {
+.header-rest {
     flex: 1;
     width: 100%;
     height: 100%;
@@ -364,11 +373,7 @@ header {
     flex-direction: column;
     justify-content: center;
 }
-.mode:hover {
-    color: rgb(200, 130, 251);
-    text-shadow: 0 0 2px rgb(194, 110, 254);
 
-}
 .fa-sun-o {
     color: rgb(255, 179, 0);
     text-shadow: 0 0 3px rgb(255, 187, 2);
@@ -379,8 +384,8 @@ header {
     text-shadow: 0 0 2px rgb(194, 110, 254);
     transition: all 0.2s;
 }
-.fa-sun-o:hover, .fa-moon-o:hover {
-    text-shadow: 0 0 0;
+.mode:hover .fa-sun-o, .mode:hover .fa-moon-o {
+    transform: scale(1.2);
 }
 .sun {
     display: none;
@@ -473,73 +478,10 @@ header {
     color: var(--primary); 
     text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.2);
 }
-.search-box {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    height: 40px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s;
-}
 
-.search input{
-    outline: none;
-    border: 0px;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    display: none;
-    background-color: transparent;
-}
-.search-btn, .search-close{
-    outline: none;
-    border: 0px;
-    height: 100%;
-    width:30px;
-    cursor: pointer;
-    background-color: transparent;
-}
-.search-close {
-    display: none;
-}
-.result-box {
-    position: fixed;
-    right: 0;
-    width: 50%;
-    overflow: auto;
-    z-index: 1;
-    color: rgb(32, 32, 32);
-    box-sizing: border-box;
-    background-color: rgba(240, 240, 240, 0.9); 
-}
-#result {
-    padding: 0px 20px 20px 20px;
-    border-bottom-left-radius: 20px;
-    background-color: antiquewhite;
-}
-#search-tip {
-    color: #000000;
-    text-align: center;
-    display: none;
-}
-.post-title {
-    margin: 10px 0;
-}
-.post-summary {
-    overflow: hidden; 
-	display:-webkit-box; 
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2; 
-}
-.post-line {
-    width: 100%;
-    height: 2px;
-    border-top: 1px solid rgb(240, 240, 240);
-    border-bottom: 1px solid rgb(201, 201, 201);
-    box-sizing: border-box;
-    margin-top: 10px;
-}
+
+
+
 .anxia {
     box-shadow:
         1px 1px 2px 1px rgba(0, 0, 0, .1),
@@ -595,10 +537,7 @@ header {
     text-align: center;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
 }
-.hometitle {
-    font-family: Impact, var(--myfont);
-}
-.homecontent {
+.hometitle, .homecontent {
     font-family: var(--myfont);
 }
 .hero-title {
@@ -619,6 +558,9 @@ header {
 }
 .hero-date a:hover {
     color: var(--primary);
+}
+.no-wrap {
+    white-space: nowrap;
 }
 .timelong {
     font-size: 14px;
@@ -657,7 +599,6 @@ body::after {
     background-color: var(--bgc-2);
     padding: 20px;
     box-sizing: border-box;
-    border-right: 1px solid var(--bgc-1); 
     position: relative;
     display: flex;
     flex-direction: column;
@@ -678,12 +619,21 @@ body::after {
 }
 .zhuti-r {
     background-color: var(--bgc-2);
-    border-left: 1px solid rgb(220, 220, 220);
     box-sizing: border-box;
     position: relative;
     z-index: 1;
 }
-
+.zhuti-r::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    border-left: 1px solid rgb(220, 220, 220);
+    border-right: 1px solid var(--bgc-1);
+    box-sizing: border-box;
+}
 .zhuti-r-0 {
     overflow: auto;
     overflow-x: hidden;
@@ -715,7 +665,7 @@ body::after {
     height: 100%;
     position: absolute;
     top: 0;
-    right: -35px;
+    right: -34px;
 }
 .content {
     width: 100%;
@@ -728,16 +678,15 @@ body::after {
 }
 .content-self {
     flex: 1;
+    padding-bottom: 20px;
     border-top: 1px dashed rgba(0, 0, 0, .3);
     border-bottom: 1px dashed rgba(0, 0, 0, .3);
 }
 .content-self a {
     transition: all 0.2s;
-    text-decoration: underline var(--primary-light);
-    color: var(--primary-light);
+    color: var(--primary);
 }
 .content-self a:hover {
-    text-decoration: underline var(--tip);
     color: var(--tip);
 }
 .pre-next {
@@ -861,7 +810,7 @@ body::after {
     text-shadow: -1px -1px 0px white;
 }
 .aixin {
-    color: var(--primary);
+    color: rgb(245, 90, 135);
 }
 .pinglun {
     color: rgb(0, 169, 0);
@@ -940,7 +889,7 @@ body::after {
         2px 2px 8px 1px rgba(50, 50, 50, 0.2);
     line-height: 22px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s;
     z-index: 3;
 }
 .baba-up {
@@ -1006,12 +955,12 @@ body::after {
 }
 .button-mulu:hover, .button-comment:hover {
     color: var(--primary);
-    text-shadow: 0 0 5px var(--primary);
+    text-shadow: 0 0 5px rgba(var(--primary-rgb), .4);
 }
 .button-r-add {
     color: var(--primary);
     box-shadow: var(--efct-button-hover-bs);
-    text-shadow: 0 0 5px rgba(var(--primary-rgb), .6);
+    text-shadow: 0 0 5px rgba(var(--primary-rgb), .4);
 }
 .about-zuozhe {
     background-color: var(--bgc-2);
@@ -1024,6 +973,8 @@ body::after {
 }
 .zuozhe {
     display: flex;
+    align-items: center;
+
 }
 .datou{
     box-sizing: border-box;
@@ -1041,6 +992,7 @@ body::after {
     object-fit: cover;
     object-position: center;
 }
+
 .name-jianjie .name {
     border-bottom: 1px solid var(--bgc-1);
     padding-bottom: 3px;
@@ -1048,7 +1000,7 @@ body::after {
 
 .jianjie {
     width: 150px;
-    height: 40px;
+    /* height: 40px; */
     font-size: 14px;
     padding-top: 5px;
     box-sizing: border-box;
@@ -1168,7 +1120,7 @@ body::after {
     font-size: 14px;
 }
 .mulu-item {
-    padding: 3px 10px 3px 0;
+    padding: 2px 10px 3px 0;
     cursor: pointer;
     max-width: 100%;
     position: relative;
@@ -1177,6 +1129,9 @@ body::after {
 }
 .mulu-item span {
     color: var(--tip);
+}
+.mulu-item span:last-child {
+    padding-right: 5px;
 }
 .mulu-item:hover {
     color: var(--primary);
@@ -1222,7 +1177,7 @@ body::after {
     border-top: 1px solid var(--bgc-1);
     border-bottom: 1px solid var(--bgc-3);
 }
-.other .list-item {
+.list-item {
     height: 60px;
     background-color: var(--bgc-2);
     margin-bottom: 15px;
@@ -1235,7 +1190,7 @@ body::after {
     border: 1px solid var(--bgc-1);
     transition: 0.2s;
 }
-.other .list-item:hover {
+.list-item:hover {
     box-shadow:
         1px 1px 2px 1px rgba(0, 0, 0, .1),
         -1px -1px 3px 2px rgba(255, 255, 255, 1),
@@ -1244,7 +1199,7 @@ body::after {
     text-shadow: 1px 1px 3px rgba(100, 100, 100, 0.4);
     color: rgb(40, 40, 40);
 }
-.other .list-item:hover .icon-other-root {
+.list-item:hover .icon-other-root {
     box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .2);
     transform: scale(0.9);
 }
@@ -1278,7 +1233,6 @@ body::after {
 .other-title {
     font-weight: bold;
     font-size: 14px;
-    transition: all 0.1s;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1286,7 +1240,6 @@ body::after {
 .other-summary {
     font-size: 12px;
     width: 170px;
-    transition: all 0.1s;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1301,7 +1254,6 @@ body::after {
 .other-date {
     font-size: 12px;
     color: rgb(120, 120, 120);
-    transition: all 0.1s;
 }
 .appreciate {
     width: 100vw;
@@ -1450,7 +1402,7 @@ body::after {
 }
 
  .chroma { 
-    line-height: 1.4em !important; 
+    line-height: 1.5em !important; 
     background-color: transparent !important;
 }
  .chroma .lntable { 
@@ -1462,19 +1414,19 @@ body::after {
     background-color: rgba(0, 0, 0, .1) !important;
 }
 .footnotes {
-    margin-left: 15px;
+    margin-top: 20px;
     font-size: 0.75em;
-    color: rgb(120, 120, 120);
+    color: rgb(150, 150, 150);
 }
 .footnotes hr {
-    margin-left: -15px;
+    border-color: var(--bgc-1);
 }
 .footnote-ref, .footnote-backref {
     color: var(--primary);
     text-decoration: none !important;
 }
 .footer-items {
-    margin: 20px 0;
+    margin: 15px 0;
     font-size: 12px;
     color: rgb(180, 180, 180);
     text-shadow: 1px 1px 0px white;
@@ -1586,6 +1538,14 @@ body::after {
         height: 200px;
         border-radius: 20px;
     }
+    .hero-title {
+        font-size: 30px;
+        padding-bottom: 0;
+    }
+    .hero-subtitle {
+        font-size: 1em;
+        padding-bottom: 0;
+    }
     .zhuti {
         position: relative; 
     }
@@ -1594,13 +1554,13 @@ body::after {
     }
     .zhuti-r {
         display: none;
-        border-left: 1px solid var(--bgc-1) !important;
         border-right: 1px solid var(--bgc-1);
         box-shadow: -2px 2px 10px 1px rgba(0, 0, 0, .2);
         position: fixed;
         right: 20px;
         top: 0px;
     }
+
     .zhuti-r-1 {
         margin-top: 80px;
     }

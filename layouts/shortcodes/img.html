@@ -1,16 +1,18 @@
-
-
 <figure>
-    <img src="{{ .Get 0 }}" alt="" 
+    <img data-src="{{ .Get 0 }}" alt="图片加载失败" 
     {{ with (.Get 2) }}
         {{ if eq . "shadow" }}
-            class="has-{{ . }}"
+            class="lazyload has-{{ . }}"
         {{ end }}
     {{ else }}
         {{ with (.Get 1) }}
             {{ if eq . "shadow" }}
-                class="has-{{ . }}"
+                class="lazyload has-{{ . }}"
+            {{ else }}
+                class="lazyload"
             {{ end }}
+        {{ else }}
+            class="lazyload"
         {{ end }} 
     {{ end }} >
     {{ with (.Get 1) }}

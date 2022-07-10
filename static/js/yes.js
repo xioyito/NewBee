@@ -3,7 +3,6 @@
 var dir;
 var if_origin_1 = 0;
 var if_origin_2 = 0;
-
 // 函数
 function jump(sel) {
     $("html,body").animate({ scrollTop: $(sel).offset().top - 60 }, 500);
@@ -31,25 +30,13 @@ function getCookie(cname) {
     return "";
 }
 
-// function checkCookie() {
-    // var user = getCookie("username");
-    // var user = $(".name-jianjie .name").text();
-    // if (user != "") {
-    //     alert("Welcome again " + user);
-    // } 
-    // else {
-    //     user = prompt("Please enter your name:", "");
-    //     if (user != "" && user != null) {
-    //         setCookie("username", user, 7);
-    //     }
-    // }
-// }
-
 
 var mydate = new Date();
 var dark = "<link rel='stylesheet' href='/css/style-dark.css' /><link rel='stylesheet' href='/css/syntax-dark.css' />";
+var isDark = (mydate.getHours() <= 6 && mydate.getHours() >= 0) || (mydate.getHours() >= 18 && mydate.getHours() <= 23);
+
 // 夜晚
-if ((mydate.getHours() <= 6 & mydate.getHours() >= 0) | (mydate.getHours() >= 18 & mydate.getHours() <= 23)) {
+if (isDark) {
     if (getCookie('mode') != 'light') {
         $("link[href='/css/_custom.css']").before(dark);
     } else {
@@ -65,24 +52,20 @@ else {
     } else {
         $("link[href='/css/_custom.css']").before(dark);
     }
-    
 }
+
 
 // 加载动画消失
 $(window).load(function () {
     $('.loading').fadeOut("slow", function() {
         var user = $(".name-jianjie .name").text();
-        // if (user != "") {
-        //     alert("欢迎回来！" + user);
-        // } 
     });
 });
 
 $(document).ready(function () {
 
-
     // 夜晚
-    if ((mydate.getHours() <= 6 & mydate.getHours() >= 0) | (mydate.getHours() >= 18 & mydate.getHours() <= 23)) {
+    if (isDark) {
         if (getCookie('mode') != 'light') {
             $(".sun").hide();
             $(".moon").show();
@@ -101,6 +84,8 @@ $(document).ready(function () {
             $(".moon").show();
         }
     }
+    
+
 
 
     // 滚动条出现后的操作
@@ -119,7 +104,7 @@ $(document).ready(function () {
             $(".sun").hide();
             $(".moon").show();
 
-            setCookie('mode', 'dark', 7);
+            setCookie('mode', 'dark', 1);
         }
         // 转浅色模式
         else {
@@ -129,7 +114,7 @@ $(document).ready(function () {
             $(".moon").hide();
             
 
-            setCookie('mode', 'light', 7);
+            setCookie('mode', 'light', 1);
         }
     });
 
@@ -202,7 +187,6 @@ $(document).ready(function () {
                         father_h3.append(html_h3_item);
 
                         var new_h3 = father_h3.children(".heading3:last"); // 这个变量声明位置不能更改
-                        // alert(new_h3.text());
                         new_h3.click(function () {
                             jump(href_h3_item);
                         });
@@ -217,7 +201,7 @@ $(document).ready(function () {
     $(".father-h3").show();
 
     // 主页hero图像尺寸调整
-    $(".hero-img-home").height($(window).height() - 110);
+    $(".hero-img-home").height($(window).height() - 108);
 
     $(".burger-btn").click(function () {
         var lw = $(window).width();
@@ -251,40 +235,9 @@ $(document).ready(function () {
 
     });
 
-    // 点击搜索按钮
-    $(".search-btn").click(function () {
-        if ($(".zz-search").css("display") == "none") {
-            $("header").height($(window).height());
-            $(".zz-search").fadeIn();
-            $(".search input").animate({ width: "toggle" }, 300);
-            $(".search-box").addClass("anxia");
-            // 模糊
-            $("#content, footer").addClass("mask");
-            $(".search-close").show(300);
-        } else {
-            search();
-        }
-    });
-
-    // 点击搜索的其他地方
-    $(".zz-search").click(function () {
-        $(".search input").animate({ width: "toggle" }, 300);
-        $(".search-box").removeClass("anxia");
-        $(".search-close").hide(300)
-        // 模糊
-        $("#content, footer").removeClass("mask");
-        $("header").height(60);
-        $(this).fadeOut();
-    });
-
-    // 点击×
-    $(".search-close").click(function () {
-        document.getElementById("search-key").value = "";
-    });
-
     // 赞赏
     $(".aixin").click(function () {
-        $(".appreciate").fadeIn(200);
+        $(".appreciate").fadeIn('fast');
     });
 
     $(".appreciate-btn div:first-child").addClass("add-appreciate-btn");
@@ -302,7 +255,7 @@ $(document).ready(function () {
 
     // 取消
     $(".cancel").click(function () {
-        $(".appreciate").fadeOut(200);
+        $(".appreciate").fadeOut('fast');
     })
 
     // .pinglun
@@ -313,24 +266,35 @@ $(document).ready(function () {
 
     // 隐藏右栏
     $(".tosides-1").click(function () {
+
         // $('.zhuti-r').hide();
         $('.tosides-1').hide();
         $('.tosides-2').show();
         $(".zhuti-l").css("min-width", "100%"); // 解决bug
         $('.zhuti-r').fadeOut("fast");
-        $(".long").css("margin-right", 22);
+        
+        $(".long").animate({marginRight: 22}, 'fast');
+        
+        
+        
+
+        
+        
+        
         if_origin_1 = 1;
     });
 
     // 显示右栏
     $(".tosides-2").click(function () {
-        $('.zhuti-r').fadeIn("slow");
+
+        $('.zhuti-r').fadeIn("fast");
         $('.tosides-1').show();
         $('.tosides-2').hide();
         $(".zhuti-l").css("min-width", "calc(100% - 310px)"); // 解决bug
+        
         var lw = $(window).width();
         if (lw > w_window_min) {
-            $(".long").css("margin-right", 0);
+            $(".long").animate({marginRight: 0}, 'fast');
             $(".zhuti-r-0").css({"max-height": $(window).height()-60, "height": $(window).height()-60});
         }
          else {
@@ -416,8 +380,11 @@ $(document).ready(function () {
         copy($(this).parents(".code-box").find("code").last());
     })
 
-    var has_zhuti_r = $(".zhuti-r").size();
+    
 
+
+
+    var has_zhuti_r = $(".zhuti-r").size();
     // 窗口改变后运行
     $(window).resize(function () {
         // 响应式按钮
@@ -428,7 +395,7 @@ $(document).ready(function () {
 
             $(".zhuti-r-0").css({"max-height": lh, "height": lh});
 
-            $(".navbar-menu > a").fadeOut();
+            $(".navbar-menu > a").hide();
             $(".navbar-burger").show(300);
 
             if (has_zhuti_r) {
@@ -443,7 +410,6 @@ $(document).ready(function () {
                     $(".tosides-2").show();
                 }
             }
-
         } else {
             $(".zhuti-r-0").css({"max-height": lh-60, "height": lh-60});
 
@@ -476,7 +442,7 @@ $(document).ready(function () {
             $(".header-rest").click();
         }
         // 主页hero图像尺寸调整
-        $(".hero-img-home").height($(window).height() - 110);
+        $(".hero-img-home").height($(window).height() - 108);
     });
 
 
@@ -493,24 +459,31 @@ $(document).ready(function () {
             dir = "up";
         };
     })
-
+    
     // 滚动监视
     $(window).scroll(function () {
 
         // 回到顶部按钮隐藏与显示
         var zhuti_l_top = $(".zhuti-l").offset().top; // zhiti-l顶部与窗口顶部的距离
         var h_scroll = $(window).scrollTop(); //滚动的高度
-        if (zhuti_l_top - h_scroll >= 0) {
-            $(".toup").fadeOut();
-        } else {
-            $(".toup").fadeIn();
+
+        if ((zhuti_l_top - h_scroll >= 0) && ($(".toup").css('display') != 'none')) {
+
+            $(".toup").css('opacity', 0);
+            setTimeout(function() {
+                $(".toup").hide();
+            }, 300);
+        } else if ((zhuti_l_top - h_scroll < 0) && ($(".toup").css('display') == 'none')) {
+            $(".toup").show();
+            $(".toup").css('opacity', 1);
         }
 
         // 目录高亮
         var h_items = $(".content-self h1, .content-self h2");
         var num_h_item = h_items.size();
 
-        if (num_h_item > 0) { // 有标题才会执行
+
+        if ((num_h_item > 0) && ($('.zhuti-r').css('display') != 'none') && ($('.zhi').css('display') != 'none')) { // 有标题并且目录为打开状态才会执行
             h_items.each(function () {
                 var id_h_item = $(this).attr("id");
                 var top_h_item = $(this).offset().top;
@@ -558,5 +531,23 @@ $(document).ready(function () {
             });
         }
     });
+
+    // if ($('.katex').size()) {
+        
+    //     var katexText = $('.katex-header').text();
+    //     var element = $('#katex-body');
+
+    //     katex.render("c = \\pm\\sqrt{a^2 + b^2}", element, {
+    //         throwOnError: false
+    //     });
+    // }
+
+
+
+    if ($('.mermaid').size()) {
+        var mermaidSrc = '<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>';
+        $('head').append(mermaidSrc);
+        mermaid.initialize({ startOnLoad: true });
+    }
 });
 

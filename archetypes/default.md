@@ -8,7 +8,7 @@ categories: []
 # refer to categories
 tags: []
 # seires
-seires: []
+series: []
 # Top image for the post
 image: ""
 ---

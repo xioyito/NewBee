@@ -13,9 +13,9 @@
                         © {{ .Site.Params.footer.from }}-{{ now.Format "2006" }} <a href="{{ .Site.Author.link }}">{{ .Site.Author.name }}</a>
                     </div>
                 {{ end }}
-                {{ if .Site.Params.footer.themeAndHugo }}
+                {{ if .Site.Params.footer.themeInfo }}
                     <div class="footer-item">
-                        Theme is <a href="https://github.com/xioyito/NewBee">NewBee</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+                        Theme by <a href="https://github.com/xioyito/NewBee">NewBee</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
                     </div>
                 {{ end }}
             </div>
@@ -26,3 +26,4 @@
         {{ partial "widgets/aplayer.html" . }}
     {{ end }}
 </footer>
+
