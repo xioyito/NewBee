@@ -84,10 +84,11 @@ $(document).ready(function () {
             $(".moon").show();
         }
     }
+
+    if ($('.down-summary a')) {
+        $('.down-summary a').contents().unwrap();
+    }
     
-
-
-
     // 滚动条出现后的操作
     var h_body = $("body").height();
     if (h_body > $(window).height()) {
@@ -531,18 +532,6 @@ $(document).ready(function () {
             });
         }
     });
-
-    // if ($('.katex').size()) {
-        
-    //     var katexText = $('.katex-header').text();
-    //     var element = $('#katex-body');
-
-    //     katex.render("c = \\pm\\sqrt{a^2 + b^2}", element, {
-    //         throwOnError: false
-    //     });
-    // }
-
-
 
     if ($('.mermaid').size()) {
         var mermaidSrc = '<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>';

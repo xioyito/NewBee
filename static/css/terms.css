@@ -26,6 +26,7 @@
     align-items: center;
     transition: all 0.2s;
     position: relative;
+    background-color: var(--bgc-2);
 }
 .card-large:hover {
     transform: translateY(3px);
@@ -44,7 +45,9 @@
     overflow: hidden;
     box-shadow:
         4px 4px 8px 1px rgba(50, 50, 50, 0.2);
+    background-color: var(--bgc-2);
 }
+
 .card-large:hover .card-large-img {
     box-shadow:
         4px 4px 8px 1px rgba(50, 50, 50, 0.1);
