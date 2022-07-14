@@ -149,7 +149,6 @@
     color: var(--tip);
 }
 .post-root {
-    transition: all 0.2s;
     padding: 0 10px;
     box-sizing: border-box;
 }
@@ -167,12 +166,11 @@
 }
 
 .post-root:hover .post {
-    box-shadow:
-        4px 4px 5px 0px rgba(98, 98, 98, 0.2);
-    text-shadow: var(--efct-button-hover-ts);
     transform: translateY(2px);
 }
-
+.post-root:hover .post-header {
+    color: var(--primary);
+}
 .post-header {
     height: 1.5em;
     display: flex;
@@ -186,17 +184,20 @@
 }
 
 .post-time {
+    font-size: 14px;
     color: rgb(150, 150, 150);
 }
 .post-mark {
     color: rgb(150, 150, 150);
     margin-top: 5px;
     overflow: hidden; 
+    transition: all 0.2s;
 	display:-webkit-box; 
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2; 
 }
 .key-hl {
+    border-radius: 4px;
     background-color: rgba(var(--primary-rgb), .3);
 }
 

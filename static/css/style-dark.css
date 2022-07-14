@@ -300,10 +300,10 @@ hr {
 }
 .year:hover {
     box-shadow:
-        1px 1px 1px 2px rgba(0, 0, 0, .1),
+        2px 2px 1px 2px rgba(0, 0, 0, .1),
         -1px -1px 3px 2px rgba(var(--bgc-1-rgb), .8),
-        2px 2px 6px 2px rgba(0, 0, 0, 0.2) inset,
-        -2px -2px 5px 0px rgba(var(--bgc-1-rgb), .8) inset;
+        3px 3px 6px 2px rgba(25, 25, 25, 0.1) inset,
+        -2px -2px 5px 0px rgba(var(--bgc-1-rgb), .5) inset;
 }
 
 /* shortcode */
@@ -436,21 +436,11 @@ hr {
     box-shadow:
         4px 4px 8px 1px rgba(0, 0, 0, 0.2);
 }
-.post-root:hover .post {
-    box-shadow:
-        4px 4px 5px 0px rgba(20, 20, 20, 0.2);
-}
+
 
 .mermaid {
     border-radius: 10px;
-    
     background-color: rgb(240, 240, 240);
-    /* background-color: var(--color); */
 }
-/* .mermaid .messageText {
-    fill: var(--white-m) !important;
-}
-.mermaid .messageLine0 {
-    stroke: var(--white-m) !important;
-} */
+
 

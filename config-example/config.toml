@@ -66,46 +66,46 @@ hasCJKLanguage = true
         # 分类页面的顶部图
         categoryTopImg = "/images/categories.jpg"
         # description of categories terms page
-        # 分类的描述
+        # 子标题
         categoryDes = "description of categories page"
 
         # top image in series terms page
         # 分类页面的顶部图
         seriesTopImg = "/images/series.jpg"
         # description of series terms page
-        # 分类的描述
+        # 子标题
         seriesDes = "description of series page"
 
         # top image in tags terms page
         # 标签页面的顶部图
         tagTopImg = "/images/tag.jpg"
         # description of tags terms page
-        # 标签页面的描述
+        # 子标题
         tagDes = "description of tags page"
 
         # top image in archives(posts) page
         # 归档（所有文章）页面的顶部图
         archivesTopImg = "/images/archive.jpg"
         # description of archives(posts) page
-        # 归档（所有文章）页面的描述
+        # 子标题
         archivesDes = "description of archives(posts) page"
 
         # top image in about page
         # 关于页面的顶部图
         aboutTopImg = "/images/about.jpg"
         # description of about page
-        # 关于页面的描述
+        # 子标题
         aboutDes = "description of about page"
 
         # default image for a post without "image" param
         # 当文章没有设置图片时，将用此图来替代
         postsTopImg = "/images/default.jpg"
         
-        # 主页文章显示数量
+        # 主页文章最大显示数量
         maxHomePostCount = 5
-        # 相关文章显示数量
+        # 相关文章最大显示数量
         maxPageRelatedCount = 5
-        # 最新文章显示数量
+        # 最新文章最大显示数量
         maxPageNewestCount = 5
 
     # Valine comment

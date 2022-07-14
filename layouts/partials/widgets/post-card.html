@@ -1,17 +1,4 @@
-<div class="down-type">
-    {{ range $tag := .Params.tags }}
-    <span class="down-type-item">
-        <div class="shuxian-root">
-            <div class="shuxian"></div>
-        </div>
-        <div class="type-text">
-            <a href='{{ "tags/" | relURL }}{{ $tag | urlize }}'>
-                <i class="fa fa-tag"></i> {{ . }}
-            </a>
-        </div>
-    </span>
-    {{ end }}
-</div>
+
 <div class="card-large">
     <div class="card-large-img">
 
@@ -43,4 +30,25 @@
         </a>
     </div>
 </div>
+
+{{ $tagsCount := 0 }}
+{{ with .Params.tags }}
+    {{ $tagsCount = 1 }}
+{{ end }}
+{{ if eq $tagsCount 1 }}
+    <div class="down-type">
+        {{ range $tag := .Params.tags }}
+        <span class="down-type-item">
+            <div class="shuxian-root">
+                <div class="shuxian"></div>
+            </div>
+            <div class="type-text">
+                <a href='{{ "tags/" | relURL }}{{ $tag | urlize }}'>
+                    <i class="fa fa-tag"></i> {{ . }}
+                </a>
+            </div>
+        </span>
+        {{ end }}
+    </div>
+{{ end }}
 <div class="dang"></div>

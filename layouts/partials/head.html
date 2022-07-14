@@ -4,6 +4,7 @@
     <title>{{ .Site.Title }}{{ if not .IsHome }}{{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }} ">
     <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ if not (in (string .Site.BaseURL) "localhost") }}
@@ -43,6 +44,7 @@
 
     {{ partial "math-jax.html" . }}
 
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     
     <script src="/js/lazysizes.min.js" async=""></script>
     

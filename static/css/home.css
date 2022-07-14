@@ -95,6 +95,7 @@
 
 .more-posts {
     margin: 20px auto;
+    margin-bottom: 10px;
     z-index: 5;
 }
 .more-posts a {

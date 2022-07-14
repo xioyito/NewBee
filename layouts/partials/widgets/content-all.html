@@ -1,5 +1,5 @@
 {{ $class1 := "" }}
-{{ $isAtPage := or (eq .Kind "page") (eq .Section "about") }}
+{{ $isPage := or (eq .Kind "page") (eq .Section "about") }}
 
 {{ if eq .Kind "page" }}
     {{ $class1 = "content-root" }}
@@ -22,7 +22,7 @@
             <i class="fa fa-arrow-up"></i>
         </button>
     </div>
-    {{ if $isAtPage }}
+    {{ if $isPage }}
         <!-- 2.1.2 文章内容 -->
         <div class="content">
             <div class="content-self">
@@ -76,7 +76,7 @@
     
 </div>
 
-{{ if $isAtPage }}
+{{ if $isPage }}
     <div class="content-last">
         <button class="aixin content-last-item efct-button">
             <i class="fa fa-heart"></i>

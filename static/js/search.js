@@ -38,10 +38,10 @@ function search() {
     clearPosts();
     var key = document.getElementById("search-key").value;
     var postCount = 0;
-    var searchBy = 'Search by <a href="https://github.com/xioyito" class="search-by" >nb-search</a>';
+    var searchBy = 'Search by <a href="https://github.com/xioyito/NewBee" class="search-by" >NewBee</a>';
 
     if (!key) {
-        $(".stip").html('~什么也没找到，' + searchBy);
+        $(".stip").html('~ ~ ~ 什么也没找到，' + searchBy);
         $(".at-bottom").hide();
         $(".sbody").show();
         return;
@@ -69,14 +69,14 @@ function search() {
         $(".stip").html('~什么也没找到，' + searchBy);
     } else {
         $(".stip").html('找到 ' + postCount + ' 条结果，' + searchBy);
-        $(".sbody-1").append('<div class="at-bottom">~~~ 已经到底啦</div>');
+        $(".sbody-1").append('<div class="at-bottom">~ ~ ~ 已经到底啦</div>');
     }
     $(".sbody").show();
 }
 
+// 向页面中添加元素
 function addItem(title, pubDate, mark, link) {
     var pHtml = "<a href=\"" + link + "\" target=\"_blank\" class=\"post\" >" +
-
             "<div class=\"post-header\">" +
             "<h4 class=\"post-title\">" + title + "</h4>" +
             "<div class=\"post-time\">" + pubDate + "</div>" +
@@ -89,11 +89,13 @@ function addItem(title, pubDate, mark, link) {
     document.getElementsByClassName('sbody-1')[0].appendChild(div);
 }
 
+// 初始化搜索页面
 function clearPosts() {
     $(".sbody").hide();
     $(".post-root, .at-bottom").remove();
 }
 
+// 截取段落
 function toMark(oPlain, key) {
     var kIdx = oPlain.indexOf(key);
     var kLen = key.length;
@@ -114,6 +116,7 @@ function toMark(oPlain, key) {
      
 }
 
+// 高亮关键字
 function hlHtml(oMark, key) {
     var text = oMark;
     var newMark = '';
