@@ -29,11 +29,14 @@
         2px 2px 6px 2px rgba(25, 25, 25, 0.1) inset,
         -2px -2px 5px 2px rgba(255, 255, 255, 1) inset;
 }
-.year:hover .year-item {
-    text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.2);
-}
+
 .year-head {
     margin-top: 0;
+    text-align: center;
+    transition: all 0.2s;
+}
+.year-items {
+    margin-top: -1em;
 }
 .year-item {
     color: var(--color);
@@ -45,7 +48,9 @@
     flex-wrap: wrap;
     position: relative;
 }
-
+.year:hover .year-item, .year:hover .year-head {
+    text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.2);
+}
 .year-item:hover {
     color: var(--primary);
     text-shadow: 2px 2px 5px rgba(var(--primary-rgb), .3) !important;

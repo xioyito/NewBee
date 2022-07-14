@@ -47,6 +47,9 @@ figure h4 {
     padding-left: 10px;
     
 }
+.for-slidetoggle span {
+    padding-left: 5px;
+}
 .code-box .fa::before {
     color: rgb(130, 130, 130);
 }

@@ -149,7 +149,6 @@
     color: var(--tip);
 }
 .post-root {
-    transition: all 0.2s;
     padding: 0 10px;
     box-sizing: border-box;
 }
@@ -161,14 +160,14 @@
     display: block;
     border: 1px solid var(--bgc-1);
     border-radius: 10px;
-    transition: all 0.2s;
+    transition: all 0.1s;
     box-shadow:
         4px 4px 8px 1px rgba(50, 50, 50, 0.2);
 }
 
 .post-root:hover .post {
     box-shadow:
-        4px 4px 5px 0px rgba(98, 98, 98, 0.2);
+        4px 4px 5px 0px rgba(120, 120, 120, 0.2);
     text-shadow: var(--efct-button-hover-ts);
     transform: translateY(2px);
 }

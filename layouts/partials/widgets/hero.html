@@ -105,7 +105,7 @@
                 <!-- {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }} -->
                 <span class="no-wrap"><i class="fa fa-pencil"></i> 本文字数: {{ .WordCount }} &nbsp;</span>
                 <span class="no-wrap"><i class="fa fa-clock-o"></i> 阅读时长: {{ .ReadingTime }} 分钟 &nbsp;</span>
-                <span class="no-wrap"><i class="fa fa-eye"></i> 阅读量: <span id="busuanzi_value_page_pv"></span></span> 
+                {{ if .Site.Params.footer.visitor }}<span class="no-wrap"><i class="fa fa-eye"></i> 阅读量: <span id="busuanzi_value_page_pv"></span></span>{{ end }}
             </div>
         </div>
     </div>
