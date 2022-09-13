@@ -1,5 +1,5 @@
 <figure>
-    <img data-src="{{ .Get 0 }}" alt="图片加载失败" 
+    <img data-src="{{ .Get 0 }}" alt="Image Loading Failed" 
     {{ with (.Get 2) }}
         {{ if eq . "shadow" }}
             class="lazyload has-{{ . }}"
@@ -13,7 +13,7 @@
             {{ end }}
         {{ else }}
             class="lazyload"
-        {{ end }} 
+        {{ end }}
     {{ end }} >
     {{ with (.Get 1) }}
         {{ if ne . "shadow" }}

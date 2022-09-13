@@ -11,7 +11,7 @@
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
 
-    
+
     <link rel="stylesheet" href='/css/style.css' />
     <link rel="stylesheet" href='/css/search.css' />
     <link rel="stylesheet" href='{{ "css/list.css" | relURL }}' />
@@ -29,7 +29,7 @@
 
         {{ if eq .Kind "404" }}
             body::after { display: none; }
-        {{ end }} 
+        {{ end }}
     </style>
 
     {{ if .Site.Params.aplayer.enable }}
@@ -45,15 +45,10 @@
     {{ partial "math-jax.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    
     <script src="/js/lazysizes.min.js" async=""></script>
-    
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    
     <script src="/js/search.js"></script>
-
     <script src="/js/yes.js"></script>
-    
     {{ if and .Site.Params.footer.enable .Site.Params.footer.visitor }}
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     {{ end }}

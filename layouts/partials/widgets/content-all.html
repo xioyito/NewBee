@@ -11,7 +11,6 @@
 
 <div class="{{ $class1 }}">
     <div class="long">
-        <!-- 圆键 -->
         <button class="tosides-1 text-wbd">
             <i class="fa fa-arrow-right"></i>
         </button>
@@ -23,7 +22,6 @@
         </button>
     </div>
     {{ if $isPage }}
-        <!-- 2.1.2 文章内容 -->
         <div class="content">
             <div class="content-self">
                 {{ .Content }}
@@ -43,7 +41,6 @@
             {{ end }}
         </div>
         {{ if eq .Kind "page" }}
-            <!-- 3 上下篇 -->
             {{ if or .PrevInSection .NextInSection }}
                 <div class="pre-next">
                     {{ partial "widgets/pre-next.html" . }}
@@ -52,11 +49,9 @@
         {{ end }}
 
     {{ else if eq .Kind "term" }}
-        <!-- 卡片 -->
         <div class="terms-row">
             {{ range .Pages }}
             <div class="terms-root">
-                
                 {{ partial "widgets/post-card.html" . }}
             </div>
             {{ end }}
@@ -65,22 +60,19 @@
     {{ else if eq .Kind "taxonomy" }}
         <div class='taxo-row {{ if eq .Section "tags" }}taxo-row-tag{{ end }}'>
             {{ if eq .Section "tags" }}
-                
                     {{ partial "widgets/tag-card.html" . }}
-                
             {{ else }}
                 {{ partial "widgets/category-card.html" . }}
             {{ end }}
         </div>
     {{ end }}
-    
 </div>
 
 {{ if $isPage }}
     <div class="content-last">
-        <button class="aixin content-last-item efct-button">
+        <!-- <button class="aixin content-last-item efct-button">
             <i class="fa fa-heart"></i>
-        </button>
+        </button> -->
         {{ if .Site.Params.valine.enable }}
             <button class="pinglun content-last-item efct-button">
                 <i class="fa fa-comment"></i>

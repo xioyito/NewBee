@@ -3,17 +3,17 @@
     <div class="card-large-img">
 
         {{ with .Params.image }}
-                <img data-src="{{ . }}" alt="图片加载失败" class="lazyload">
+                <img data-src="{{ . }}" alt="Image Loading Failed" class="lazyload">
         {{ else }}
-                <img data-src="{{ .Site.Params.page.postsTopImg }}" alt="图片加载失败" class="lazyload">
+                <img data-src="{{ .Site.Params.page.postsTopImg }}" alt="Image Loading Failed" class="lazyload">
         {{ end }}
     </div>
     <div class="card-large-content">
         <div class="up-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
         <div class="up-date">
-            <span class="no-wrap"><i class="fa fa-calendar"></i> 发布于: {{ .PublishDate.Format "2006-1-2" }} &nbsp;</span>
+            <span class="no-wrap"><i class="fa fa-calendar"></i> Posted On: {{ .PublishDate.Format "2006-1-2" }} &nbsp;</span>
             <span class="no-wrap"><i class="fa fa-folder"></i>
-                {{ with .Params.categories }}收录于:{{ else }}未收录{{ end }}
+                {{ with .Params.categories }}Recorded In:{{ else }}Not Included{{ end }}
                     {{ range $idx, $category := .Params.categories }}
                     {{- if ne $idx 0 }}, {{ end }}
                     <a href='{{ "categories/" | relURL }}{{ $category | urlize }}'>
