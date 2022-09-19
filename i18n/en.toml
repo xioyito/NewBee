@@ -1,0 +1,70 @@
+[latestPosts]
+	other = 'Latest Posts'
+[relatedPosts]
+	other = 'Related Posts'
+[allPosts]
+	other = 'All Posts'
+[category]
+	other = 'Category'
+[categories]
+	other = 'Categories'
+[tags]
+	other = 'Tags'
+[tag]
+	other = 'Tag'
+[series]
+	other = 'Series'
+
+[postsUnit]
+	one = 'post'
+	other = 'posts'
+[categoriesUnit]
+	one = 'category'
+	other = 'categories'
+[tagsUnit]
+	one = 'tag'
+	other = 'tags'
+
+
+[content]
+	other = 'Table of Contents' # 目录
+[contentLowerCase]
+	other = 'content'
+[about]
+	other = 'About'
+[comment]
+	other = 'comment'
+[postedOn]
+	other = 'postedOn'
+[updatedOn]
+	other = 'updatedOn'
+[includedIn]
+	other = 'includedIn'
+[notIncluded]
+	other = 'notIncluded'
+[wordsCount]
+	other = 'wordsCount'
+[readingTime]
+	other = 'readingTime'
+[imageLoadingFailed]
+	other = 'image loading failed'
+[viewers]
+	other = 'viewers'
+
+[appreciate]
+	other = 'Appreciate'
+[cancel]
+	other = 'cancel'
+
+[search]
+	other = 'Search'
+[inputKeyWords]
+	other = 'Enter Keywords'
+
+[sorry]
+	other = 'Sorry, the page seems to be lost'
+[backToHome]
+	other = 'Back to Home'
+[minute] 
+	one = 'min'
+	other = 'mins'

@@ -3,7 +3,7 @@
 {{ $num_params := len .Params }}
 {{ $content := .Inner }}
 {{ $icon_note := "fa-circle-o" }}
-{{/*  默认有3个参数  */}}
+
 {{ $type := .Get 0 }}
 {{ $title := .Get 1 }}
 {{ $status := .Get 2 }}
@@ -13,17 +13,13 @@
     {{ $title = "" }}
     
 {{ else if eq $num_params 1 }}
-    {{/*  如果是类型  */}}
     {{ if eq (.Get 0) (or "default" "primary" "tip" "success" "danger" "warning") }}
         {{ $type := .Get 0 }}
         {{ $title := "" }}
-        
-    {{/*  如果是关闭  */}}
     {{ else if eq (.Get 0) "close" }}
         {{ $type := "default" }}
         {{ $title := "" }}
         {{ $status := "close" }}
-    {{/*  标题  */}}
     {{ else }}
         {{ $type := "default" }}
         {{ $title := .Get 0 }}       
@@ -72,8 +68,6 @@
         </div>
     </div>
     <div class="note-content {{ $type }}-content {{ with $status }}note-{{ . }}{{ end }}">
-
         {{ $content }}
     </div>
 </div>
-    

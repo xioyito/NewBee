@@ -1,3 +1,6 @@
+# Uncommented options are not recommended for modification
+# 未标注释的选项建议不要修改
+
 baseURL = 'http://xxx.xxx/'
 languageCode = 'en-us'
 
@@ -8,8 +11,12 @@ title = 'NewBee'
 # 主题
 theme = "NewBee"
 # i18n
-defaultContentLanguage = "zh"
-defaultContentLanguageInSubdir = false
+# change default content here
+# 在这更改网站默认语言
+defaultContentLanguage = "en"
+# don't change it
+# 别动
+defaultContentLanguageInSubdir = true
 # whether to use robots.txt
 # 是否使用 robots.txt
 enableRobotsTXT = true
@@ -21,8 +28,6 @@ enableGitInfo = true
 summaryLength = 50
 
 hasCJKLanguage = true
-
-
 
 [author]
     name = "xioyito"
@@ -41,7 +46,6 @@ hasCJKLanguage = true
     series = "series"
     
 [params]
-
     # page configuration
     # 页面配置  
     [params.page]
@@ -157,72 +161,6 @@ hasCJKLanguage = true
         list_max_height = "500px"
         lrc_type = 1
 
-[menus]
-    # navigation entries
-    # 导航栏子项
-    [[menus.main]]
-        # 名称
-        name = "首页"
-        # 路径
-        url = "/"
-        # order weight, more small more close to left, at least 1
-        # 排序的权重，越小越靠前（左），最小为1
-        weight = 1
-        # icon from FontAwesome in front of single entry
-        # 图标，本主题使用的图标来自FontAwesome
-        pre = "<i class='fa fa-home'></i>"
-    [[menus.main]]
-        name = "文章"
-        url = "/posts"
-        weight = 2
-        pre = "<i class='fa fa-book'></i>"
-    [[menus.main]]
-        name = "分类"
-        url = "/categories"
-        weight = 3
-        pre = "<i class='fa fa-folder-open'></i>"
-    [[menus.main]]
-        name = "系列"
-        url = "/series"
-        weight = 4
-        pre = "<i class='fa fa-gears'></i>"
-    [[menus.main]]
-        name = "标签"
-        url = "/tags"
-        weight = 5
-        pre = "<i class='fa fa-tags'></i>"        
-    [[menus.main]]
-        name = "关于"
-        url = "/about"
-        weight = 6
-        pre = "<i class='fa fa-info-circle'></i>"
-
-    # social entries
-    # 作者卡片社交链接，最多6个
-    [[menus.social]]
-        name = "GitHub"
-        url = "https://github.com/xioyito"
-        pre = "<i class='fa fa-github'></i>"
-        weight = 1
-    [[menus.social]]
-        name = "YouTube"
-        url = "https://www.youtube.com"
-        pre = "<i class='fa fa-youtube'></i>"
-        weight = 2
-
-    # sponsor entries, not more than 3
-    # 赞赏，最多支持3个
-    [[menus.appreciate]]
-        name = "微信"
-        url = "/images/appreciate/Wechat.jpeg"
-    [[menus.appreciate]]
-        name = "支付宝"
-        url = "/images/appreciate/Alipay.jpeg"
-    
-# [permalinks]
-#     posts = '/:year/:month/:title/'
-
-
 # related configuration, see more: https://gohugo.io/content-management/related/
 # 相关文章的配置。详情请移步：https://gohugo.io/content-management/related/
 [related]
@@ -281,5 +219,115 @@ hasCJKLanguage = true
         [markup.goldmark.renderer]
             unsafe = true
 
+# 多语言设置
+[languages]
+    [languages.en]
+        languageName = 'English'
+        weight = 1
+        contentDir = 'content/english'
+        [languages.en.menus]
+        # navigation entries
+        # 导航栏子项
+        [[languages.en.menus.main]]
+            # 名称
+            name = "Home"
+            # 路径
+            url = "/en"
+            # order weight, more small more close to left, at least 1
+            # 排序的权重，越小越靠前（左），最小为1
+            weight = 1
+            # icon from FontAwesome in front of single entry
+            # 图标，本主题使用的图标来自FontAwesome
+            pre = "<i class='fa fa-home'></i>"
+        [[languages.en.menus.main]]
+            name = "Posts"
+            url = "/en/posts"
+            weight = 2
+            pre = "<i class='fa fa-book'></i>"
+        [[languages.en.menus.main]]
+            name = "Categories"
+            url = "/en/categories"
+            weight = 3
+            pre = "<i class='fa fa-folder-open'></i>"
+        [[languages.en.menus.main]]
+            name = "Series"
+            url = "/en/series"
+            weight = 4
+            pre = "<i class='fa fa-gears'></i>"
+        [[languages.en.menus.main]]
+            name = "Tags"
+            url = "/en/tags"
+            weight = 5
+            pre = "<i class='fa fa-tags'></i>"        
+        [[languages.en.menus.main]]
+            name = "About"
+            url = "/en/about"
+            weight = 6
+            pre = "<i class='fa fa-info-circle'></i>"
 
+        # social entries
+        # 作者卡片社交链接，最多6个
+        [[languages.en.menus.social]]
+            name = "GitHub"
+            url = "https://github.com/xioyito"
+            pre = "<i class='fa fa-github'></i>"
+            weight = 1
+        [[languages.en.menus.social]]
+            name = "YouTube"
+            url = "https://www.youtube.com"
+            pre = "<i class='fa fa-youtube'></i>"
+            weight = 2
+
+        # sponsor entries, not more than 3
+        # 赞赏，最多支持3个
+        [[languages.en.menus.appreciate]]
+            name = "Wechat"
+            url = "/images/appreciate/Wechat.jpeg"
+            weight = 1
+        [[languages.en.menus.appreciate]]
+            name = "Alipay"
+            url = "/images/appreciate/Alipay.jpeg"
+            weight = 2
+        
+    [languages.zh]
+        languageName = '简体中文'
+        weight = 2
+        contentDir = 'content/chinese'
+        [languages.zh.menus]
+            [[languages.zh.menus.main]]
+                name = "主页"
+                url = "/zh"
+                weight = 1
+                pre = "<i class='fa fa-home'></i>"
+            [[languages.zh.menus.main]]
+                name = "文章"
+                url = "/zh/posts"
+                weight = 2
+                pre = "<i class='fa fa-book'></i>"
+            [[languages.zh.menus.main]]
+                name = "分类"
+                url = "/zh/categories"
+                weight = 3
+                pre = "<i class='fa fa-folder-open'></i>"
+            [[languages.zh.menus.main]]
+                name = "系列"
+                url = "/zh/series"
+                weight = 4
+                pre = "<i class='fa fa-gears'></i>"
+            [[languages.zh.menus.main]]
+                name = "标签"
+                url = "/zh/tags"
+                weight = 5
+                pre = "<i class='fa fa-tags'></i>"        
+            [[languages.zh.menus.main]]
+                name = "关于"
+                url = "/zh/about"
+                weight = 6
+                pre = "<i class='fa fa-info-circle'></i>"
+            [[languages.zh.menus.appreciate]]
+                name = "微信"
+                url = "/images/appreciate/Wechat.jpeg"
+            [[languages.zh.menus.appreciate]]
+                name = "支付宝"
+                url = "/images/appreciate/Alipay.jpeg"
   

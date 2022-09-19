@@ -8,17 +8,19 @@
                 <div class="loading-short"></div>
             </div>
         </div>
-        
+
         {{ if ne .Kind "404"}}
             {{- partial "header.html" . -}}
         {{ end }}
+
         <div id="content">
             {{- block "main" . }}{{- end }}
         </div>
+
         {{ if ne .Kind "404"}}
             {{- partial "footer.html" . -}}
         {{ end }}
-
+        
         {{ partial "search.html" . }}
         {{ partial "widgets/search.html" . }}
     </body>

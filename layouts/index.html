@@ -1,17 +1,16 @@
 {{ define "main" }}
-<!-- 1 页首图片 -->
 {{ partial "widgets/hero.html" . }}
 <div class="zhuti-0">
     <div class="container">
         <div class="zhuti">
-            <!-- 2.1 左栏 -->
             <div class="zhuti-l zhuti-l-home">
                 <div class="zuixin">
                     <div class="xian-l"></div>
-                    <h3>最新文章</h3>
+                    <h3>
+                        {{ i18n "latestPosts" }}
+                    </h3>
                     <div class="xian-r"></div>
                 </div>
-                <!-- 卡片 -->
                 <div class="terms-row">
                     {{ range first .Site.Params.page.maxHomePostCount .Site.RegularPages }}
                     <div class="terms-root">
@@ -20,7 +19,7 @@
                     {{ end }}
                 </div>
                 <div class="more-posts">
-                    <a href="/posts" class="efct-button">所有文章</a>
+                    <a href='{{ add (add "/" .Lang) "/posts" }}' class="efct-button">{{ i18n "allPosts" }}</a>
                 </div>
             </div>
         </div>

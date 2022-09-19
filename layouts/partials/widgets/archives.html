@@ -7,14 +7,9 @@
             <a href="{{ .RelPermalink }}">
                 <div class="year-item">
                     <div class="dot"></div>
-                    <div class="item-title">
-                        {{ .Title }}
-                    </div>
-                    <div class="connect-line">
-                    </div>
-                    <div class="item-date">
-                        {{ .PublishDate.Format "01-02" }}
-                    </div>
+                    <div class="item-title">{{ .Title }}</div>
+                    <div class="connect-line"></div>
+                    <div class="item-date">{{ .PublishDate.Format "01-02" }}</div>
                 </div>
             </a>
             {{ end }}

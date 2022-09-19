@@ -89,6 +89,9 @@ figure h4 {
     display: flex;
     justify-content: space-between;
 }
+.note-header .fa-angle-down, .code-header .fa-angle-down {
+    transition: all 0.3s;
+}
 .for-slidetoggle span {
     font-family: var(--font-sans-serif);
 }

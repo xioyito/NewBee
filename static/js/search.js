@@ -4,10 +4,9 @@ $(document).ready(function () {
     
     $(".search-in").click(function() {
         $(".search-root").show();
-        
         $(".search").animate({
             marginTop: 10,
-        }, 100);
+        }, 100, 'linear');
         $('.search input').focus();
     })
     $(".search-zz").click(function() {

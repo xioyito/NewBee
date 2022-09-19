@@ -1,0 +1,74 @@
+[latestPosts]
+	other = '最新文章'
+[relatedPosts]
+	other = '相关文章'
+[allPosts]
+	other = '所有文章'
+[posts]
+	other = '文章'
+[category]
+	other = '分类'
+[categories]
+	other = '分类'
+[tags]
+	other = '标签'
+[tag]
+	other = '标签'
+[series]
+	other = '系列'
+
+[postsUnit]
+	one = '篇'
+	other = '篇'
+[categoriesUnit]
+	one = '分类'
+	other = '分类'
+[tagsUnit]
+	one = '标签'
+	other = '标签'
+
+[content]
+	other = '目录'
+[contentLowerCase]
+	other = '目录'
+[about]
+	other = '关于'
+[comment]
+	other = '评论'
+[postedOn]
+	other = '发布于'
+[updatedOn]
+	other = '更新于'
+[includedIn]
+	other = '收录于'
+[notIncluded]
+	other = '未收录'
+[wordsCount]
+	other = '本文字数'
+[readingTime]
+	other = '阅读时间'
+[imageLoadingFailed]
+	other = '图片加载失败'
+[viewers]
+	other = '阅读量'
+
+[appreciate]
+	other = '赞赏'
+[cancel]
+	other = '取消'
+
+[search]
+	other = '搜索'
+[inputKeyWords]
+	other = '输入关键字'
+
+[sorry]
+	other = '抱歉，页面好像走丢了~ ~'
+[backToHome]
+	other = '回到主页'
+[minute] 
+	one = '分钟'
+	other = '分钟'
+
+
+

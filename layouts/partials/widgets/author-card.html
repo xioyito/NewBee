@@ -12,20 +12,28 @@
             </div>
         </div>
     </div>
+
     <div class="type">
-        <a href="/posts" class="wenzhang">
-            <p>文章</p>
+        <a href='{{ add "/" (add .Lang "/posts") }}' class="wenzhang">
+            <p>
+                {{ if eq .Lang "en" }}
+                    {{ i18n "postsUnit" (len .Site.RegularPages) }}
+                {{ else }}
+                    {{ i18n "posts" (len .Site.RegularPages) }}
+                {{ end }}
+            </p>
             <p>{{ len .Site.RegularPages }}</p>
         </a>
-        <a href="/categories" class="fenlei">
-            <p>分类</p>
+        <a href='{{ add "/" (add .Lang "/categories") }}' class="fenlei">
+            <p>{{ i18n "categoriesUnit" (len .Site.Taxonomies.categories) }}</p>
             <p>{{ len .Site.Taxonomies.categories }}</p>
         </a>
-        <a href="/tags" class="biaoqian">
-            <p>标签</p>
+        <a href='{{ add "/" (add .Lang "/tags") }}' class="biaoqian">
+            <p>{{ i18n "tagsUnit" (len .Site.Taxonomies.tags) }}</p>
             <p>{{ len .Site.Taxonomies.tags }}</p>
         </a>
     </div>
+
     <a href="{{ .Site.Author.link }}">
         <div class="follow">Follow Me</div>
     </a>

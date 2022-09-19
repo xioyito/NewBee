@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 .zuixin h3 {
-    min-width: 100px;
+    white-space: nowrap;
     padding: 0 20px;
     margin: 0;
 }

@@ -476,10 +476,58 @@ header {
     color: var(--primary); 
     text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.2);
 }
-
-
-
-
+.lang-box-up {
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.lang-box {
+    position: relative;
+    margin: 0 10px;
+}
+.lang-box-up:hover .wait-lang-box {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(1.8em);
+}
+.wait-lang-box {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: translateY(1.5em);
+    text-align: center;
+}
+.lang-up {
+    border-radius: 10px;
+    padding: 1px;
+    background-color: var(--bgc-2);
+    border: 1px solid var(--bgc-1);
+    box-shadow: 0px 1px 8px 5px var(--bs-2);
+    margin: 0;
+}
+.lang-up li {
+    list-style: none;
+}
+.lang {
+    color: var(--color);
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: block;
+    padding: 2px 4px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+.lang:hover {
+    color: var(--primary);
+    box-shadow: 1px 1px 3px 1px var(--bgc-3) inset;
+    text-shadow: 2px 2px 4px rgba(var(--primary-rgb), .3);
+    border: 1px solid var(--bgc-1);
+}
 .anxia {
     box-shadow:
         1px 1px 2px 1px rgba(0, 0, 0, .1),
@@ -1170,9 +1218,13 @@ body::after {
     align-items: center;
     margin-bottom: 20px;
 }
+.other-qita {
+    white-space: nowrap;
+    padding-right: 20px;
+}
 .other .xian {
     box-sizing: border-box;
-    width: 170px;
+    width: 100%;
     height: 2px;
     border-top: 1px solid var(--bgc-1);
     border-bottom: 1px solid var(--bgc-3);
@@ -1506,6 +1558,7 @@ body::after {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-shadow: -1px -1px 1px var(--bgc-1);
 }
 .back div {
     color: var(--color);

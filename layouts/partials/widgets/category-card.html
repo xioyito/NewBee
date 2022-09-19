@@ -15,12 +15,10 @@
             <div class="folder-front">
                 <div class="taxo-text">
                     <div>{{ $pageTitle }}</div>
-                    {{/*  <span class="division-line">&nbsp;|&nbsp;</span>  */}}
-                    <div class="jipian">{{ $pageCount }} 篇</div>
+                    <div class="jipian">{{ $pageCount }} {{ i18n "postsUnit" $pageCount }}</div>
                 </div>
             </div>
         </div>
     </a>
 </div>
-
 {{ end }}

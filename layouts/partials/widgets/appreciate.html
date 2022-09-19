@@ -1,8 +1,9 @@
-{{ $len_btn := len .Site.Menus.appreciate }}
+{{ if .Site.Menus.appreciate }}
+    {{ $len_btn := len .Site.Menus.appreciate }}
 {{ $num_appre := 1 }}
 <div class="appreciate">
     <div class="appreciate-self">
-        <div class="appreciate-title">赞赏</div>
+        <div class="appreciate-title">{{ i18n "appreciate" }}</div>
         <div class="appreciate-btn">
             {{ range .Site.Menus.appreciate }}
                 {{ if eq $len_btn 2 }}
@@ -23,7 +24,6 @@
                 {{ else }}
                     <div class="appre-btn-{{ $num_appre }}">{{ .Name }}</div>
                 {{ end }}
-
                 {{ $num_appre = (add $num_appre 1) }}
             {{ end }}
         </div>
@@ -38,6 +38,7 @@
                 {{ $num_appre = (add $num_appre 1) }}
             {{ end }}
         </div>
-        <div class="cancel efct-button">取消</div>
+        <div class="cancel efct-button">{{ i18n "cancel" }}</div>
     </div>
 </div>
+{{ end }}

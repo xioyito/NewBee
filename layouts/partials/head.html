@@ -10,8 +10,6 @@
     {{ if not (in (string .Site.BaseURL) "localhost") }}
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
-
-    
     <link rel="stylesheet" href='/css/style.css' />
     <link rel="stylesheet" href='/css/search.css' />
     <link rel="stylesheet" href='{{ "css/list.css" | relURL }}' />
@@ -26,34 +24,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href='/css/_custom.css' />
     <style>
-
         {{ if eq .Kind "404" }}
             body::after { display: none; }
         {{ end }} 
     </style>
-
     {{ if .Site.Params.aplayer.enable }}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
         <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     {{ end }}
-
     {{ if .Site.Params.valine.enable }}
         <script src='//cdnjs.cloudflare.com/ajax/libs/valine/1.5.0/Valine.min.js'></script>
     {{ end }}
-
     {{ partial "math-jax.html" . }}
-
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    
     <script src="/js/lazysizes.min.js" async=""></script>
-    
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    
     <script src="/js/search.js"></script>
-
     <script src="/js/yes.js"></script>
-    
     {{ if and .Site.Params.footer.enable .Site.Params.footer.visitor }}
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     {{ end }}

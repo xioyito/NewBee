@@ -443,4 +443,6 @@ hr {
     background-color: rgb(240, 240, 240);
 }
 
-
+.back {
+    text-shadow: -1px -1px 1px transparent;
+}

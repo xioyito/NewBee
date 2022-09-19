@@ -14,6 +14,7 @@ You can see this theme in action on [demo site](https://xioyito.top).
 ## Features
 * Functions
     * local search without any configuration
+    * multi-language
     * Syntax Highlight
     * Custom Header
     * Custom footer
