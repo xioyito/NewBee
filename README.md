@@ -69,13 +69,14 @@ download the theme manually by going to <https://github.com/xioyito/NewBee> and 
 
 clone it directly to `themes`:
 ``` bash
+~ % cd my-blog
 my-blog % git clone https://github.com/xioyito/NewBee.git themes/NewBee
 ```
 
-### configuration
+### Configuration
 That's simple, just copy the file `NewBee/config-example/config.toml` to your Hugo root directory.
 
-### New post
+### First post
 create a new post:
 ``` bash
 my-blog % hugo new "posts/first-post.md"

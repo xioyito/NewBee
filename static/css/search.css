@@ -81,7 +81,7 @@
     background-color: transparent;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    transition: all 0.2s;
+    transition: all 0.1s;
 }
 .sheader input:focus, .sheader input:hover {
     box-shadow: 
@@ -160,7 +160,7 @@
     display: block;
     border: 1px solid var(--bgc-1);
     border-radius: 10px;
-    transition: all 0.2s;
+    transition: all 0.1s;
     box-shadow:
         4px 4px 8px 1px rgba(50, 50, 50, 0.2);
 }

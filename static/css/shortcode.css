@@ -161,6 +161,7 @@ figure h4 {
 }
 .label a {
     color: var(--white-m);
+    word-break: break-all;
 }
 .label-primary {
     background-color: var(--primary);

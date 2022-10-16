@@ -1,4 +1,4 @@
-{{ $categorypostsImg := .Site.Params.page.postsTopImg }}
+{{ $categorypostsImg := .Site.Params.page.defaultPostImg }}
 {{ range .Data.Terms.ByCount }}
 {{ $pageTitle := .Page.Title }}
 {{ $pageCount := .Count }}

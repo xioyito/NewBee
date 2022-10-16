@@ -1,4 +1,5 @@
 {{ $langNow := .Lang }}
+{{ $isMultiLingual := .Site.IsMultiLingual }}
 {{ $includedIn := "newnewnew"  }}
 <div class="card-large">
     <div class="card-large-img">
@@ -6,7 +7,7 @@
         {{ with .Params.image }}
                 <img data-src="{{ . }}" alt='{{ i18n "imageLoadingFailed" }}' class="lazyload">
         {{ else }}
-                <img data-src="{{ .Site.Params.page.postsTopImg }}" alt='{{ i18n "imageLoadingFailed" }}' class="lazyload">
+                <img data-src="{{ .Site.Params.page.defaultPostImg }}" alt='{{ i18n "imageLoadingFailed" }}' class="lazyload">
         {{ end }}
     </div>
     <div class="card-large-content">
@@ -18,9 +19,13 @@
                     {{ i18n "includedIn" }}:
                     {{ range $idx, $category := . }}
                         {{- if ne $idx 0 }}, {{ end }}
-                        <a href='{{ $langNow | relURL}}/categories/{{ $category | urlize }}'>
-                            {{ $category }}
-                        </a>
+                        <a href='{{ if $isMultiLingual }}
+                                {{ $langNow | relURL}}/categories/{{ $category | urlize }}
+                            {{ else }}
+                                {{ "categories/" | relURL }}{{ $category | urlize }}
+                            {{ end }}'>
+                                {{ $category }}
+                            </a>
                     {{- end }}
                 {{ else }}
                     {{ i18n "notIncluded" }}
@@ -48,9 +53,16 @@
                 <div class="shuxian"></div>
             </div>
             <div class="type-text">
-                <a href='{{ $langNow | relURL}}/tags/{{ $tag | urlize }}'>
+                <a href='{{ if $isMultiLingual }}
+                {{ $langNow | relURL}}/tags/{{ $tag | urlize }}
+            {{ else }}
+                {{ "tags/" | relURL }}{{ $tag | urlize }}
+            {{ end }}'>
                     <i class="fa fa-tag"></i> {{ . }}
                 </a>
+
+
+                
             </div>
         </span>
         {{ end }}

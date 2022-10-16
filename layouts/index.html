@@ -19,7 +19,7 @@
                     {{ end }}
                 </div>
                 <div class="more-posts">
-                    <a href='{{ add (add "/" .Lang) "/posts" }}' class="efct-button">{{ i18n "allPosts" }}</a>
+                    <a href='{{ if .Site.IsMultiLingual }} {{ add (add "/" .Lang) "/posts" }} {{ else }} /posts {{ end }}' class="efct-button">{{ i18n "allPosts" }}</a>
                 </div>
             </div>
         </div>

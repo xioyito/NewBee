@@ -1,13 +1,13 @@
-
-{{ $hero_img := .Site.Params.page.postsTopImg }}
+{{ $langNow := .Lang }}
+{{ $hero_img := .Site.Params.page.defaultPostImg }}
 {{ $hero_title := "" }}
 {{ $hero_des := "" }}
-
+{{ $isMultiLingual := .Site.IsMultiLingual }}
 {{ if eq .Kind "section" }}
     {{ if eq .Section "posts" }}
-        {{ $hero_img = .Site.Params.page.archivesTopImg }}
+        {{ $hero_img = .Site.Params.page.allPostsTopImg }}
         {{ $hero_title = i18n "allPosts" }}
-        {{ $hero_des = .Site.Params.page.archivesDes }}
+        {{ $hero_des = .Site.Params.page.allPostsDes }}
     {{ else if eq .Section "about" }}
         {{ $hero_img = .Site.Params.page.aboutTopImg }}
         {{ $hero_title = i18n "about" }}
@@ -87,7 +87,11 @@
                         {{ with .Params.categories }}{{ i18n "includedIn" }}:{{ else }}{{ i18n "notIncluded" }}{{ end }}
                         {{ range $idx, $category := .Params.categories }}
                             {{- if ne $idx 0 }}, {{ end }}
-                            <a href='{{ "categories/" | relURL }}{{ $category | urlize }}'>
+                            <a href='{{ if $isMultiLingual }}
+                                {{ $langNow | relURL}}/categories/{{ $category | urlize }}
+                            {{ else }}
+                                {{ "categories/" | relURL }}{{ $category | urlize }}
+                            {{ end }}'>
                                 {{ $category }}
                             </a>
                         {{- end }}

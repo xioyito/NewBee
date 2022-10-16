@@ -162,7 +162,6 @@ $(document).ready(function () {
         if ($(".header-rest").css("display") == "none") {
             $("header").height($(window).height());
             $(".header-rest").fadeIn();
-            $(".navbar").css("border-bottom", 0);
             $(".burger-items").slideDown('fast');
         } else {
             $(".burger-items").slideUp('fast', function () {
@@ -191,7 +190,7 @@ $(document).ready(function () {
             theStrPosition = originPath.indexOf('/');
             newPath = originPath.substring(theStrPosition + 1);
             return newPath;
-        })();
+        }());
         var toTransHref = $(this)['context']['attributes'][0].value + pathName;
         window.location.href = toTransHref
     })

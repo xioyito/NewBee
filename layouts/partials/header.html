@@ -19,7 +19,10 @@
             <div class="navbar-burger">
                 <div class="burger-btn"><span><i class="fa fa-navicon"></i></span></div>
             </div>
-            {{ partial "widgets/selectLang.html" . }}
+            {{ if .Site.IsMultiLingual }}
+                {{ partial "widgets/selectLang.html" . }}
+            {{ end }}
+            
             <div class="search-in"><span><i class="fa fa-search"></i></span></div>
             <div class="mode">
                 <span class="sun"><i class="fa fa-sun-o"></i></span>

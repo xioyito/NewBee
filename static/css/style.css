@@ -322,7 +322,7 @@ header {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .1);
+    
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
@@ -334,6 +334,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--bgc-1) !important;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .1);
     box-sizing: border-box;
     position: relative;
     z-index: 2;
@@ -732,6 +733,7 @@ body::after {
 .content-self a {
     transition: all 0.2s;
     color: var(--primary);
+    word-break: break-all;
 }
 .content-self a:hover {
     color: var(--tip);

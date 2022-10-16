@@ -5,7 +5,7 @@
             {{ with .Params.image }}
                 <div class="icon-other" style="background-image: url( {{ . }} );"></div>
             {{ else }}
-                <div class="icon-other" style="background-image: url( {{ .Site.Params.page.postsTopImg }} );"></div>
+                <div class="icon-other" style="background-image: url( {{ .Site.Params.page.defaultPostImg }} );"></div>
             {{ end }}
         </div>
         <div class="list-right">
