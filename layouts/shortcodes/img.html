@@ -1,5 +1,5 @@
 <figure>
-    <img data-src="{{ .Get 0 }}" alt='{{ i18n "imageLoadingFailed" }}' 
+    <img src="/images/thumbnail.gif" data-src="{{ .Get 0 }}" alt='{{ i18n "imageLoadingFailed" }}' 
     {{ with (.Get 2) }}
         {{ if eq . "shadow" }}
             class="lazyload has-{{ . }}"

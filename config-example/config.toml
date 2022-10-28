@@ -71,7 +71,7 @@ hasCJKLanguage = false
         # top image in archives(posts) page
         # 归档（所有文章）页面的顶部图
         allPostsTopImg = "/images/allPosts.jpg"
-        # description of archives(posts) page
+        # description of allposts page
         # 子标题
         allPostsDes = "description of allPosts page"
 

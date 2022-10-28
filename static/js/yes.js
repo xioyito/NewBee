@@ -21,11 +21,9 @@ if ((isDark && (sessionStorage.getItem('mode') != 'light')) || (!isDark && sessi
     $("link[href='/css/_custom.css']").before(darkHTML);
 }
 
-$(window).load(function () {
-    $('.loading').fadeOut("slow");
-});
-
 $(document).ready(function () {
+
+    $('.loading').fadeOut("slow");
 
     if (sessionStorage.getItem('mode') == 'dark') {
         $(".sun").hide();

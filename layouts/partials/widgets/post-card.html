@@ -5,9 +5,9 @@
     <div class="card-large-img">
 
         {{ with .Params.image }}
-                <img data-src="{{ . }}" alt='{{ i18n "imageLoadingFailed" }}' class="lazyload">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt='{{ i18n "imageLoadingFailed" }}'>
         {{ else }}
-                <img data-src="{{ .Site.Params.page.defaultPostImg }}" alt='{{ i18n "imageLoadingFailed" }}' class="lazyload">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ .Site.Params.page.defaultPostImg }}" alt='{{ i18n "imageLoadingFailed" }}'>
         {{ end }}
     </div>
     <div class="card-large-content">
@@ -60,9 +60,6 @@
             {{ end }}'>
                     <i class="fa fa-tag"></i> {{ . }}
                 </a>
-
-
-                
             </div>
         </span>
         {{ end }}

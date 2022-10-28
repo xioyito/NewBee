@@ -91,10 +91,10 @@ hasCJKLanguage = true
 
         # top image in archives(posts) page
         # 归档（所有文章）页面的顶部图
-        allPostsTopImg = "/images/archive.jpg"
-        # description of archives(posts) page
+        allPostsTopImg = "/images/allPosts.jpg"
+        # description of allposts page
         # 子标题
-        allPostsDes = "description of archives(posts) page"
+        allPostsDes = "description of allposts page"
 
         # top image in about page
         # 关于页面的顶部图

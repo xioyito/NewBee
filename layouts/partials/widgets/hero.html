@@ -48,7 +48,7 @@
     <div class="hero">
         {{ with .Site.Params.page.homeTopImg }}
         <div class="hero-img-home">
-            <img src="{{ . }}" alt="">
+            <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
         </div>
         {{ end }}
         <div class="hero-content">
@@ -70,11 +70,11 @@
     <div class="hero">
         {{ with .Params.image }}
             <div class="hero-img">
-                <img src="{{ . }}" alt="">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
             </div>
         {{ else }}
             <div class="hero-img">
-                <img src="{{ $hero_img }}" alt="">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ $hero_img }}" alt="">
             </div>
         {{ end }}
         <div class="hero-content">
@@ -109,7 +109,7 @@
     <div class="hero">
         {{ with $hero_img }}
             <div class="hero-img">
-                <img src="{{ . }}" alt="">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
             </div>
         {{ end }}
         <div class="hero-content">
@@ -123,11 +123,11 @@
         {{ $firstChild := index .Pages 0 }}
             {{ with $firstChild.Params.image }}
                 <div class="hero-img">
-                    <img src="{{ . }}" alt="">
+                    <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
                 </div>
             {{ else }}
                 <div class="hero-img">
-                    <img src="{{ $hero_img }}" alt="">
+                    <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ $hero_img }}" alt="">
                 </div>
             {{ end }}
         <div class="hero-content">
