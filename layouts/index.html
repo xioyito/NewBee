@@ -7,7 +7,7 @@
                 <div class="zuixin">
                     <div class="xian-l"></div>
                     <h3>
-                        {{ i18n "latestPosts" }}
+                        {{ i18n "Home_latestPosts" }}
                     </h3>
                     <div class="xian-r"></div>
                 </div>
@@ -19,7 +19,11 @@
                     {{ end }}
                 </div>
                 <div class="more-posts">
-                    <a href='{{ if .Site.IsMultiLingual }} {{ add (add "/" .Lang) "/posts" }} {{ else }} /posts {{ end }}' class="efct-button">{{ i18n "allPosts" }}</a>
+                    <a href='{{ if and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+                                {{ .Lang | relURL}}/posts
+                            {{ else }} 
+                            {{ "posts" | relURL }}
+                            {{ end }}' class="efct-button">{{ i18n "Home_allPosts" }}</a>
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@ You can see this theme in action on [demo site](https://xioyito.top).
     * series taxonomy
     * Author card
     * Pre and Next button
-    * sponsor
+    * sponsor card
 * Other
     * Responsive
     * Light-Neumorphism style

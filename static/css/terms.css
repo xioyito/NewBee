@@ -2,7 +2,6 @@
     position: relative;
 }
 .terms-row {
-    /* margin-top: -20px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,16 +10,13 @@
 .terms-root {
     flex: 100%;
     max-width: 100%;
-    /* min-height: 100px; */
     position: relative;
     padding: 0px 20px;
-    /* margin-bottom: 20px; */
     box-sizing: border-box;
 }
 .card-large {
     width: 100%;
     min-height: 200px;
-    /* margin-bottom: 5px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,7 +65,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
     transition: all 0.3s;
 }
 .content-up {

@@ -1,9 +1,9 @@
-{{ $newOrRelated_text := i18n "latestPosts" }}
+{{ $newOrRelated_text := i18n "sidebar_latestPosts" }}
 {{ $newOrRelated := first .Site.Params.page.maxPageNewestCount .Site.RegularPages }}
 
 {{ if eq .Kind "page" }}
     {{ $newOrRelated = (where (.Site.RegularPages.Related .) "Type" "posts") | first .Site.Params.page.maxPageRelatedCount }}
-    {{ $newOrRelated_text = i18n "relatedPosts" }}
+    {{ $newOrRelated_text = i18n "sidebar_relatedPosts" }}
 {{ end }}
 
 <div class="other">
@@ -13,7 +13,7 @@
     </div>
     <div class="list">
         {{ range $newOrRelated }}
-            <a href="{{ .Permalink }}" class="">
+            <a href="{{ .Permalink }}">
                 {{ partial "widgets/post-card-small.html" . }}
             </a>
         {{ end }}

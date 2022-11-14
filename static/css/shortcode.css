@@ -95,6 +95,9 @@ figure h4 {
 .for-slidetoggle span {
     font-family: var(--font-sans-serif);
 }
+.title-note {
+    padding-left: 3px;
+}
 .note-content {
     width: 100%;
     padding: 10px;
@@ -115,6 +118,10 @@ figure h4 {
 .default-box {
     background-color: var(--default);
 }
+.default-box li::marker {
+    color: var(--default);
+}
+
 .danger-content {
     color: var(--danger);
     text-shadow: 1px 1px 3px var(--danger-shadow);
@@ -122,6 +129,10 @@ figure h4 {
 .danger-box {
     background-color: var(--danger);
 }
+.danger-box li::marker {
+    color: var(--danger);
+}
+
 .tip-content {
     color: var(--tip);
     text-shadow: 1px 1px 3px var(--tip-shadow);
@@ -129,6 +140,10 @@ figure h4 {
 .tip-box {
     background-color: var(--tip);
 }
+.tip-box li::marker {
+    color: var(--tip);
+}
+
 .success-content {
     color: var(--success);
     text-shadow: 1px 1px 3px var(--success-shadow);
@@ -136,19 +151,30 @@ figure h4 {
 .success-box {
     background-color: var(--success);
 }
+.success-box li::marker {
+    color: var(--success);
+}
+
 .warning-content {
     color: var(--warning);
     text-shadow: 1px 1px 3px var(--warning-shadow);
 }
+.warning-box li::marker {
+    color: var(--warning);
+}
 .warning-box {
     background-color: var(--warning);
 }
+
 .primary-content {
     color: var(--primary);
     text-shadow: 1px 1px 3px var(--primary-shadow);
 }
 .primary-box {
     background-color: var(--primary);
+}
+.primary-box li::marker {
+    color: var(--primary);
 }
 
 .label {

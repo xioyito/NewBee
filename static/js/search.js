@@ -40,7 +40,7 @@ function search() {
     var searchBy = 'Search by <a href="https://github.com/xioyito/NewBee" class="search-by" >NewBee</a>';
 
     if (!key) {
-        $(".stip").html('~ ~ ~ 什么也没找到，' + searchBy);
+        $(".stip").html(search_nothing + '，' + searchBy);
         $(".at-bottom").hide();
         $(".sbody").show();
         return;
@@ -65,10 +65,10 @@ function search() {
         
     }
     if (postCount == 0) {
-        $(".stip").html('~什么也没找到，' + searchBy);
+        $(".stip").html(search_nothing + '，' + searchBy);
     } else {
-        $(".stip").html('找到 ' + postCount + ' 条结果，' + searchBy);
-        $(".sbody-1").append('<div class="at-bottom">~ ~ ~ 已经到底啦</div>');
+        $(".stip").html(search_found + ' ' + postCount + (postCount>1?(' ' + search_results + ', '):(' ' + search_result + ', ')) + searchBy);
+        $(".sbody-1").append('<div class="at-bottom">' + search_theEnd + '</div>');
     }
     $(".sbody").show();
 }

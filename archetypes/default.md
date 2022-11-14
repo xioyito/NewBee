@@ -5,7 +5,7 @@ date: {{ .Date }}
 lastmod: "2022-10-01"
 # set false when you want the post publish
 draft: true
-# one categorie: ["category-1"] 
+# one category: ["category-1"] 
 # more categories: ["category-1", "category-2", ...]
 categories: []
 # refer to categories

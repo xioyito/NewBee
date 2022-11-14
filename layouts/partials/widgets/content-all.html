@@ -1,6 +1,7 @@
 {{ $class1 := "" }}
 {{ $isPage := or (eq .Kind "page") (eq .Section "about") }}
 {{ $langNow := .Lang }}
+{{ $isMultiLingual := and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
 {{ if $isPage }}
     {{ $class1 = "content-root" }}
 {{ else if eq .Kind "taxonomy" }}
@@ -31,7 +32,11 @@
                     {{ range $tag := .Params.tags }}
                     <span class="down-type-item">
                         <div class="type-text">
-                            <a href='{{ $langNow | relURL}}/tags/{{ $tag | urlize }}'>
+                            <a href='{{ if $isMultiLingual }}
+                                        {{ $langNow | relURL}}/tags/{{ $tag | urlize }}
+                                    {{ else }}
+                                        {{ "tags/" | relURL }}{{ $tag | urlize }}
+                                    {{ end }}'>
                                 <i class="fa fa-tag"></i> {{ . }}
                             </a>
                         </div>
@@ -69,9 +74,9 @@
     {{ end }}
 </div>
 {{ if $isPage }}
-    {{ if or .Site.Menus.appreciate .Site.Params.valine.enable }}
+    {{ if or .Site.Menus.sponsor .Site.Params.valine.enable }}
         <div class="content-last">
-            {{ if .Site.Menus.appreciate }}
+            {{ if .Site.Menus.sponsor }}
                 <button class="aixin content-last-item efct-button">
                     <i class="fa fa-heart"></i>
                 </button>

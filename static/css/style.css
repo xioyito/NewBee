@@ -339,7 +339,6 @@ header {
     position: relative;
     z-index: 2;
     background-color: rgba(var(--bgc-2-rgb), .9);
-    
 }
 
 .logo {
@@ -352,6 +351,7 @@ header {
     height: inherit;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 }
 
 .navbar-burger {
@@ -483,9 +483,19 @@ header {
     display: flex;
     align-items: center;
 }
+
 .lang-box {
     position: relative;
-    margin: 0 10px;
+    margin: 0 10px 0 20px;
+}
+.lang-box:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1em;
+    left: -15px;
+    top: 3px;
+    background-color: var(--color);
 }
 .lang-box-up:hover .wait-lang-box {
     visibility: visible;
@@ -582,7 +592,7 @@ header {
     align-items: center;
     color: var(--white-s);
     text-align: center;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
 }
 .hometitle, .homecontent {
     font-family: var(--myfont);
@@ -669,7 +679,7 @@ body::after {
     background-color: var(--bgc-2);
     box-sizing: border-box;
     position: relative;
-    z-index: 0;
+    z-index: 1;
 }
 .zhuti-r::after {
     content: '';
@@ -714,6 +724,7 @@ body::after {
     position: absolute;
     top: 0;
     right: -34px;
+    z-index: 2;
 }
 .content {
     width: 100%;
@@ -887,7 +898,6 @@ body::after {
     line-height: 22px;
     transform: scale(1);
     transition: all 0.3s;
-    z-index: 1;
     cursor: pointer;
 }
 .tosides-2 {
@@ -905,7 +915,6 @@ body::after {
     text-align: center;
     line-height: 22px;
     transition: all 0.3s;
-    z-index: 1;
     display: none;
     cursor: pointer;
 }
@@ -939,7 +948,6 @@ body::after {
     line-height: 22px;
     cursor: pointer;
     transition: all 0.3s;
-    z-index: 1;
     display: none;
 }
 .baba-up {
@@ -1309,7 +1317,7 @@ body::after {
     font-size: 12px;
     color: rgb(120, 120, 120);
 }
-.appreciate {
+.sponsor {
     width: 100vw;
     height: 100vh;
     background-color: rgba(var(--bgc-2-rgb), .75);
@@ -1321,7 +1329,7 @@ body::after {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
-.appreciate-self {
+.sponsor-self {
     width: 300px;
     padding: 10px 20px 0;
     border: 1px solid var(--bgc-1);
@@ -1344,26 +1352,26 @@ body::after {
     left: -50%;
     background-color: rgba(81, 81, 81, 0.3);
 }
-.appreciate-title {
+.sponsor-title {
     height: 40px;
     line-height: 40px;
     margin-bottom: 10px;
     font-size: 20px;
     text-align: center;
 }
-.appreciate-btn {
+.sponsor-btn {
     display: flex;
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     border-radius: 20px;
     box-shadow:
-        1px 1px 1px 0px rgba(255, 255, 255, 1),
-        -1px -1px 1px 0px rgba(100, 100, 100, .1),
-        1px 1px 0px 0px rgba(255, 255, 255, 1) inset,
-        -1px -1px 0px 0px rgba(100, 100, 100, .1) inset;
+        1px 1px 1px 0px var(--bgc-1),
+        -1px -1px 1px 0px var(--bgc-3),
+        1px 1px 0px 0px var(--bgc-1) inset,
+        -1px -1px 0px 0px var(--bgc-3) inset;
 }
-.appreciate-btn div {
+.sponsor-btn div {
     flex: 1;
     height: 40px;
     line-height: 40px;
@@ -1372,7 +1380,7 @@ body::after {
     cursor: pointer;
     transition: all 0.2s;  
 }
-.appreciate-btn div:hover {
+.sponsor-btn div:hover {
     color: var(--primary);
     text-shadow: 1px 1px 2px rgba(var(--primary-rgb), .3);
 }
@@ -1387,20 +1395,20 @@ body::after {
     border-right: 1px solid var(--bgc-1);
 }
 
-.appreciate-btn div:first-child {
+.sponsor-btn div:first-child {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px; 
 }
-.appreciate-btn div:last-child {
+.sponsor-btn div:last-child {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.appreciate-img {
+.sponsor-img {
     width: 260px;
     height: 260px;
     margin-top: 15px;
 }
-.appre-img-1, .appre-img-2, .appre-img-3 {
+.sponsor-img-1, .sponsor-img-2, .sponsor-img-3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1423,7 +1431,7 @@ body::after {
     color: var(--primary);
     text-shadow: 2px 2px 2px rgba(var(--primary-rgb), .3);
 }
-.add-appreciate-btn {
+.add-sponsor-btn {
     color: var(--primary);
     text-shadow: 0px 0px 3px rgba(var(--primary-rgb), .3) !important;
 }
