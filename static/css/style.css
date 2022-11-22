@@ -147,16 +147,10 @@ body {
     background-color: var(--bgc-2);
     position: relative;
 }
-p > code {
-    padding: 4px 6px;
-    border-radius: 5px;
-    background-color: rgb(221, 221, 221);
-}
+
 .chroma code {
     font-size: 14px;
     font-family: monospace, 'Courier New', Courier;
-
-
     color: var(--color);
 }
 ul, ol {
@@ -186,13 +180,13 @@ a {
     text-decoration: none;
     color: #000;
 }
-blockquote {
+/* blockquote {
     padding: 1px 15px;
     border: 1px solid rgb(141, 199, 247);
     box-sizing: border-box;
     border-radius: 10px;
     background-color: rgba(var(--tip-rgb), .3);
-}
+} */
 table {
     border-collapse: collapse;
 }
@@ -218,8 +212,8 @@ button {
 .loading {
     width: 100%;
     height: 100%;
-    background-color: rgba(var(--bgc-2-rgb), .75);
-    backdrop-filter: blur(5px);
+    background-color: rgba(var(--bgc-2-rgb), .8);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
@@ -319,7 +313,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     
@@ -592,7 +586,7 @@ header {
     align-items: center;
     color: var(--white-s);
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
 }
 .hometitle, .homecontent {
     font-family: var(--myfont);
@@ -745,6 +739,7 @@ body::after {
     transition: all 0.2s;
     color: var(--primary);
     word-break: break-all;
+    text-decoration-line: underline;
 }
 .content-self a:hover {
     color: var(--tip);
@@ -752,7 +747,7 @@ body::after {
 .pre-next {
     width: 100%;
     display: flex;
-    border-top: 2px solid rgb(230, 230, 230);
+    border-top: 2px solid var(--bgc-3);
 }
 .pre {
     flex: 1;
@@ -762,7 +757,7 @@ body::after {
     display: flex;
     align-items: center;
     border-bottom-left-radius: 15px;
-    border-right: 1px solid rgb(231, 231, 231);
+    border-right: 1px solid var(--bgc-3);
     transition: all 0.1s;
     white-space: nowrap;
 }
@@ -774,7 +769,7 @@ body::after {
     display: flex;
     justify-content: end;
     align-items: center;
-    border-left: 1px solid rgb(231, 231, 231);
+    border-left: 1px solid var(--bgc-3);
     border-bottom-right-radius: 15px;
     transition: box-shadow 0.2s, text-shadow 0.2s;
     white-space: nowrap;
@@ -828,7 +823,7 @@ body::after {
     display: flex;
     justify-content: center;
     padding: 0 40px;
-    border-right: 0;
+    border-right: 0 !important;
     border-bottom-right-radius: 15px;
 }
 .next-first {
@@ -836,7 +831,7 @@ body::after {
     display: flex;
     justify-content: center;
     padding: 0 40px;
-    border-left: 0;
+    border-left: 0 !important;
     border-bottom-left-radius: 15px;
 }
 .content-last {

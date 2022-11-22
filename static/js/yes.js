@@ -267,9 +267,69 @@ $(document).ready(function () {
 
     })
 
+
+    function findBq(bqs) {
+        bqs.each(function() {
+            var it = $(this);
+            var p1 = it.children('p:first-child');
+            var p1Html= p1.html();
+
+            var indexOfSpace = p1Html.indexOf('\n');
+            var noteKind = p1Html.slice(0, indexOfSpace);
+            if (
+                noteKind != 'primary' &&
+                noteKind != 'success' &&
+                noteKind != 'tip' &&
+                noteKind != 'warning' &&
+                noteKind != 'danger'
+            ) {
+                noteKind = 'default';
+            } else {
+                p1.html(p1Html.slice(indexOfSpace + 1));
+            }
+            var theIcon = (function() {
+                switch(noteKind) {
+                    case 'default': return 'fa-circle-o';
+                    case 'primary': return 'fa-circle-o';
+                    case 'success': return 'fa-check';
+                    case 'tip': return 'fa-lightbulb-o';
+                    case 'warning': return 'fa-exclamation-circle';
+                    case 'danger': return 'fa-close';
+                    default: return 'fa-circle-o';
+                }
+            })();
+            
+            var theHtml = it.html();
+
+            it.after(
+                '<div class="note ' + noteKind + '-box">' +
+                    '<div class="note-header">' +
+                        '<div>' +
+                            '<i class="fa ' + theIcon + '"></i>' +
+                        '</div>' +
+                        '<div>' +
+                            '<span>' +
+                                '<i class="fa fa-angle-down"></i>' +
+                            '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="note-content ' + noteKind + '-content">' +
+                        theHtml +
+                    '</div>' +
+                '</div>'
+            );
+            if (it.children('blockquote').size() > 0) {
+                findBq(it.next().children('.note-content').children('blockquote'));
+            }
+            it.remove();
+        });
+    }
+    findBq($('.content-self > blockquote'));
+
+
+
     $(".note-header").click(function () {
-        var h_the_box = $(this).parent().height();
-        if (h_the_box > 35) {
+        if ($(this).next().css('display') == 'block') {
             $(this).find(".fa-angle-down").css("transform", "rotate(-90deg)");
         } else {
             $(this).find(".fa-angle-down").css("transform", "rotate(0deg)");
@@ -277,15 +337,111 @@ $(document).ready(function () {
         $(this).next().slideToggle(300);
     });
 
-    $(".for-slidetoggle").click(function () {
-        var h_the_box = $(this).parent().parent().height();
-        if (h_the_box > 30) {
-                $(this).find(".fa-angle-down").css("transform", "rotate(-90deg)");
-            } else {
-                $(this).find(".fa-angle-down").css("transform", "rotate(0deg)");
+    (function codeBlockToSc() {
+        $('.content-self > .highlight').each(function() {
+            
+            var outer = $(this);
+            var code_1 = outer.find('code:first');
+            var code_2 = outer.find('code:last');
+            var span_1 = code_2.find('span:first');
+            var case_1 = code_2.html().slice(0, 5) == '<span';
+            var case_2 = code_2.html().slice(0, 5) == 'close';
+            
+            var closeCase = 
+                ((case_1 && span_1.text() == 'close') || case_2)
+                ? true
+                : false;
+            if (closeCase) {
+                if (case_1) {
+                    span_1.remove();
+                    code_2.html(code_2.html().slice(1));
+                } else if (case_2) {
+                    code_2.html(code_2.html().slice(6));
+                }
+                code_1.find('span:last').remove();
             }
+
+            var theHtml = $(this).html();
+            var theLang = (function() {
+                var a = '';
+                if (typeof code_2.attr('class') == 'string') {
+                    a = code_2.attr('data-lang');
+                }
+                return a;
+            })();
+            
+            outer.after(
+                '<div class="code-box">' +
+                    '<div class="code-header">' + 
+                        '<span class="for-slidetoggle">' +
+                            '<i class="fa fa-angle-down"></i>' +
+                            '<span>' + theLang + '</span>' +
+                        '</span>' +
+                        '<span class="for-copy">' +
+                            '<i class="fa fa-copy"></i>' +
+                        '</span>' +
+                    '</div>' +
+                    '<div class="code-content ' + (closeCase? 'note-close': '') + '">' +
+                        '<div class="highlight">' +
+                            theHtml +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+            
+            )
+            if (closeCase) {
+                 outer.next().find('.fa-angle-down').css("transform", "rotate(-90deg)");
+            }
+           
+            outer.remove();
+        })
+    })();
+
+    $(".for-slidetoggle").click(function () {
+        if ($(this).parent().next().css('display') == 'block') {
+            $(this).find(".fa-angle-down").css("transform", "rotate(-90deg)");
+        } else {
+            $(this).find(".fa-angle-down").css("transform", "rotate(0deg)");
+        }
         $(this).parent().next().slideToggle(300);
     });
+
+
+
+    (function codeLineTosc() {
+        $('code').each(function() {
+            var it = $(this);
+            if (it.parent().prop('tagName') != 'PRE') {
+                var theText = it.text()
+                var indexBegin = theText.lastIndexOf('(');
+                var indexEnd = theText.lastIndexOf(')');
+                var kind = theText.slice(indexBegin+1, indexEnd);
+                if (
+                    kind != 'primary' &&
+                    kind != 'success' &&
+                    kind != 'tip' &&
+                    kind != 'warning' &&
+                    kind != 'danger'
+                ) kind = 'default';
+                var notInNote = (function() {
+                    var a = true;
+                    it.parents().each(function() {
+                        if ($(this).attr('class')) {
+                            if ($(this).attr('class').indexOf('note')) {
+                                a = false;
+                            }
+                        }
+                    })
+                    return a;
+                })();
+                
+                if ((kind != 'default') || ((kind == 'default') && notInNote)) {
+                    it.text(theText.slice(0, indexBegin-1));
+                }
+                it.addClass('label label-' + kind);
+            }
+        });
+    })()
 
     function copy(that) {
         var ta = document.createElement('textarea');
@@ -442,4 +598,30 @@ $(document).ready(function () {
     if ($('.mermaid')) {
         mermaid.initialize({ startOnLoad: true });
     }
+
+    (function imgAddSd() {
+       var imgs = $('.content-self img');
+       imgs.each(function() {
+            var it = $(this);
+            var title = it.attr('title');
+            it.attr({
+                'data-src': it.attr('src'),
+                'src': '/images/thumbnail.gif'
+            });
+            it.addClass('lazyload has-shadow');
+            if (title) {
+                if (title.slice(-3) == '_no') {
+                    it.removeClass('has-shadow');
+                    it.attr('title', title.slice(0, -3));
+                    if (it.attr('title').length == 0) {
+                        it.removeAttr('title');
+                    } else {
+                        it.after('<div class="img-title">' + it.attr('title') + '</div>');
+                    }
+                } else {
+                    it.after('<div class="img-title">' + it.attr('title') + '</div>');
+                }
+            }
+       });
+    })();
 });

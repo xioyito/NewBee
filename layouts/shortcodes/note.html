@@ -68,6 +68,6 @@
         </div>
     </div>
     <div class="note-content {{ $type }}-content {{ with $status }}note-{{ . }}{{ end }}">
-        {{ $content }}
+        {{ $content | markdownify}}
     </div>
 </div>

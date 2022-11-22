@@ -1,8 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
+
 # format for string: "xxxx-xx-xx"
-lastmod: "2022-10-01"
+# lastmod: "2022-10-01"
+
 # set false when you want the post publish
 draft: true
 # one category: ["category-1"] 
