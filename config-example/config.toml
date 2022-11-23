@@ -43,6 +43,8 @@ hasCJKLanguage = false
 [params]
     [params.site]
         onlyOneLang = false
+        # style of theme: auto, light, dark
+        mode = 'auto'
     # page configuration
     # 页面配置  
     [params.page]
@@ -241,6 +243,7 @@ hasCJKLanguage = false
         lineNumbersInTable = true
         noClasses = false
         noHl = false
+        hl_inline = false
         # 代码高亮样式，更多样式请移步：https://xyproto.github.io/splash/docs/
         style = 'monokailight'
         tabWidth = 4

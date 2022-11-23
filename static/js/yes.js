@@ -1,33 +1,60 @@
 var if_origin_1 = 0, if_origin_2 = 0;
-
+var darkHTML = "<link rel='stylesheet' href='/css/style-dark.css' /><link rel='stylesheet' href='/css/syntax-dark.css' />";
 function jump(sel) {
     $("html,body").animate({ scrollTop: $(sel).offset().top - 60 }, 500);
 }
 
-var mydate = new Date(), hourNow = mydate.getHours();
-var darkHTML = "<link rel='stylesheet' href='/css/style-dark.css' /><link rel='stylesheet' href='/css/syntax-dark.css' />";
-var isDark = (hourNow <= 6 && hourNow >= 0) || (hourNow >= 18 && hourNow <= 23);
-
-if (!sessionStorage.getItem('mode')) {
-    if (isDark) {
-        sessionStorage.setItem('mode', 'dark');
-    } else {
-        sessionStorage.setItem('mode', 'light');
+if (sessionStorage.getItem('mode')) {
+    if (sessionStorage.getItem('mode') == 'dark') {
+        $("link[href='/css/_custom.css']").before(darkHTML);
     }
-    
-}
-
-if ((isDark && (sessionStorage.getItem('mode') != 'light')) || (!isDark && sessionStorage.getItem('mode') == 'dark')) {
-    $("link[href='/css/_custom.css']").before(darkHTML);
 }
 
 $(document).ready(function () {
 
     $('.loading').fadeOut("slow");
+    if (mode_custom == 'auto') {
+        
+        if (!sessionStorage.getItem('mode')) {
+            var mydate = new Date(), hourNow = mydate.getHours();
+            var isDark = (hourNow <= 6 && hourNow >= 0) || (hourNow >= 18 && hourNow <= 23);
+            if (isDark) {
+                $("link[href='/css/_custom.css']").before(darkHTML);
+                $(".sun").hide();
+                $(".moon").show();
+                sessionStorage.setItem('mode', 'dark');
+            } else {
+                sessionStorage.setItem('mode', 'light');
+            }
+        } else {
+            if (sessionStorage.getItem('mode') == 'dark') {
+                
+                $(".sun").hide();
+                $(".moon").show();
+            }
+        }
 
-    if (sessionStorage.getItem('mode') == 'dark') {
-        $(".sun").hide();
-        $(".moon").show();
+        $(".mode").click(function () {
+            if (sessionStorage.getItem('mode') == 'light') {
+                $("link[href='/css/_custom.css']").before(darkHTML);
+                $(".sun").hide();
+                $(".moon").show();
+                sessionStorage.setItem('mode', 'dark');
+            } else {
+                $("link[href='/css/style-dark.css'], link[href='/css/syntax-dark.css']").remove();
+                $(".sun").show();
+                $(".moon").hide();
+                sessionStorage.setItem('mode', 'light');
+            }
+        });
+    } else if (mode_custom == 'light') {
+        if ($("link[href='/css/style-dark.css']")) {
+            $("link[href='/css/style-dark.css']").remove();
+            $("link[href='/css/syntax-dark.css']").remove();
+        }
+        sessionStorage.setItem('mode', 'light');
+    } else if (mode_custom == 'dark') {
+        sessionStorage.setItem('mode', 'dark');
     }
 
     if ($('.down-summary a')) {
@@ -58,19 +85,7 @@ $(document).ready(function () {
         var w_window_min = 768;
     }
 
-    $(".mode").click(function () {
-        if (sessionStorage.getItem('mode') == 'light') {
-            $("link[href='/css/_custom.css']").before(darkHTML);
-            $(".sun").hide();
-            $(".moon").show();
-            sessionStorage.setItem('mode', 'dark');
-        } else {
-            $("link[href='/css/style-dark.css'], link[href='/css/syntax-dark.css']").remove();
-            $(".sun").show();
-            $(".moon").hide();
-            sessionStorage.setItem('mode', 'light');
-        }
-    });
+
 
     var lw = $(window).width();
     if (lw <= w_window_min) {
@@ -271,9 +286,8 @@ $(document).ready(function () {
     function findBq(bqs) {
         bqs.each(function() {
             var it = $(this);
-            var p1 = it.children('p:first-child');
+            var p1 = it.children('p:first');
             var p1Html= p1.html();
-
             var indexOfSpace = p1Html.indexOf('\n');
             var noteKind = p1Html.slice(0, indexOfSpace);
             if (

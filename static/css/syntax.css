@@ -13,7 +13,7 @@
 /* KeywordPseudo */ .chroma .kp { color: #00a8c8 }
 /* KeywordReserved */ .chroma .kr { color: #00a8c8 }
 /* KeywordType */ .chroma .kt { color: #00a8c8 }
-/* Name */ .chroma .n { color: #111111 }
+/* Name */ .chroma .n { color: var(--color) }
 /* NameAttribute */ .chroma .na { color: #75af00 }
 /* NameBuiltin */ .chroma .nb { color: #111111 }
 /* NameBuiltinPseudo */ .chroma .bp { color: #111111 }

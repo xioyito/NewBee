@@ -283,6 +283,10 @@ body::-webkit-scrollbar-thumb:hover, .zhuti-r-0::-webkit-scrollbar-thumb:hover {
     border-radius: 5px;
     background-color: var(--scroll-thumb);
 }
+.chroma .lntable{ 
+    padding: 10px !important; 
+    box-sizing: border-box !important;
+}
 .lntable::-webkit-scrollbar {
     height: 8px;
     background: var(--scroll-bgc);
@@ -294,7 +298,6 @@ body::-webkit-scrollbar-thumb:hover, .zhuti-r-0::-webkit-scrollbar-thumb:hover {
 .lntable::-webkit-scrollbar-thumb:hover {
     background-color: rgb(var(--primary-rgb), .5);
 }
-
 
 .container {
     margin: 0 auto;
@@ -1461,10 +1464,6 @@ body::after {
  .chroma { 
     line-height: 1.6em !important; 
     background-color: transparent !important;
-}
- .chroma .lntable { 
-    padding: 10px !important; 
-    box-sizing: border-box !important;
 }
 .chroma .err {
     border-radius: 3px;

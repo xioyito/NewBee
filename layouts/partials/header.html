@@ -6,8 +6,7 @@
             </a>
         </div>
         <div class="navbar-menu">
-            {{/*  <div class="menu-items">  */}}
-                {{ range .Site.Menus.main }}
+            {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}">
                     <div class="menu-item">
                         <div class="hengtiao-root">
@@ -16,8 +15,7 @@
                         </div>
                     </div>
                 </a>
-                {{ end }}
-            {{/*  </div>  */}}
+            {{ end }}
             <div class="navbar-burger">
                 <div class="burger-btn"><span><i class="fa fa-navicon"></i></span></div>
             </div>
@@ -26,11 +24,12 @@
             {{ end }}
             
             <div class="search-in"><span><i class="fa fa-search"></i></span></div>
-            <div class="mode">
-                <span class="sun"><i class="fa fa-sun-o"></i></span>
-                <span class="moon"><i class="fa fa-moon-o"></i></span>
-            </div>
-            
+            {{ if eq .Site.Params.Site.Mode "auto" }}
+                <div class="mode">
+                    <span class="sun"><i class="fa fa-sun-o"></i></span>
+                    <span class="moon"><i class="fa fa-moon-o"></i></span>
+                </div>
+            {{ end }}
         </div>
     </nav>
     <div class="burger-items">

@@ -17,6 +17,7 @@
 .card-large {
     width: 100%;
     min-height: 200px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -246,6 +247,7 @@
 @media only screen and (max-width: 768px) {
     .card-large {
         min-height: 150px;
+        border-radius: 20px;
     }
     .card-large-img {
         border-radius: 20px;
