@@ -50,6 +50,8 @@ hasCJKLanguage = true
 [params]
     [params.site]
         onlyOneLang = false
+        # style of theme: auto, light, dark
+        mode = 'auto'
     # page configuration
     # 页面配置  
     [params.page]
