@@ -52,17 +52,18 @@ function search() {
         var postPlain = arrPosts[i].plain;
         var link = arrPosts[i].link;
         var keyIndex = postPlain.indexOf(key);
+        var keyIndexTitle = postTitle.indexOf(key);
         
-        if (keyIndex >= 0) {
+        if (keyIndex >= 0 || keyIndexTitle >= 0) {
             var postMark = toMark(postPlain, key);
+            var postMark2 = toMarkTitle(postTitle, key);
             postCount ++;
 
-            if (postMark) {
-                addItem(hlHtml(postTitle, key), postPubDate, hlHtml(postMark, key), link);
+            if (postMark || postMark2) {
+                addItem(hlHtml(postMark2, key), postPubDate, hlHtml(postMark, key), link);
             }
 
         }
-        
     }
     if (postCount == 0) {
         $(".stip").html(search_nothing + '，' + searchBy);
@@ -97,35 +98,68 @@ function clearPosts() {
 // 截取段落
 function toMark(oPlain, key) {
     var kIdx = oPlain.indexOf(key);
-    var kLen = key.length;
-    var beginIdx = kIdx;
-    var postMark_l = '';
-    var postMark_r = oPlain.slice(kIdx + kLen, kIdx + kLen + 201);
     
-    while ((beginIdx > 0) && (oPlain[beginIdx-1] != ',') && (oPlain[beginIdx-1] != '.') && (oPlain[beginIdx-1] != '，') && (oPlain[beginIdx-1] != '。')) {
-        beginIdx -= 1;
-        postMark_l = oPlain[beginIdx] + postMark_l;
+    
+    if (kIdx >= 0) {
+        var kLen = key.length;
+        var beginIdx = kIdx;
+        var postMark_l = '';
+        var postMark_r = oPlain.slice(kIdx + kLen, kIdx + kLen + 401);
+        while ((beginIdx > 0) && (oPlain[beginIdx-1] != ',') && (oPlain[beginIdx-1] != '.') && (oPlain[beginIdx-1] != '，') && (oPlain[beginIdx-1] != '。')) {
+            beginIdx -= 1;
+            postMark_l = oPlain[beginIdx] + postMark_l;
+        }
+        if (postMark_l == key) {
+            return;
+        }
+        return postMark_l + key + postMark_r;
+    } else {
+        if (oPlain == '') {
+            return '...';
+        } else {
+            return oPlain;
+        }
     }
+}
 
-    if (postMark_l == key) {
-        return;
+function toMarkTitle(oPlain, key) {
+    var kIdx = oPlain.indexOf(key);
+    if (kIdx >= 0) {
+        var kLen = key.length;
+        var beginIdx = kIdx;
+        var postMark_l = '';
+        var postMark_r = oPlain.slice(kIdx + kLen, kIdx + kLen + 401);
+        while ((beginIdx > 0) && (oPlain[beginIdx-1] != ',') && (oPlain[beginIdx-1] != '.') && (oPlain[beginIdx-1] != '，') && (oPlain[beginIdx-1] != '。')) {
+            beginIdx -= 1;
+            postMark_l = oPlain[beginIdx] + postMark_l;
+        }
+
+        if (postMark_l == key) {
+            return;
+        }
+
+        return postMark_l + key + postMark_r;
     }
-
-    return postMark_l + key + postMark_r;
-     
+    return oPlain; 
 }
 
 // 高亮关键字
 function hlHtml(oMark, key) {
-    var text = oMark;
-    var newMark = '';
-    var keyIdx = text.indexOf(key);
-    var keyHtml = "<span class=\"key-hl\">" + key + "</span>";
-    while (keyIdx >= 0) {
-        newMark = newMark + text.slice(0, keyIdx) + keyHtml;
-        text = text.slice(keyIdx + key.length);
-        keyIdx = text.indexOf(key);
+    var keyIdx = oMark.indexOf(key);
+    if (oMark && keyIdx >= 0) {
+        var text = oMark;
+        var newMark = '';
+        
+
+        var keyHtml = "<span class=\"key-hl\">" + key + "</span>";
+        while (keyIdx >= 0) {
+            newMark = newMark + text.slice(0, keyIdx) + keyHtml;
+            text = text.slice(keyIdx + key.length);
+            keyIdx = text.indexOf(key);
+        }
+        return newMark + text;
     }
-    return newMark + text;
+    return oMark;
+
 }
 

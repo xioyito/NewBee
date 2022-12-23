@@ -65,8 +65,8 @@ p > code {
     color: rgb(255, 188, 2);
     text-shadow: 0 0 3px rgb(255, 188, 2);
 }
-#content img, .mermaid, .note {
-    filter: brightness(0.9);
+#content img, .mermaid {
+    filter: brightness(0.8);
 }
 .loading-long {
     box-shadow:

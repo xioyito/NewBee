@@ -215,6 +215,7 @@ figure img {
 }
 .label {
     padding: 1px 0.4em;
+    margin: 0 5px;
     font-size: 0.9em;
     font-family: var(--font-sans-serif);
     border-radius: 5px;
