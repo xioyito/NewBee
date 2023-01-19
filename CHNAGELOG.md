@@ -1,3 +1,7 @@
+v1.2.0
+1. Removing mermaid and math shortcode that will be replaced Markdown syntax
+2. Enhance Markdown: add tabs, mermaid and math syntax. See: <https://xioyito.top/posts/markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/>
+
 v1.1.1
 1. fixed search bug
 

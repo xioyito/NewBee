@@ -13,6 +13,7 @@
     {{ end }}
     <link rel="stylesheet" href='/css/style.css' />
     <link rel="stylesheet" href='/css/search.css' />
+    <link rel="stylesheet" href='/css/md_nb.css' />
     <link rel="stylesheet" href='{{ "css/list.css" | relURL }}' />
     <link rel="stylesheet" href='{{ "css/terms.css" | relURL }}' />
     <link rel="stylesheet" href='{{ "css/taxonomy.css" | relURL }}' />
@@ -45,7 +46,10 @@
     <script src="/js/lazysizes.min.js" async=""></script>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/js/search.js"></script>
+    <script src="/js/md_nb.js"></script>
+    
     <script src="/js/yes.js"></script>
+    
     {{ if and .Site.Params.footer.enable .Site.Params.footer.visitor }}
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     {{ end }}

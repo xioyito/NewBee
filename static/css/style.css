@@ -5,7 +5,7 @@
 
     --primary-rgb: 245, 90, 135;
     --primary-oppo-rgb: 250, 116, 80;
-    --default-rgb: 170, 170, 170;
+    --default-rgb: 150, 150, 150;
     --danger-rgb: 253, 100, 100;
     --tip-rgb: 117, 182, 236;
     --success-rgb: 106, 180, 91;
@@ -84,7 +84,6 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
 h1 {
     font-size: 26px;
@@ -1004,7 +1003,6 @@ body::after {
     border: 1px solid var(--bgc-2);
     box-sizing: border-box;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    /* transition: all 0.2s; */
 }
 .button-comment {
     margin-left: 20px;

@@ -91,7 +91,7 @@ $(document).ready(function () {
     if (lw <= w_window_min) {
         $(".zhuti-r, .tosides-1").hide();
         $(".tosides-2").show();
-        $(".long").css("margin-right", 22);
+        $(".long").css("margin-right", 21);
         $(".zhuti-r-0").css({ "max-height": $(window).height(), "height": $(window).height() });
     } else {
         $(".navbar-burger").hide();
@@ -223,7 +223,7 @@ $(document).ready(function () {
         $('.tosides-2').show();
         $(".zhuti-l").css("min-width", "100%"); // fix bug
         $('.zhuti-r').fadeOut("fast");
-        $(".long").animate({ marginRight: 22 }, 'fast');
+        $(".long").animate({ marginRight: 21 }, 'fast');
         if_origin_1 = 1;
     });
 
@@ -338,7 +338,7 @@ $(document).ready(function () {
             it.remove();
         });
     }
-    findBq($('.content-self > blockquote'));
+    findBq($('blockquote'));
 
 
 
@@ -351,8 +351,10 @@ $(document).ready(function () {
         $(this).next().slideToggle(300);
     });
 
+
+
     (function codeBlockToSc() {
-        $('.content-self > .highlight').each(function() {
+        $('.highlight').each(function() {
             
             var outer = $(this);
             var code_1 = outer.find('code:first');
@@ -483,9 +485,9 @@ $(document).ready(function () {
                     if (if_origin_1 == 0) {
                         $('.zhuti-r').show();
                     }
-                    $(".long").css("margin-right", 22);
+                    $(".long").css("margin-right", 21);
                 } else {
-                    $(".long").css("margin-right", 22);
+                    $(".long").css("margin-right", 21);
                     $(".tosides-1").hide();
                     $(".tosides-2").show();
                 }
@@ -501,7 +503,7 @@ $(document).ready(function () {
                     $(".tosides-2").hide();
                     $(".tosides-1").show();
                 } else {
-                    $(".long").css("margin-right", 22);
+                    $(".long").css("margin-right", 21);
                     $(".tosides-2").show();
                 }
             }
@@ -609,9 +611,9 @@ $(document).ready(function () {
         $(".button-comment").click();
     });
 
-    if ($('.mermaid')) {
-        mermaid.initialize({ startOnLoad: true });
-    }
+    // if ($('.mermaid')) {
+    //     mermaid.initialize({ startOnLoad: true });
+    // }
 
     (function imgAddSd() {
        var imgs = $('.content-self img');

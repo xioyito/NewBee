@@ -453,3 +453,8 @@ p > code {
 .back {
     text-shadow: -1px -1px 1px transparent;
 }
+
+/* tabs */
+.tabs-header > span {
+    color: var(--color);
+}
