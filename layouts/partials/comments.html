@@ -1,0 +1,14 @@
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: {{ .Site.Params.valine.appId }},
+        appKey: {{ .Site.Params.valine.appKey }},
+        avatar: {{ .Site.Params.valine.avatar }},
+        placeholder: {{ .Site.Params.valine.placeholder }},
+        requiredFields: {{ .Site.Params.valine.requiredFields }},
+        visitor: {{ .Site.Params.valine.visitor }},
+        pageSize: {{ .Site.Params.valine.pageSize}},
+});
+</script>

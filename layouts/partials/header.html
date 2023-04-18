@@ -1,0 +1,45 @@
+<header>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/">
+                <span class="logo">{{ .Site.Title }}</span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}">
+                    <div class="menu-item">
+                        <div class="hengtiao-root">
+                            <div class="hengtiao"></div>
+                            <div class="name text-wbd-reverse">{{ .Pre }} {{ .Name }}</div>
+                        </div>
+                    </div>
+                </a>
+            {{ end }}
+            <div class="navbar-burger">
+                <div class="burger-btn"><span><i class="fa fa-navicon"></i></span></div>
+            </div>
+            {{ if and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang) }}
+                {{ partial "widgets/selectLang.html" . }}
+            {{ end }}
+            
+            <div class="search-in"><span><i class="fa fa-search"></i></span></div>
+            {{ if eq .Site.Params.Site.Mode "auto" }}
+                <div class="mode">
+                    <span class="sun"><i class="fa fa-sun-o"></i></span>
+                    <span class="moon"><i class="fa fa-moon-o"></i></span>
+                </div>
+            {{ end }}
+        </div>
+    </nav>
+    <div class="burger-items">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">
+            <div class="burger-item">
+                {{ .Pre }} {{ .Name }}
+            </div>
+        </a>
+        {{ end }}
+    </div>
+    <div class="header-rest"></div>
+</header>

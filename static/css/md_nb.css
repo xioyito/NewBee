@@ -1,0 +1,46 @@
+.tabs {
+    background-color: var(--default) !important;
+}
+.efct-btn-tabs {
+    color: var(--color) !important;
+    background-color: var(--bgc-2);
+}
+.tabs-header {
+    padding: 5px 0;
+    height: 25px;
+    margin-bottom: -4px;
+    line-height: 25px;
+    color: rgb(130, 130, 130);
+    display: flex; 
+    
+}    
+
+.tabs-header > span {
+    color: var(--white-s);
+    padding: 0 10px;
+    margin-right: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 9px;
+    transition: all .2s;
+    
+}
+.tabs-header > span:hover {
+    background-color: rgba(var(--bgc-2-rgb), .3);
+}
+.tabs-header > .efct-btn-tabs:hover {
+    background-color: var(--bgc-2);
+}
+.tabs-content {
+    padding: 5px 10px;
+    background-color: var(--bgc-2) !important;
+    box-shadow: 0 0 0 0 transparent !important;
+}
+.tabs-content > div {
+    display: none;
+}
+
+.tabs-content .tab-content-active {
+    display: block;
+}
+

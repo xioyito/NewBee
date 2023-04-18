@@ -1,0 +1,132 @@
+#vcomments.v {
+    margin: 20px 10px;
+}
+.vwrap {
+    margin: 0 10px;
+    background-color: var(--bgc-2);
+    border-radius: 15px !important;
+    box-shadow:
+        1px 1px 8px 2px rgba(100, 100, 100, .2) inset,
+        -2px -2px 8px 2px rgba(250, 250, 250, 1) inset;
+    border: 2px solid rgba(250, 250, 250, .8) !important;
+}
+.vheader {
+    display: flex;
+    flex-direction: column;
+}
+.vheader .vnick, .vmail, .vlink {
+    width: 100% !important;
+    padding: 5px 5px 2px 5px !important;  
+}
+.vcard .vnick {
+    font-size: 1em !important;
+    color: var(--primary);
+}
+.veditor {
+    padding-top: 0 !important;
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, .2),
+        -1px -1px 0px white;
+    color: rgb(100, 100, 100) !important;
+}
+.vcount {
+    margin: 0 10px 5px 10px;
+    text-shadow:
+        -1px -1px 1px rgba(255, 255, 255, 0.8),
+        2px 2px 5px rgba(25, 25, 25, 0.3);
+}
+.vemoji-btn svg {
+    transition: fill 0.3s, filter 0.2s;
+}
+.vpreview-btn svg {
+    transition: fill 0.3s, filter 0.2s;
+}
+.vemoji-btn:hover svg {
+    fill: rgb(255, 166, 0); 
+}
+.vpreview-btn:hover svg {
+    fill: var(--tip);
+}
+.vsubmit {
+    text-shadow: 1px 1px 0px white;
+    box-shadow: 2px 2px 3px 1px rgba(100, 100, 100, 0.2),
+                -2px -2px 3px 1px rgba(255, 255, 255, .8);
+    color: var(--success) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgb(245, 245, 245) !important;
+    transition: all 0.2s !important;
+}
+.vsubmit:hover {
+    box-shadow: 1px 1px 1px 0px rgba(100, 100, 100, 0.3),
+                -1px -1px 1px 0px rgba(255, 255, 255, 1),
+                2px 2px 3px 1px rgba(100, 100, 100, 0.2) inset,
+                -1px -1px 3px 2px rgba(255, 255, 255, 1) inset;
+    text-shadow: 2px 2px 3px rgba(var(--success-rgb), 0.3);
+}
+.vcard {
+    margin: 0 10px;
+    padding-top: 0 !important;
+}
+.vimg {
+    box-shadow:
+        2px 2px 5px 1px rgba(25, 25, 25, 0.2),
+        -2px -2px 3px 3px rgba(255, 255, 255, .8);
+}
+.vcard .vh {
+    overflow: visible !important;
+    margin-left: 20px;
+    padding-bottom: 0 !important;
+    border-bottom: 1px dashed transparent !important;
+}
+
+.vh .vcard {
+    z-index: 3 !important;
+}
+.vh p {
+    color: var(--color) !important;
+    margin: 5px 0;
+}
+.vcontent {
+    padding: 0 10px !important;
+    text-shadow: -1px -1px 1px rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.vhead span:first-child + .vsys{
+    display: none !important;
+}
+.vhead .vsys, .vtime {
+    text-shadow: 1px 1px 0px rgb(255, 255, 255);
+}
+.vhead .vnick, .at {
+    text-shadow: 2px 2px 2px rgba(var(--primary-rgb), .3);
+}
+.vat {
+    color: var(--tip) !important;
+    transition: all 0.2s;
+}
+.vat:hover {
+    text-shadow: 2px 2px 3px rgba(var(--tip-rgb), .5);
+}
+.at {
+    text-shadow: 2px 2px 2px rgba(var(--primary-oppo-rgb), .3);
+    color: var(--primary-oppo) !important;
+}
+.vquote {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+}
+.vpower {
+    text-shadow: 1px 1px 1px white;
+}
+.vmore {
+    color: var(--color) !important;
+    border-radius: 10px !important;
+    box-shadow: var(--efct-button-bs) !important;
+    border: 1px solid var(--bgc-1) !important;
+    transition: all 0.2s !important;
+}
+.vmore:hover {
+    box-shadow: var(--efct-button-hover-bs) !important;
+    text-shadow: 2px 2px 3px rgba(var(--primary-rgb), .3) !important;
+    color: var(--primary) !important;
+}

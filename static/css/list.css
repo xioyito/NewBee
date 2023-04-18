@@ -1,0 +1,97 @@
+.year-body {
+    position: relative;
+}
+.content-list {
+    min-height: 80vh;
+}
+.year-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -10px;
+}
+.year {
+    
+    padding: 20px 40px;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow:
+        2px 2px 5px 2px rgba(50, 50, 50, 0.1),
+        -2px -2px 6px 3px rgba(255, 255, 255, 1);
+    transition: all 0.2s;
+}
+.year:hover {
+    box-shadow:
+        1px 1px 1px 2px rgba(0, 0, 0, .1),
+        -1px -1px 3px 2px rgba(255, 255, 255, 1),
+        2px 2px 6px 2px rgba(25, 25, 25, 0.1) inset,
+        -2px -2px 5px 2px rgba(255, 255, 255, 1) inset;
+}
+
+.year-head {
+    margin-top: 0;
+    text-align: center;
+    transition: all 0.2s;
+}
+.year-items {
+    margin-top: -1em;
+}
+.year-item {
+    color: var(--color);
+    padding: 5px 0 5px 20px;
+    border-left: 1px solid rgb(163, 163, 163);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.year:hover .year-item, .year:hover .year-head {
+    text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.2);
+}
+.year-item:hover {
+    color: var(--primary);
+    text-shadow: 2px 2px 5px rgba(var(--primary-rgb), .3) !important;
+}
+
+.connect-line {
+    height: 1px;
+    box-sizing: border-box;
+    border-top: 1px dashed rgb(124, 124, 124);
+    margin: 0 10px;
+    flex: 1;
+    transition: all 0.2s;
+}
+.year:hover .connect-line {
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.2);
+}
+.year-item:hover .connect-line {
+    box-shadow: 2px 2px 5px 0px rgba(var(--primary-rgb), .3) !important;
+}
+.dot {
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+    transition: all 0.2s;
+    background-color: rgb(180, 180, 180);
+}
+.year-item:hover .dot {
+    background-color: var(--primary);
+    transform: scale(1.3);
+}
+.year-item:hover .connect-line {
+    border-top: 1px dashed var(--primary);
+    box-shadow: 1px 1px 4px rgba(var(--primary-rgb), 0.2);
+}
+.item-title {
+    width: auto;
+}
+.item-date {
+    text-align: right;
+    word-break: break-all;
+}

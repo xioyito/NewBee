@@ -1,0 +1,55 @@
+{{ $langNow := .Lang }}
+{{ $isMultiLingual := and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+<div class="about-zuozhe">
+    <div class="zuozhe">
+        {{ with .Site.Author.image }}
+            <div class="datou">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
+            </div>
+        {{ end }}
+        <div class="name-jianjie">
+            <div class="name">{{ .Site.Author.name }}</div>
+            <div class="jianjie">
+                {{ .Site.Author.description }}
+            </div>
+        </div>
+    </div>
+
+    <div class="type">
+        <a href='{{ if $isMultiLingual }}
+                    {{ $langNow | relURL}}/posts
+                {{ else }}
+                    {{ "posts/" | relURL }}
+                {{ end }}'>
+            <p>{{ i18n "sidebar_posts" (len .Site.RegularPages) }}</p>
+            <p>{{ len .Site.RegularPages }}</p>
+        </a>
+        <a href='{{ if $isMultiLingual }}
+                    {{ $langNow | relURL}}/categories
+                {{ else }}
+                    {{ "categories/" | relURL }}
+                {{ end }}'>
+            <p>{{ i18n "sidebar_categories" (len .Site.Taxonomies.categories) }}</p>
+            <p>{{ len .Site.Taxonomies.categories }}</p>
+        </a>
+        <a href='{{ if $isMultiLingual }}
+                    {{ $langNow | relURL}}/tags
+                {{ else }}
+                    {{ "tags/" | relURL }}
+                {{ end }}'>
+            <p>{{ i18n "sidebar_tags" (len .Site.Taxonomies.tags) }}</p>
+            <p>{{ len .Site.Taxonomies.tags }}</p>
+        </a>
+    </div>
+
+    <a href="{{ .Site.Author.link }}">
+        <div class="follow">Follow Me</div>
+    </a>
+    <div class="link">
+        {{ range .Site.Menus.social }}
+        <a href="{{ .URL }}" class="link-item is-hidden-desktop" title="{{ .Name }}">
+            <span class="icon">{{ .Pre }}</span>
+        </a>
+        {{ end }}
+    </div>
+</div>

@@ -1,0 +1,119 @@
+
+
+.zhuti-l-home {
+    border-right: 0;
+}
+.zuixin {
+    text-align: center;
+    padding: 0 10px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.xian-l, .xian-r {
+    width: 100%;
+    height: 2px;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(220, 220, 220);
+    box-sizing: border-box;
+}
+.zuixin h3 {
+    white-space: nowrap;
+    padding: 0 20px;
+    margin: 0;
+}
+
+@keyframes to-down {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(20px) scale(0.75);
+        opacity: 0.5;
+    }
+    100% {
+        
+        opacity: 1;
+    }
+}
+.todown {
+    width: 100%;
+    height: 80px;
+    color: aliceblue;
+    background-color: transparent;
+    border: 0px solid #000;
+    position: absolute;
+    bottom: 25px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.hero-img-home {
+    height: 400px;
+    width: 100%;
+    border: 4px solid var(--bgc-1);
+    box-sizing: border-box;
+    box-shadow: -1px 0 20px 2px rgba(50, 50, 50, 0.3);
+    border-radius: 35px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.hero-content .fa-angle-down {
+    color: white;
+    animation: to-down 1.5s ease-out infinite;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+}
+.l-zz {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, .3);
+}
+.content-l {
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    color: aliceblue;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.l-date {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.l-summary {
+    overflow: hidden; 
+	display:-webkit-box; 
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; 
+}
+
+.more-posts {
+    margin: 20px auto;
+    margin-bottom: 10px;
+    z-index: 5;
+}
+.more-posts a {
+    display: block;
+    padding: 5px 20px;;
+    border-radius: 12px;
+    border: 1px solid var(--bgc-1);
+    box-sizing: border-box;
+    background-color: var(--bgc-2);
+    color: var(--color);
+}
+.more-posts:hover a {
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(var(--primary-rgb), .5);
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-img-home {
+        border-radius: 20px;
+    }
+}

@@ -1,0 +1,19 @@
+
+<a href="{{ .Permalink }}">
+    <div class="list-item">
+        <div class="icon-other-root">
+            {{ with .Params.image }}
+                <div class="icon-other" style="background-image: url( {{ . }} );"></div>
+            {{ else }}
+                <div class="icon-other" style="background-image: url( {{ .Site.Params.page.defaultPostImg }} );"></div>
+            {{ end }}
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                {{ .Title }}
+            </div>
+            <div class="other-summary">{{ .Summary }}</div>
+            <div class="other-date">{{ .PublishDate.Format "2006-1-2"}}</div>
+        </div>
+    </div>
+</a>

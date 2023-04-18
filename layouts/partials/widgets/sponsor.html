@@ -1,0 +1,44 @@
+{{ if .Site.Menus.sponsor }}
+    {{ $len_btn := len .Site.Menus.sponsor }}
+{{ $num_sponsor := 1 }}
+<div class="sponsor">
+    <div class="sponsor-self">
+        <div class="sponsor-title">{{ i18n "sponsor_sponsor" }}</div>
+        <div class="sponsor-btn">
+            {{ range .Site.Menus.sponsor }}
+                {{ if eq $len_btn 2 }}
+                    {{ if eq $num_sponsor 1 }}
+                        <div class="sponsor-btn-{{ $num_sponsor }} border-r">{{ .Name }}</div>
+                    {{ else }}
+                        <div class="sponsor-btn-{{ $num_sponsor }} border-l">{{ .Name }}</div>
+                    {{ end }}
+                {{ else if eq $len_btn 3 }}
+                    {{ if eq $num_sponsor 1 }}
+                        <div class="sponsor-btn-{{ $num_sponsor }} border-r">{{ .Name }}</div>
+                    {{ else if eq $num_sponsor 2 }}
+                        <div class="sponsor-btn-{{ $num_sponsor }} border-m">{{ .Name }}</div>
+                    
+                    {{ else }}
+                        <div class="sponsor-btn-{{ $num_sponsor }} border-l">{{ .Name }}</div>
+                    {{ end }}
+                {{ else }}
+                    <div class="sponsor-btn-{{ $num_sponsor }}">{{ .Name }}</div>
+                {{ end }}
+                {{ $num_sponsor = (add $num_sponsor 1) }}
+            {{ end }}
+        </div>
+        {{ $num_sponsor := 1 }}
+        <div class="sponsor-img">
+            {{ range .Site.Menus.sponsor }}
+                {{ if eq $num_sponsor 1 }}
+                    <img class="sponsor-img-{{ $num_sponsor }}" src="{{ .URL }}" alt="">
+                {{ else }}
+                    <img class="sponsor-img-{{ $num_sponsor }}" src="{{ .URL }}" alt="" style="display: none;">
+                {{ end }}
+                {{ $num_sponsor = (add $num_sponsor 1) }}
+            {{ end }}
+        </div>
+        <div class="cancel efct-button">{{ i18n "sponsor_cancel" }}</div>
+    </div>
+</div>
+{{ end }}

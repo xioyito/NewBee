@@ -1,0 +1,139 @@
+{{ $langNow := .Lang }}
+{{ $hero_img := .Site.Params.page.defaultPostImg }}
+{{ $hero_title := "" }}
+{{ $hero_des := "" }}
+{{ $isMultiLingual := and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+{{ if eq .Kind "section" }}
+    {{ if eq .Section "posts" }}
+        {{ $hero_img = .Site.Params.page.allPostsTopImg }}
+        {{ $hero_title = i18n "Posts_allPosts" }}
+        {{ $hero_des = .Site.Params.page.allPostsDes }}
+    {{ else if eq .Section "about" }}
+        {{ $hero_img = .Site.Params.page.aboutTopImg }}
+        {{ $hero_title = i18n "About_about" }}
+        {{ $hero_des = .Site.Params.page.aboutDes }}
+    {{ end }}
+
+{{ else if eq .Kind "taxonomy" }}
+    {{ if eq .Section "categories" }}
+        {{ $hero_img = .Site.Params.page.categoryTopImg }}
+        {{ $hero_title = i18n "Categories_categories" }}
+        {{ $hero_des = .Site.Params.page.categoryDes }}
+    {{ else if eq .Section "tags" }}
+        {{ $hero_img = .Site.Params.page.tagTopImg }}
+        {{ $hero_title = i18n "Tags_tags" }}
+        {{ $hero_des = .Site.Params.page.tagDes }}
+    {{ else if eq .Section "series" }}
+        {{ $hero_img = .Site.Params.page.seriesTopImg }}
+        {{ $hero_title = i18n "Series_series" }}
+        {{ $hero_des = .Site.Params.page.seriesDes }}
+    {{ end }}
+
+{{ else if eq .Kind "term" }}
+    {{ if eq .Section "categories" }}
+        {{ $hero_title = add (i18n "CategoriesTerms_category") ": " }}
+    {{ else if eq .Section "tags" }}
+        {{ $hero_title = add (i18n "TagsTerms_tag") ": " }}
+    {{ else if eq .Section "series" }}
+        {{ $hero_title = add (i18n "SeriesTerms_series") ": " }}
+    {{ end }}
+
+{{ else if eq .Kind "home" }}
+    {{ $hero_img = .Site.Params.page.homeTopImg }}
+    {{ $hero_title = .Site.Params.page.homeTitle }}
+    {{ $hero_des = .Site.Params.page.homeContent }}
+{{ end }}
+
+{{ if eq .Kind "home" }}
+    <div class="hero">
+        {{ with .Site.Params.page.homeTopImg }}
+        <div class="hero-img-home">
+            <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
+        </div>
+        {{ end }}
+        <div class="hero-content">
+                    {{ $hometitlefontsize := .Site.Params.page.homeTitleFontSize }}
+                    {{ $homecontentfontsize := .Site.Params.page.homeContentFontSize }}
+                    {{ with $hero_title }}
+                        <div class="hometitle" style="font-size: {{ $hometitlefontsize }}px; margin-bottom: 20px;">{{ . | markdownify }}</div>
+                    {{ end }}
+                    {{ with $hero_des }}
+                        <div class="homecontent" style="font-size: {{ $homecontentfontsize }}px;">{{ . | markdownify }}</div>
+                    {{ end }}
+                <button class="todown" type="button">
+                    <i class="fa fa-angle-down fa-3x"></i>
+                </button>
+        </div>
+    </div>
+
+{{ else if eq .Kind "page" }}
+    <div class="hero">
+        {{ with .Params.image }}
+            <div class="hero-img">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
+            </div>
+        {{ else }}
+            <div class="hero-img">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ $hero_img }}" alt="">
+            </div>
+        {{ end }}
+        <div class="hero-content">
+            <div class="hero-title">{{ .Title }}</div>
+            <div class="hero-subtitle">{{ .Params.subtitle }}</div>
+            <div class="hero-date">
+                    <span class="no-wrap"><i class="fa fa-calendar"></i> {{ i18n "postInfo_postedOn" }}: {{ .PublishDate.Format "2006-1-2" }} &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> {{ i18n "postInfo_updatedOn" }}: {{ .Lastmod.Format "2006-1-2" }} &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-folder"></i>
+                        {{ with .Params.categories }}{{ i18n "postInfo_includedIn" }}:{{ else }}{{ i18n "postInfo_notIncluded" }}{{ end }}
+                        {{ range $idx, $category := .Params.categories }}
+                            {{- if ne $idx 0 }}, {{ end }}
+                            <a href='{{ if $isMultiLingual }}
+                                {{ $langNow | relURL}}/categories/{{ $category | urlize }}
+                            {{ else }}
+                                {{ "categories/" | relURL }}{{ $category | urlize }}
+                            {{ end }}'>
+                                {{ $category }}
+                            </a>
+                        {{- end }}
+                    </span>    
+            </div>
+            <div class="timelong">
+                <span class="no-wrap"><i class="fa fa-pencil"></i> {{ i18n "postInfo_wordsCount" }}: {{ .WordCount }} &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-clock-o"></i> {{ i18n "postInfo_readingTime" }}: {{ .ReadingTime }} {{ i18n "postInfo_minute" .ReadingTime }} &nbsp;</span>
+                {{ if .Site.Params.footer.visitor }}<span class="no-wrap"><i class="fa fa-eye"></i> {{ i18n "postInfo_viewers" }}: <span id="busuanzi_value_page_pv"></span></span>{{ end }}
+            </div>
+        </div>
+    </div>
+
+{{ else if or (eq .Kind "section") (eq .Kind "taxonomy") }}
+    <div class="hero">
+        {{ with $hero_img }}
+            <div class="hero-img">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
+            </div>
+        {{ end }}
+        <div class="hero-content">
+            <div class="hero-title">{{ $hero_title }}</div>
+            <div>{{ $hero_des }}</div>
+        </div>
+    </div>
+
+{{ else if eq .Kind "term" }}
+    <div class="hero">
+        {{ $firstChild := index .Pages 0 }}
+            {{ with $firstChild.Params.image }}
+                <div class="hero-img">
+                    <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt="">
+                </div>
+            {{ else }}
+                <div class="hero-img">
+                    <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ $hero_img }}" alt="">
+                </div>
+            {{ end }}
+        <div class="hero-content">
+            <h1 class="hero-title">{{ $hero_title }}{{ .Title }}</h1>
+        </div>
+    </div>
+
+{{ end }}
+

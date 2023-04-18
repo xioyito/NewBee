@@ -1,0 +1,115 @@
+# String in Home
+[Home_latestPosts]
+	other = '最新文章'
+[Home_allPosts]
+	other = '所有文章'
+
+# String in Posts
+[Posts_allPosts]
+	other = '所有文章'
+
+# String in Categories taxonomy
+[Categories_categories]
+	other = '分类'
+[Categories_postUnit] # keep 'one' and 'other' same If there is no singular and plural
+	one = '篇'
+	other = '篇'
+# String in Categories terms
+[CategoriesTerms_category]
+	other = '分类'
+
+# String in Tags taxonomy
+[Tags_tags]
+	other = '标签'
+# String in Tags terms
+[TagsTerms_tag]
+	other = '标签'
+
+# String in Series taxonomy
+[Series_series]
+	other = '系列'
+# String in Series terms
+[SeriesTerms_series]
+	other = '系列'
+
+# String in About
+[About_about]
+	other = '关于'
+
+# String in sidebar
+[sidebar_content] # This button will not appear until the comment function is turned on
+	other = '目录'
+[sidebar_comment] # This button will not appear until the comment function is turned on
+	other = '评论'
+[sidebar_posts]
+	other = '文章'
+[sidebar_categories]
+	other = '分类'
+[sidebar_tags]
+	other = '标签'
+[sidebar_followMe]
+	other = 'Follow Me'
+[sidebar_tableOfContent]
+	other = '目录'
+[sidebar_latestPosts]
+	other = '最新文章'
+[sidebar_relatedPosts]
+	other = '相关文章'
+
+# String in sponsor
+[sponsor_sponsor]
+	other = '赞赏'
+[sponsor_cancel]
+	other = '取消'
+
+# String in postInfo
+[postInfo_postedOn]
+	other = '发布于'
+[postInfo_updatedOn]
+	other = '更新于'
+[postInfo_includedIn]
+	other = '收录于'
+[postInfo_notIncluded]
+	other = '未收录'
+[postInfo_wordsCount]
+	other = '文章字数'
+[postInfo_readingTime]
+	other = '阅读时间'
+[postInfo_minute] # keep 'one' and 'other' same If there is no singular and plural
+	one = '分钟'
+	other = '分钟'
+[postInfo_viewers]
+	other = '阅读量'
+
+# String in search
+[search_search]
+	other = '搜索'
+[search_enterAKeyWord]
+	other = '请输入关键词'
+[search_found]
+	other = '找到'
+# keep '[search_result]' and '[search_results]' same
+# If there is no singular and plural
+[search_result] # singular
+	other = '条结果'
+[search_results] # plural
+	other = '条结果'
+[search_theEnd]
+	other = '到底了'
+[search_nothing]
+	other = '什么也没找到'
+
+
+
+# String in 404 page
+[_404_sorry]
+	other = '抱歉，页面好像走丢了...'
+[_404_backToHome]
+	other = '回到主页'
+
+# String in imageLoadingFailed
+[imageLoadingFailed]
+	other = '图片加载失败'
+
+
+

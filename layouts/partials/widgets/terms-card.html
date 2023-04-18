@@ -1,0 +1,22 @@
+{{ $categoryTermsImg := .Site.Params.img.categoryTermsImg }}
+{{ range .Data.Terms.ByCount }}
+{{ $pageTitle := .Page.Title }}
+{{ $pageCount := len .Pages }}
+<div class="terms-col">
+    <a href="{{ .Page.Permalink }}">
+        <div class="terms-card">
+            {{ $firstChild := index .Pages 0 }}
+            {{ with $firstChild.Params.images }}
+            <div class="terms-img" style="background-image: url( {{ index . 0 }} );"></div>
+            {{ else }}
+            <div class="terms-img" style="background-image: url( {{ $categoryTermsImg }} );"></div>
+            {{ end }}
+            <div class="terms-text">
+                {{ $pageTitle }}
+                <span class="division-line">&nbsp;|&nbsp;</span>
+                {{ $pageCount }} {{ i18n "Categories_postsUnit" $pageCount }}
+            </div>
+        </div>
+    </a>
+</div>
+{{ end }}

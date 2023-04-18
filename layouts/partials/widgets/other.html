@@ -1,0 +1,21 @@
+{{ $newOrRelated_text := i18n "sidebar_latestPosts" }}
+{{ $newOrRelated := first .Site.Params.page.maxPageNewestCount .Site.RegularPages }}
+
+{{ if eq .Kind "page" }}
+    {{ $newOrRelated = (where (.Site.RegularPages.Related .) "Type" "posts") | first .Site.Params.page.maxPageRelatedCount }}
+    {{ $newOrRelated_text = i18n "sidebar_relatedPosts" }}
+{{ end }}
+
+<div class="other">
+    <div class="other-up">
+        <div class="other-qita text-wbd">{{ $newOrRelated_text }}</div>
+        <div class="xian"></div>
+    </div>
+    <div class="list">
+        {{ range $newOrRelated }}
+            <a href="{{ .Permalink }}">
+                {{ partial "widgets/post-card-small.html" . }}
+            </a>
+        {{ end }}
+    </div>
+</div>

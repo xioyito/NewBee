@@ -1,0 +1,17 @@
+{{ with .Site.Params.aplayer }}
+    <div>
+        <meting-js
+            server = "{{ .server }}"
+            type = "{{ .type }}"
+            id = "{{ .id }}"
+            fixed = "{{ .fixed }}"
+            autoplay = "{{ .autoplay }}"
+            loop = "{{ .loop }}"
+            order = "{{ .order }}"
+            preload = "{{ .preload }}"
+            list-folded = "{{ .list_folder }}"
+            list-max-height = "{{ .list_max_height }}"
+            lrc-type = "{{ .lrc_type }}">
+        </meting-js>
+    </div>
+{{ end }}

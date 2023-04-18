@@ -1,0 +1,211 @@
+.search-in {
+    width: 36px;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.search-in:hover {
+    color: var(--primary);
+    transform: scale(1.2);
+}
+
+.search-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+.search-zz {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(var(--bgc-3-rgb), 0.5);
+}
+.search {
+    width: 700px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    margin-left: -350px;
+}
+.sheader {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: var(--bgc-2);
+    box-shadow: 
+        2px 2px 5px 3px rgba(50, 50, 50, 0.1);
+    border: 1px solid var(--bgc-1);
+    box-sizing: border-box;
+}
+.sh-l {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.sclear {
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    line-height: 40px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.sclear:hover {
+    color: var(--danger);
+}
+.sheader input{
+    outline: none;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px 0 10px;
+    color: var(--color);
+    box-sizing: border-box;
+    background-color: transparent;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.1s;
+}
+.sheader input:focus, .sheader input:hover {
+    box-shadow: 
+        2px 2px 3px 1px rgba(100, 100, 100, 0.2) inset,
+        -1px -1px 3px 2px rgba(255, 255, 255, 1) inset;
+    text-shadow: 2px 2px 3px rgba(0,0,0, 0.2);
+}
+
+.sh-r {
+    height: 100%;
+
+}
+.sh-r button {
+    width: 60px;
+    height: 100%;
+    border: 0;
+    border-left: 1px solid var(--bgc-3);
+    cursor: pointer;
+    color: var(--color);
+    background-color: transparent;
+    transition: all 0.2s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.sh-r button:hover {
+    color: var(--primary);
+    box-shadow: 
+        1px 2px 3px 1px rgba(100, 100, 100, 0.2) inset,
+        -1px -1px 3px 2px rgba(255, 255, 255, 1) inset;
+    text-shadow: 2px 2px 3px rgba(var(--primary-rgb), 0.2);
+}
+.sbody {
+
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: var(--bgc-2);
+    overflow: hidden;
+    border: 1px solid var(--bgc-1);
+    box-sizing: border-box;
+    box-shadow: 
+        2px 2px 8px 3px rgba(50, 50, 50, 0.2);
+    display: none;
+}
+.sbody-1 {
+    padding-top: 10px;
+    max-height: calc(100vh - 100px);
+
+    overflow-x: hidden;
+}
+.at-bottom {
+    text-align: center;
+    font-size: small;
+    color: rgb(150, 150, 150);
+    margin-bottom: 10px;
+}
+.stip {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    font-size: small;
+    text-align: center;
+    color: rgb(150, 150, 150);
+}
+.search-by {
+    color: var(--tip);
+}
+.post-root {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.post {
+    padding: 10px 10px;
+    margin: 10px 0;
+    color: var(--color);
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid var(--bgc-1);
+    border-radius: 10px;
+    transition: all 0.1s;
+    box-shadow:
+        4px 4px 8px 1px rgba(50, 50, 50, 0.2);
+}
+
+.post-root:hover .post {
+    transform: translateY(2px);
+}
+.post-root:hover .post-header {
+    color: var(--primary);
+}
+.post-header {
+    height: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-title {
+    margin: 0;
+    transition: all 0.2s;
+    font-weight: bold;
+}
+
+.post-time {
+    font-size: 14px;
+    color: rgb(150, 150, 150);
+}
+.post-mark {
+    color: rgb(150, 150, 150);
+    margin-top: 5px;
+    overflow: hidden; 
+    transition: all 0.2s;
+	display:-webkit-box; 
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; 
+}
+.key-hl {
+    border-radius: 4px;
+    background-color: rgba(var(--primary-rgb), .3);
+}
+
+@media only screen and (max-width: 768px) {
+    .search {
+        width: calc(100vw - 40px);
+        margin-left: calc(-50vw + 20px);
+    
+    
+    }
+}

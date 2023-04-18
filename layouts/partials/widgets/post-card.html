@@ -1,0 +1,69 @@
+{{ $langNow := .Lang }}
+{{ $isMultiLingual := and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+{{ $includedIn := "newnewnew"  }}
+<div class="card-large">
+    <div class="card-large-img">
+
+        {{ with .Params.image }}
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ . }}" alt='{{ i18n "imageLoadingFailed" }}'>
+        {{ else }}
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="{{ .Site.Params.page.defaultPostImg }}" alt='{{ i18n "imageLoadingFailed" }}'>
+        {{ end }}
+    </div>
+    <div class="card-large-content">
+        <div class="up-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+        <div class="up-date">
+            <span class="no-wrap"><i class="fa fa-calendar"></i> {{ i18n "postInfo_postedOn" }}: {{ .PublishDate.Format "2006-1-2" }} &nbsp;</span>
+            <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> {{ i18n "postInfo_updatedOn" }}: {{ .Lastmod.Format "2006-1-2" }} &nbsp;</span>
+            <span class="no-wrap"><i class="fa fa-folder"></i>
+                {{ with .Params.categories }}
+                    {{ i18n "postInfo_includedIn" }}:
+                    {{ range $idx, $category := . }}
+                        {{- if ne $idx 0 }}, {{ end }}
+                        <a href='{{ if $isMultiLingual }}
+                                        {{ $langNow | relURL}}/categories/{{ $category | urlize }}
+                                    {{ else }}
+                                        {{ "categories/" | relURL }}{{ $category | urlize }}
+                                    {{ end }}'>
+                                {{ $category }}
+                            </a>
+                    {{- end }}
+                {{ else }}
+                    {{ i18n "postInfo_notIncluded" }}
+                {{ end }}
+            </span>
+        </div>
+        <div class="down-summary">{{ .Summary }}</div>
+    </div>
+    <div class="card-readmore">
+        <a href="{{ .Permalink }}">
+            <span><i class="fa fa-arrow-right"></i></span>
+        </a>
+    </div>
+</div>
+
+{{ $tagsCount := 0 }}
+{{ with .Params.tags }}
+    {{ $tagsCount = 1 }}
+{{ end }}
+{{ if eq $tagsCount 1 }}
+    <div class="down-type">
+        {{ range $tag := .Params.tags }}
+        <span class="down-type-item">
+            <div class="shuxian-root">
+                <div class="shuxian"></div>
+            </div>
+            <div class="type-text">
+                <a href='{{ if $isMultiLingual }}
+                            {{ $langNow | relURL}}/tags/{{ $tag | urlize }}
+                        {{ else }}
+                            {{ "tags/" | relURL }}{{ $tag | urlize }}
+                        {{ end }}'>
+                    <i class="fa fa-tag"></i> {{ . }}
+                </a>
+            </div>
+        </span>
+        {{ end }}
+    </div>
+{{ end }}
+<div class="dang"></div>

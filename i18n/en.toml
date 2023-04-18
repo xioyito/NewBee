@@ -1,0 +1,113 @@
+# String in Home
+[Home_latestPosts]
+	other = 'Latest Posts'
+[Home_allPosts]
+	other = 'All Posts'
+
+# String in Posts
+[Posts_allPosts]
+	other = 'all Posts'
+
+# String in Categories taxonomy
+[Categories_categories]
+	other = 'Categories'
+[Categories_postUnit] # make 'one' and 'other' same If there is no singular and plural
+	one = 'post'
+	other = 'posts'
+# String in Categories terms
+[CategoriesTerms_category]
+	other = 'Category'
+
+# String in Tags taxonomy
+[Tags_tags]
+	other = 'Tags'
+# String in Tags terms
+[TagsTerms_tag]
+	other = 'Tag'
+
+# String in Series taxonomy
+[Series_series]
+	other = 'Series'
+# String in Series terms
+[SeriesTerms_series]
+	other = 'Series'
+
+# String in About
+[About_about]
+	other = 'About'
+
+# String in sidebar
+[sidebar_content] # This button will not appear until the comment function is turned on
+	other = 'content'
+[sidebar_comment] # This button will not appear until the comment function is turned on
+	other = 'comment'
+[sidebar_posts]
+	other = 'posts'
+[sidebar_categories]
+	other = 'categories'
+[sidebar_tags]
+	other = 'tags'
+[sidebar_followMe]
+	other = 'Follow Me'
+[sidebar_tableOfContent]
+	other = 'Table of Contents'
+[sidebar_latestPosts]
+	other = 'latest Posts'
+[sidebar_relatedPosts]
+	other = 'Related Posts'
+
+# String in sponsor
+[sponsor_sponsor]
+	other = 'Sponsor'
+[sponsor_cancel]
+	other = 'cancel'
+
+# String in postInfo
+[postInfo_postedOn]
+	other = 'postedOn'
+[postInfo_updatedOn]
+	other = 'updatedOn'
+[postInfo_includedIn]
+	other = 'includedIn'
+[postInfo_notIncluded]
+	other = 'notIncluded'
+[postInfo_wordsCount]
+	other = 'wordsCount'
+[postInfo_readingTime]
+	other = 'readingTime'
+[postInfo_minute] # make 'one' and 'other' same If there is no singular and plural
+	one = 'min'
+	other = 'mins'
+[postInfo_viewers]
+	other = 'viewers'
+
+# String in search
+[search_search]
+	other = 'search'
+[search_enterAKeyWord]
+	other = 'Enter a KeyWord'
+[search_found]
+	other = 'Found'
+# keep '[search_result]' and '[search_results]' same
+# If there is no singular and plural
+[search_result] # singular
+	other = 'result'
+[search_results] # plural
+	other = 'results'
+[search_theEnd]
+	other = 'The End'
+[search_nothing]
+	other = 'Nothing was found'
+
+# String in 404 page
+[_404_sorry]
+	other = 'Sorry, the page seems to be lost...'
+[_404_backToHome]
+	other = 'Back to Home'
+
+# String in imageLoadingFailed
+[imageLoadingFailed]
+	other = 'image loading failed'
+
+
+

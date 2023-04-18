@@ -1,0 +1,15 @@
+v1.2.1
+Now, if you use math-jax and mermaid in a post, Add both or one of params above in front-matter for the post:
+math: true
+mermaid: true
+
+v1.2.0
+1. Removing mermaid and math shortcode that will be replaced Markdown syntax
+2. Enhance Markdown: add tabs, mermaid and math syntax. See: <https://xioyito.top/posts/markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/>
+
+v1.1.1
+1. fixed search bug
+
+v1.0.0
+1. Delete these shortcodes: hl(highlight), label, img.
+2. Add Markdown function.

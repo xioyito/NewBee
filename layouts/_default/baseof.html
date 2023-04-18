@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body style="font-family: {{ .Site.Params.page.font }}{{ if ne .Site.Params.page.font "" }},{{ end }}'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;">
+        <div class="loading">
+            <div class="loading-bg"></div>
+            <div class="loading-long">
+                <div class="loading-short"></div>
+            </div>
+        </div>
+
+        {{ if ne .Kind "404"}}
+            {{- partial "header.html" . -}}
+        {{ end }}
+
+        <div id="content">
+            {{- block "main" . }}{{- end }}
+        </div>
+
+        {{ if ne .Kind "404"}}
+            {{- partial "footer.html" . -}}
+        {{ end }}
+        
+        {{ partial "search.html" . }}
+        {{ partial "widgets/search.html" . }}
+        
+    </body>
+</html>
+

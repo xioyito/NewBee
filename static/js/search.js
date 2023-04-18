@@ -1,0 +1,165 @@
+
+
+$(document).ready(function () {
+    
+    $(".search-in").click(function() {
+        $(".search-root").show();
+        $(".search").animate({
+            marginTop: 10,
+        }, 100, 'linear');
+        $('.search input').focus();
+    })
+    $(".search-zz").click(function() {
+        $(".search").css("margin-top", 0);
+        $(".search-root").hide();
+        document.getElementById("search-key").value = "";
+        clearPosts();
+    })
+
+    $(".search button").click(function() {
+        search(); 
+    })
+    $(".sclear").click(function() {
+        $('#search-key').val('').focus();
+        clearPosts();
+    })
+    window.onload = function() {
+        document.onkeydown = function(ev) {
+          var event = ev || event
+          if (event.keyCode == 13) {
+            search();
+          }
+        }
+    }
+})
+
+function search() {
+    clearPosts();
+    var key = document.getElementById("search-key").value;
+    var postCount = 0;
+    var searchBy = 'Search by <a href="https://github.com/xioyito/NewBee" class="search-by" >NewBee</a>';
+
+    if (!key) {
+        $(".stip").html(search_nothing + '，' + searchBy);
+        $(".at-bottom").hide();
+        $(".sbody").show();
+        return;
+    }
+
+    for (var i=0; i<postsCount; i++) {
+        var postTitle = arrPosts[i].title;
+        var postPubDate = arrPosts[i].pubDate;
+        var postPlain = arrPosts[i].plain;
+        var link = arrPosts[i].link;
+        var keyIndex = postPlain.indexOf(key);
+        var keyIndexTitle = postTitle.indexOf(key);
+        
+        if (keyIndex >= 0 || keyIndexTitle >= 0) {
+            var postMark = toMark(postPlain, key);
+            var postMark2 = toMarkTitle(postTitle, key);
+            postCount ++;
+
+            if (postMark || postMark2) {
+                addItem(hlHtml(postMark2, key), postPubDate, hlHtml(postMark, key), link);
+            }
+
+        }
+    }
+    if (postCount == 0) {
+        $(".stip").html(search_nothing + '，' + searchBy);
+    } else {
+        $(".stip").html(search_found + ' ' + postCount + (postCount>1?(' ' + search_results + ', '):(' ' + search_result + ', ')) + searchBy);
+        $(".sbody-1").append('<div class="at-bottom">' + search_theEnd + '</div>');
+    }
+    $(".sbody").show();
+}
+
+// 向页面中添加元素
+function addItem(title, pubDate, mark, link) {
+    var pHtml = "<a href=\"" + link + "\" target=\"_blank\" class=\"post\" >" +
+            "<div class=\"post-header\">" +
+            "<h4 class=\"post-title\">" + title + "</h4>" +
+            "<div class=\"post-time\">" + pubDate + "</div>" +
+            "</div>" +
+            "<div class=\"post-mark\">" + mark + "</div>" +
+            "</a>"
+    var div = document.createElement("div");
+    div.innerHTML = pHtml;
+    div.setAttribute("class", "post-root");
+    document.getElementsByClassName('sbody-1')[0].appendChild(div);
+}
+
+// 初始化搜索页面
+function clearPosts() {
+    $(".sbody").hide();
+    $(".post-root, .at-bottom").remove();
+}
+
+// 截取段落
+function toMark(oPlain, key) {
+    var kIdx = oPlain.indexOf(key);
+    
+    
+    if (kIdx >= 0) {
+        var kLen = key.length;
+        var beginIdx = kIdx;
+        var postMark_l = '';
+        var postMark_r = oPlain.slice(kIdx + kLen, kIdx + kLen + 401);
+        while ((beginIdx > 0) && (oPlain[beginIdx-1] != ',') && (oPlain[beginIdx-1] != '.') && (oPlain[beginIdx-1] != '，') && (oPlain[beginIdx-1] != '。')) {
+            beginIdx -= 1;
+            postMark_l = oPlain[beginIdx] + postMark_l;
+        }
+        if (postMark_l == key) {
+            return;
+        }
+        return postMark_l + key + postMark_r;
+    } else {
+        if (oPlain == '') {
+            return '...';
+        } else {
+            return oPlain;
+        }
+    }
+}
+
+function toMarkTitle(oPlain, key) {
+    var kIdx = oPlain.indexOf(key);
+    if (kIdx >= 0) {
+        var kLen = key.length;
+        var beginIdx = kIdx;
+        var postMark_l = '';
+        var postMark_r = oPlain.slice(kIdx + kLen, kIdx + kLen + 401);
+        while ((beginIdx > 0) && (oPlain[beginIdx-1] != ',') && (oPlain[beginIdx-1] != '.') && (oPlain[beginIdx-1] != '，') && (oPlain[beginIdx-1] != '。')) {
+            beginIdx -= 1;
+            postMark_l = oPlain[beginIdx] + postMark_l;
+        }
+
+        if (postMark_l == key) {
+            return;
+        }
+
+        return postMark_l + key + postMark_r;
+    }
+    return oPlain; 
+}
+
+// 高亮关键字
+function hlHtml(oMark, key) {
+    var keyIdx = oMark.indexOf(key);
+    if (oMark && keyIdx >= 0) {
+        var text = oMark;
+        var newMark = '';
+        
+
+        var keyHtml = "<span class=\"key-hl\">" + key + "</span>";
+        while (keyIdx >= 0) {
+            newMark = newMark + text.slice(0, keyIdx) + keyHtml;
+            text = text.slice(keyIdx + key.length);
+            keyIdx = text.indexOf(key);
+        }
+        return newMark + text;
+    }
+    return oMark;
+
+}
+

@@ -1,0 +1,60 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ .Site.Title }}{{ if not .IsHome }}{{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }} ">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ if not (in (string .Site.BaseURL) "localhost") }}
+        {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+
+    <link rel="stylesheet" href='/css/style.css' />
+    <link rel="stylesheet" href='/css/search.css' />
+    <link rel="stylesheet" href='/css/md_nb.css' />
+    <link rel="stylesheet" href='{{ "css/list.css" | relURL }}' />
+    <link rel="stylesheet" href='{{ "css/terms.css" | relURL }}' />
+    <link rel="stylesheet" href='{{ "css/taxonomy.css" | relURL }}' />
+    <link rel="stylesheet" href='/css/font-awesome-4.7.0/css/font-awesome.min.css' />
+    <link rel="stylesheet" href='{{ "css/home.css" | relURL }}' />
+    <link rel="stylesheet" href='/css/syntax.css' />
+    {{ if .Site.Params.valine.enable }}
+        <link rel="stylesheet" href='{{ "css/comment.css" | relURL }}' />
+    {{ end }}
+    <link rel="stylesheet" href='{{ "css/shortcode.css" | relURL }}' />
+    
+    {{ if eq .Site.Params.Site.Mode "dark" }}
+        <link rel="stylesheet" href='/css/style-dark.css' />
+    {{ end }}
+    <link rel="stylesheet" href='/css/_custom.css' />
+    <style>
+        {{ if eq .Kind "404" }}
+            body::after { display: none; }
+        {{ end }} 
+    </style>
+    {{ if .Site.Params.aplayer.enable }}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    {{ end }}
+    {{ if .Site.Params.valine.enable }}
+        <script src='//cdnjs.cloudflare.com/ajax/libs/valine/1.5.0/Valine.min.js'></script>
+    {{ end }}
+    {{ if .Params.math }}
+        {{- partial "math-jax.html" . -}}
+    {{ end }}
+    {{ if .Params.mermaid }}
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    {{ end }}
+    <script src="/js/lazysizes.min.js" async=""></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/md_nb.js"></script>
+    <script src="/js/yes.js"></script>
+    {{ if and .Site.Params.footer.enable .Site.Params.footer.visitor }}
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    {{ end }}
+</head>
