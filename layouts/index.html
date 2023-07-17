@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $kind := .Kind }}
 {{ partial "widgets/hero.html" . }}
 <div class="zhuti-0">
     <div class="container">
@@ -13,9 +14,11 @@
                 </div>
                 <div class="terms-row">
                     {{ range first .Site.Params.page.maxHomePostCount .Site.RegularPages }}
+                    {{ if and (not .Params.hideFromHomePage) (eq $kind "home") }}
                     <div class="terms-root">
                         {{ partial "widgets/post-card.html" . }}
                     </div>
+                    {{ end }}
                     {{ end }}
                 </div>
                 <div class="more-posts">

@@ -74,7 +74,7 @@ my-blog % git clone https://github.com/xioyito/NewBee.git themes/NewBee
 ```
 
 ### 配置
-把文件 `NewBee/config-example/config.toml` 复制到你的网站根目录即可。
+把文件 `NewBee/config-example/hugo.toml` 复制到你的网站根目录即可。
 
 ### 第一篇文章
 创建一篇新的文章:

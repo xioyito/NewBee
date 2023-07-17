@@ -1,5 +1,9 @@
+v1.2.2
+Add front-matter: hideFromHomePage.
+Rename config.toml to hugo.toml.
+
 v1.2.1
-Now, if you use math-jax and mermaid in a post, Add both or one of params above in front-matter for the post:
+Use the front-matter below if you use math or mermaid:
 math: true
 mermaid: true
 

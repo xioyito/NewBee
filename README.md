@@ -74,7 +74,7 @@ my-blog % git clone https://github.com/xioyito/NewBee.git themes/NewBee
 ```
 
 ### Configuration
-That's simple, just copy the file `NewBee/config-example/config.toml` to your Hugo root directory.
+That's simple, just copy the file `NewBee/config-example/hugo.toml` to your Hugo root directory.
 
 ### First post
 create a new post:

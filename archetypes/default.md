@@ -16,6 +16,8 @@ tags: []
 series: []
 # Top image for the post
 image: ""
+# Hide from home page
+hideFromHomePage: false
 ---
 
 

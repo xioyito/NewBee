@@ -64,9 +64,7 @@
     {{ else if eq .Kind "taxonomy" }}
         <div class='taxo-row {{ if eq .Section "tags" }}taxo-row-tag{{ end }}'>
             {{ if eq .Section "tags" }}
-                
-                    {{ partial "widgets/tag-card.html" . }}
-                
+                {{ partial "widgets/tag-card.html" . }}
             {{ else }}
                 {{ partial "widgets/category-card.html" . }}
             {{ end }}
