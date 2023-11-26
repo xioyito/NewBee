@@ -1,0 +1,459 @@
+:root {
+    --bgc-1-rgb: 80, 80, 80;
+    --bgc-2-rgb: 60, 60, 60;
+    --bgc-3-rgb: 40, 40, 40;
+
+    --primary-rgb: 217, 80, 119;
+    --primary-oppo-rgb: 250, 116, 80;
+    --default-rgb: 80, 80, 80;
+    --danger-rgb: 217, 87, 87;
+    --tip-rgb: 102, 158, 204;
+    --success-rgb: 85, 153, 73;
+    --warning-rgb: 191, 141, 25;
+    --quote-rgb: 255, 234, 195;
+
+
+
+    /* --- */
+
+    --bs-1: rgba(0,0,0,.1);
+    --bs-2: rgba(0,0,0,.2);
+    --bs-3: rgba(0,0,0,.3);
+
+    --white-s: rgb(230, 230, 230);
+    --white-m-rgb: 235, 235, 235;
+    --white-m: rgb(var(--white-m-rgb));
+    --white-l: rgb(240, 240, 235);
+    --blue-nb: rgb(0, 174, 254);
+
+    --color: rgb(200, 200, 200);
+    --color-s: rgb(80, 80, 80);
+
+    --scroll-bgc: rgb(80, 80, 80);
+    --scroll-thumb: rgb(100, 100, 100);
+
+    /* else */
+
+    --efct-button-bs:
+        2px 2px 3px 1px rgba(0, 0, 0, 0.2),
+        -2px -2px 3px 1px var(--bgc-1);
+
+    --efct-button-hover-bs:
+        1px 1px 1px 0px rgba(0, 0, 0, 0.2),
+        -1px -1px 1px 0px var(--bgc-1),
+        2px 2px 3px 1px rgba(0, 0, 0, 0.3) inset,
+        -1px -1px 3px 2px var(--bgc-1) inset;
+    --efct-button-hover-ts: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+body:after {
+    background-color: var(--scroll-bgc);
+}
+hr {
+    border: 1px solid var(--bgc-1);
+}
+p > code {
+    background-color: var(--bgc-1);
+}
+.text-wbd {
+    text-shadow: 0px 0px 0 transparent;
+}
+.burger-btn {
+    text-shadow: 0 0 0 transparent;
+}
+.mode:hover {
+    color: rgb(255, 188, 2);
+    text-shadow: 0 0 3px rgb(255, 188, 2);
+}
+#content img, .mermaid {
+    filter: brightness(0.8);
+}
+.loading-long {
+    box-shadow:
+        2px 2px 4px 0px rgba(0, 0, 0, 0.2),
+        
+        2px 2px 3px 0px rgba(0, 0, 0, 0.2) inset,
+        -2px -2px 2px 0px rgba(var(--bgc-1-rgb), 1) inset;
+}
+.loading-short {
+    background-color: rgb(120, 120, 120);
+    box-shadow:
+        0px 1px 3px 0px rgba(50, 50, 50, 0.3);
+    border: 1px solid var(--bgc-1);
+}
+
+
+.content-self {
+    border-top: 1px dashed var(--bgc-1);
+    border-bottom: 1px dashed var(--bgc-1);
+}
+.zhuti {
+    box-shadow: -1px 0 20px 2px rgba(0, 0, 0, 0.1);
+}
+
+.zhuti-r::after {
+    border-left: 1px solid var(--bgc-3);
+}
+.toup, .tosides-1, .tosides-2 {
+    background-color: var(--bgc-2);
+    border: 1px solid var(--bgc-1);
+    box-shadow:
+        2px 2px 5px 1px rgba(20, 20, 20, 0.1) inset,
+        2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+}
+.fa-arrow-left, .fa-arrow-right, .fa-arrow-up {
+    color: var(--color);
+    text-shadow: 0px 0px 5px rgb(180, 180, 180);
+}
+.tosides-1:hover i, .tosides-2:hover i, .toup:hover i {
+    color: white;
+    text-shadow: 0px 0px 8px rgb(180, 180, 180);
+}
+.pre-next {
+    border-top: 2px solid var(--bgc-1);
+}
+.next {
+    border-left: 1px solid var(--bgc-1);
+}
+.pre {
+    border-right: 1px solid var(--bgc-1);
+}
+.next:hover {
+    box-shadow: -2px 2px 8px 0px rgba(10, 10, 10, 0.2) inset;
+}
+.pre:hover {
+    box-shadow: 2px 2px 8px 0px rgba(10, 10, 10, 0.2) inset;
+}
+.pre:hover span, .next:hover span {
+    color: white;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+.aixin {
+    text-shadow: 0px 0px 3px var(--primary);
+}
+.pinglun {
+    text-shadow: 0px 0px 3px var(--success);
+}
+.aixin:hover {
+    text-shadow: 2px 2px 5px rgba(var(--primary-rgb), 0.4);
+}
+.pinglun:hover {
+    text-shadow: 2px 2px 5px rgba(0, 169, 0, 0.4);
+}
+
+.button-r-add {
+    text-shadow: 0 0 5px rgba(var(--primary-rgb), .8);
+}
+
+.follow {
+    box-shadow:
+        0px 0px 10px 0px rgba(var(--primary-rgb), .6);
+    text-shadow: -1px -1px 2px rgba(0, 0, 0, .2);
+}
+.follow:hover {
+    box-shadow:
+        1px 1px 2px 0px rgba(0, 0, 0, .2),
+        -1px -1px 1px 0px var(--bgc-1),
+        0px 2px 5px 2px rgba(0, 0, 0, .1) inset,
+        0px -1px 5px 1px rgba(255, 255, 255, 0) inset;
+}
+.dong {
+    background-color: var(--bgc-3);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3) inset,
+        0px -4px 5px 0px var(--bgc-1),
+        0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.zhi {
+    background-image: linear-gradient(
+        rgb(50, 50, 50),
+        var(--bgc-2) 10px,
+        var(--bgc-2) 97%,
+        rgb(50, 50, 50));
+
+    border-top: 1px solid rgba(120, 120, 120, 0.5);
+    border-bottom: 1px solid rgba(120, 120, 120, 0.5);
+
+}
+.other .list-item {
+    box-shadow:
+        2px 2px 5px 2px rgba(0,0,0,.2),
+        -2px -1px 6px 2px var(--bgc-1);
+    border: 1px solid var(--bgc-1);
+}
+.other .list-item:hover {
+    box-shadow:
+        1px 1px 2px 1px rgba(0, 0, 0, .2),
+        -1px -1px 3px 2px var(--bgc-1),
+        2px 2px 6px 1px rgba(0, 0, 0, 0.2) inset,
+        -1px -1px 5px 1px var(--bgc-1) inset;
+
+    color: rgb(255, 255, 255);
+}
+.other .list-item:hover .other-title, .other .list-item:hover .other-summary {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+.other .list-item:hover .other-date {
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
+}
+
+.appreciate-self {
+    box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.2);
+}
+.appreciate-btn {
+    box-shadow:
+        1px 1px 1px 0px rgba(var(--bgc-1-rgb), 1),
+        -1px -1px 1px 0px rgba(0, 0, 0, 0.2),
+        1px 1px 0px 0px rgba(var(--bgc-1-rgb), 1) inset,
+        -1px -1px 0px 0px rgba(0, 0, 0, 0.2) inset;
+}
+
+.footer-items {
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* comment */
+
+.vwrap {
+    box-shadow: 0px 0px 8px 2px rgba(var(--bgc-3-rgb), .3) inset;
+    border: 2px solid var(--bgc-1) !important;
+}
+.vsubmit {
+    text-shadow: 0px 0px 3px var(--success);
+    box-shadow: var(--efct-button-bs);
+    border: 1px solid var(--bgc-1) !important;
+}
+.vsubmit:hover {
+    box-shadow: var(--efct-button-hover-bs);
+    text-shadow: 2px 2px 3px rgba(var(--success-rgb), 0.3);
+}
+.vwrap .vbtn {
+    outline: none !important;
+    background: var(--bgc-2) !important;
+    background-color: var(--bgc-2) !important;
+}
+.vcount {
+    text-shadow: 0px 0px 0px transparent;
+}
+.vcontent.expand::before {
+    background: rgba(0,0,0,.1) !important;
+}
+.vcontent.expand::after {
+    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, .2);
+    border-top: 1px solid var(--bgc-1);
+    background: rgb(50, 50, 50)!important;
+}
+.vheader .vnick, .vmail, .vlink {
+    border-bottom: 1px dashed var(--bgc-1) !important;
+}
+
+
+.veditor {
+    color: var(--color) !important;
+    text-shadow:
+        1px 1px 3px var(--bgc-3);
+}
+
+.vimg {
+    border: 1px solid rgb(100, 100, 100) !important;
+    box-shadow: 2px 2px 5px 1px rgb(50, 50, 50);
+}
+
+
+.vcontent {
+    text-shadow: 0px 0px 3px transparent;
+}
+
+.vhead .vsys, .vtime {
+    text-shadow: 1px 1px 0px transparent;
+}
+.vhead .vnick, .at {
+    text-shadow: 0px 0px 3px rgba(var(--primary-rgb), .5);
+}
+.vat {
+    color: var(--tip) !important;
+    transition: all 0.2s;
+}
+.vat:hover {
+    text-shadow: 0px 0px 5px rgba(var(--tip-rgb), .5);
+}
+.at {
+    text-shadow: 0px 0px 3px rgba(var(--primary-oppo-rgb), .3);
+    color: var(--primary-oppo) !important;
+}
+
+.vpower {
+    text-shadow: 1px 1px 1px transparent;
+}
+
+/* home */
+.xian-l, .xian-r {
+    border-top: 1px solid var(--bgc-1);
+    border-bottom: 1px solid var(--bgc-3);
+}
+
+/* list */
+.year {
+    border: 1px solid var(--bgc-1);
+    box-shadow:
+        2px 2px 5px 2px rgba(0, 0, 0, 0.2),
+        -2px -2px 6px 2px rgba(var(--bgc-1-rgb), .8);
+    transition: all 0.2s;
+}
+.year:hover {
+    box-shadow:
+        2px 2px 1px 2px rgba(0, 0, 0, .1),
+        -1px -1px 3px 2px rgba(var(--bgc-1-rgb), .8),
+        3px 3px 6px 2px rgba(25, 25, 25, 0.1) inset,
+        -2px -2px 5px 0px rgba(var(--bgc-1-rgb), .5) inset;
+}
+
+/* shortcode */
+.note-content {
+    text-shadow: 0 0 0 transparent;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.note-content a {
+    text-shadow: 0 0 0 transparent;
+}
+.note-content a:hover {
+    text-shadow: 0 0 0 transparent;
+}
+.code-box {
+    background-color: var(--bgc-1);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.code-header {
+    color: var(--color);
+}
+.code-content{
+    box-shadow: 1px 1px 3px 1px rgba(20, 20, 20, 0.2) inset;
+    background-color: rgb(60, 60, 60);
+}
+
+.has-shadow {
+    box-shadow: 3px 5px 25px 2px rgba(0, 0, 0, 0.3);
+}
+
+.chroma .err {
+    background-color: transparent !important;
+}
+
+/* terms */
+.card-large-img {
+    box-shadow:
+        4px 4px 8px 1px rgba(0, 0, 0, 0.1);
+}
+.card-large:hover .card-large-img {
+    box-shadow:
+        4px 4px 8px 1px rgba(20, 20, 20, 0.1);
+}
+.shuxian {
+    background-color: rgb(100, 100, 100);
+}
+.card-readmore {
+    position: absolute;
+    top: 65px;
+    right: -28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    filter: opacity(0);
+    background-color: var(--bgc-1);
+    box-sizing: border-box;
+    box-shadow:
+        -8px -8px 5px 1px rgba(0, 0, 0, 0.1) inset,
+        0px 0px 8px 1px rgba(50, 50, 50, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.card-readmore i {
+    color: var(--color);
+    text-shadow: 0 0 0;
+}
+
+
+/* taxonomy */
+.folder-rear {
+    background: linear-gradient( rgba(var(--bgc-2-rgb), 0.5),  var(--bgc-2) 60% );
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.folder-front {
+    background: linear-gradient( rgba(var(--bgc-2-rgb), 0.5),  var(--bgc-2) 70% );
+}
+.tag-taxo-card {
+    box-shadow:
+        2px 2px 6px 1px rgba(0, 0, 0, .2),
+        -2px -2px 5px 0px var(--bgc-1);
+}
+.tag-taxo-card:hover {
+    box-shadow:
+        1px 1px 2px 1px rgba(0, 0, 0, .2),
+        -1px -1px 1px 0px rgba(var(--bgc-1-rgb), 1),
+        2px 2px 4px 2px rgba(0, 0, 0, 0.2) inset,
+        -2px -2px 4px 0px rgba(var(--bgc-1-rgb), 1) inset;
+}
+.tag-taxo-text {
+    text-shadow: 0 0 0;
+}
+.tag-taxo-card:hover .tag-taxo-text {
+    text-shadow: 0px 0px 3px rgba(var(--primary-oppo-rgb), 0.5);
+    color: var(--primary-oppo);
+}
+
+
+/* footer */
+.footer a:hover {
+    text-shadow: 0px 0px 3px rgba(var(--primary-rgb), .3);
+}
+
+
+
+
+
+/* 404 */
+.circle-404 {
+    box-shadow:
+        3px 3px 8px 3px rgba(0, 0, 0, .4),
+        -2px -2px 10px 8px var(--bgc-1);
+}
+
+/* search */
+.sheader {
+    box-shadow: 
+        2px 2px 5px 3px rgba(0, 0, 0, 0.1);
+}
+.sheader input:focus, .sheader input:hover {
+    box-shadow: 
+        2px 2px 3px 1px rgba(0, 0, 0, 0.2) inset,
+        -1px -1px 3px 1px rgba(255, 255, 255, 0.1) inset;
+    text-shadow: 2px 2px 3px rgba(0,0,0, 0.2);
+}
+.sh-r button:hover {
+    box-shadow: 
+        1px 2px 3px 1px rgba(0, 0, 0, 0.2) inset,
+        -1px -1px 3px 2px rgba(255, 255, 255, 0.1) inset;
+    text-shadow: 2px 2px 3px rgba(var(--primary-rgb), 0.2);
+}
+.sbody {
+    box-shadow: 
+        2px 2px 8px 3px rgba(0, 0, 0, 0.2);
+}
+.post {
+    box-shadow:
+        4px 4px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.mermaid {
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+}
+
+.back {
+    text-shadow: -1px -1px 1px transparent;
+}
+
+/* tabs */
+.tabs-header > span {
+    color: var(--color);
+}

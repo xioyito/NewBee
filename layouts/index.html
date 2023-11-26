@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ $kind := .Kind }}
+{{ partial "widgets/hero.html" . }}
+<div class="zhuti-0">
+    <div class="container">
+        <div class="zhuti">
+            <div class="zhuti-l zhuti-l-home">
+                <div class="zuixin">
+                    <div class="xian-l"></div>
+                    <h3>
+                        {{ i18n "Home_latestPosts" }}
+                    </h3>
+                    <div class="xian-r"></div>
+                </div>
+                <div class="terms-row">
+                    {{ range first .Site.Params.page.maxHomePostCount .Site.RegularPages }}
+                    {{ if and (not .Params.hideFromHomePage) (eq $kind "home") }}
+                    <div class="terms-root">
+                        {{ partial "widgets/post-card.html" . }}
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                <div class="more-posts">
+                    <a href='{{ if and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+                                {{ .Lang | relURL}}/posts
+                            {{ else }} 
+                            {{ "posts" | relURL }}
+                            {{ end }}' class="efct-button">{{ i18n "Home_allPosts" }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

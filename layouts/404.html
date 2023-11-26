@@ -1,0 +1,23 @@
+
+{{ define "main"}}
+{{ $isMultiLingual := and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+    <main>
+        <div class="circle-404">
+            <div class="root-404">
+                <div class="c404"></div>
+                <div class="titleroot-404">
+                    <div class="title-404">4</div>
+                    <div class="title-404">4</div>
+                </div>
+            </div>
+        <div class="back">
+            <div>{{ i18n "_404_sorry" }}</div>
+            <a href='{{ if $isMultiLingual }}
+                        {{ .Lang | relURL}}
+                    {{ else }}
+                        {{ "/" | relURL }}
+                    {{ end }}' class="efct-button">{{ i18n "_404_backToHome" }}</a>
+        </div>
+        </div>
+    </main>
+{{ end }}

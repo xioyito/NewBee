@@ -1,0 +1,29 @@
+<footer class="footer">
+    {{ if .Site.Params.footer.enable }}
+        <div class="container">
+            <div class="footer-items">
+                {{ if .Site.Params.footer.visitor }}
+                    <div class="footer-item">
+                        <i class="fa fa-user"></i> <span id="busuanzi_value_site_pv"></span> |
+                        <i class="fa fa-eye"></i> <span id="busuanzi_value_site_uv"></span>
+                    </div>
+                {{ end }}
+                {{ if .Site.Params.footer.copyRight }}
+                    <div class="footer-item">
+                        © {{ .Site.Params.footer.from }}-{{ now.Format "2006" }} <a href="{{ .Site.Author.link }}">{{ .Site.Author.name }}</a>
+                    </div>
+                {{ end }}
+                {{ if .Site.Params.footer.themeInfo }}
+                    <div class="footer-item">
+                        Theme by <a href="https://github.com/xioyito/NewBee">NewBee</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    {{ end }}
+
+    {{ if .Site.Params.aplayer.enable }}
+        {{ partial "widgets/aplayer.html" . }}
+    {{ end }}
+</footer>
+

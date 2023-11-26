@@ -1,0 +1,24 @@
+{{ $categorypostsImg := .Site.Params.page.defaultPostImg }}
+{{ range .Data.Terms.ByCount }}
+{{ $pageTitle := .Page.Title }}
+{{ $pageCount := .Count }}
+<div class="taxo-col">
+    <a href="{{ .Page.Permalink }}">
+        <div class="taxo-card">
+            <div class="folder-rear"></div>
+                {{ $firstChild := index .Pages 0 }}
+                {{ with $firstChild.Params.image }}
+                    <div class="taxo-img" style="background-image: url( {{ . }} );"></div>
+                {{ else }}
+                    <div class="taxo-img" style="background-image: url( {{ $categorypostsImg }} );"></div>
+                {{ end }}
+            <div class="folder-front">
+                <div class="taxo-text">
+                    <div>{{ $pageTitle }}</div>
+                    <div class="jipian">{{ $pageCount }} {{ i18n "Categories_postUnit" $pageCount }}</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+{{ end }}

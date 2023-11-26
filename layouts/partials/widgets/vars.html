@@ -1,0 +1,33 @@
+{{ $mode_custom := .Site.Params.Site.Mode }}
+{{ $postsCount := len .Site.RegularPages }}
+{{ $arrPosts := slice }}
+{{ $theEnd := i18n "search_theEnd" }}
+{{ $nothing := i18n "search_nothing" }}
+{{ $found := i18n "search_found" }}
+{{ $result := i18n "search_result" }}
+{{ $results := i18n "search_results" }}
+{{ $enableMermaid := .Params.mermaid }}
+{{ range .Site.RegularPages }}
+    {{ $thePost := dict "title" .Title "pubDate" (.PublishDate.Format "2006-01-02") "plain" .Plain "link" .Permalink }}
+    {{ $arrPosts = $arrPosts | append $thePost }}
+{{ end }}
+
+{{ $baseURL := .Site.BaseURL }}
+
+<script type="text/javascript">
+    var mode_custom = {{ $mode_custom }};
+    var postsCount = {{ $postsCount }};
+    var arrPosts = {{ $arrPosts }};
+    var search_theEnd = {{ $theEnd }};
+    var search_nothing = {{ $nothing }};
+    var search_found = {{ $found }};
+    var search_result = {{ $result }};
+    var search_results = {{ $results }};
+    var enable_mermaid = {{ $enableMermaid }};
+
+    var baseURL = {{ $baseURL }};
+</script>
+
+
+
+

@@ -1,0 +1,89 @@
+{{ $class1 := "" }}
+{{ $isPage := or (eq .Kind "page") (eq .Section "about") }}
+{{ $langNow := .Lang }}
+{{ $isMultiLingual := and (ne .Site.Language.Weight 1) (and .Site.IsMultiLingual (not .Site.Params.Site.OnlyOneLang)) }}
+{{ if $isPage }}
+    {{ $class1 = "content-root" }}
+{{ else if eq .Kind "taxonomy" }}
+    {{ $class1 = "taxo-body" }}
+{{ else if eq .Kind "term" }}
+    {{ $class1 = "terms-body" }}
+{{ end }}
+
+<div class="{{ $class1 }}">
+    <div class="long">
+        <button class="tosides-1 text-wbd">
+            <i class="fa fa-arrow-right"></i>
+        </button>
+        <button class="tosides-2 text-wbd">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="toup text-wbd">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+    </div>
+    {{ if $isPage }}
+        <div class="content">
+            <div class="content-self">
+                {{ .Content }}
+            </div>
+            {{ if eq .Kind "page" }}
+                <div class="tags">
+                    {{ range $tag := .Params.tags }}
+                    <span class="down-type-item">
+                        <div class="type-text">
+                            <a href='{{ if $isMultiLingual }}
+                                        {{ $langNow | relURL}}/tags/{{ $tag | urlize }}
+                                    {{ else }}
+                                        {{ "tags/" | relURL }}{{ $tag | urlize }}
+                                    {{ end }}'>
+                                <i class="fa fa-tag"></i> {{ . }}
+                            </a>
+                        </div>
+                    </span>
+                    {{ end }}
+                </div>
+            {{ end }}
+        </div>
+        {{ if eq .Kind "page" }}
+            {{ if or .PrevInSection .NextInSection }}
+                <div class="pre-next">
+                    {{ partial "widgets/pre-next.html" . }}
+                </div>
+            {{ end }}
+        {{ end }}
+    {{ else if eq .Kind "term" }}
+        <div class="terms-row">
+            {{ range .Pages }}
+            <div class="terms-root">
+                
+                {{ partial "widgets/post-card.html" . }}
+            </div>
+            {{ end }}
+        </div>
+    {{ else if eq .Kind "taxonomy" }}
+        <div class='taxo-row {{ if eq .Section "tags" }}taxo-row-tag{{ end }}'>
+            {{ if eq .Section "tags" }}
+                {{ partial "widgets/tag-card.html" . }}
+            {{ else }}
+                {{ partial "widgets/category-card.html" . }}
+            {{ end }}
+        </div>
+    {{ end }}
+</div>
+{{ if $isPage }}
+    {{ if or .Site.Menus.sponsor .Site.Params.valine.enable }}
+        <div class="content-last">
+            {{ if .Site.Menus.sponsor }}
+                <button class="aixin content-last-item efct-button">
+                    <i class="fa fa-heart"></i>
+                </button>
+            {{ end }}
+            {{ if .Site.Params.valine.enable }}
+                <button class="pinglun content-last-item efct-button">
+                    <i class="fa fa-comment"></i>
+                </button>
+            {{ end }}
+        </div>
+    {{ end }}
+{{ end }}

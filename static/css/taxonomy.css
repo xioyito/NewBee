@@ -1,0 +1,137 @@
+
+.taxo-body {
+    position: relative;
+}
+.taxo-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: -5px -10px 0;
+}
+.taxo-row-tag {
+    margin: -10px -10px 0;
+}
+.taxo-col {
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.taxo-col-tag {
+    padding: 10px;
+}
+.taxo-card {
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 5px 10px 0 10px;
+    transition: all 0.3s;
+    position: relative;
+}
+.taxo-img {
+    width: var(--width-img-category);
+    height: calc(var(--width-img-category) * var(--ratio-img));
+    border: 2px solid var(--bgc-1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 2px 5px 2px rgba(50, 50, 50, .2);
+    transform: translateY(-10px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+}
+.taxo-card:hover .taxo-img {
+    transform: translateY(-20px);
+    box-shadow: 0px 2px 5px 3px rgba(50, 50, 50, .2);
+}
+
+.read-all{
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 38px;
+    transition: all 0.3s;
+    display: none;
+}
+.taxo-card:hover .taxo-text {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.tag-taxo-card {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid var(--bgc-1);
+    box-sizing: border-box;
+    padding: 0 10px;
+    box-shadow:
+        2px 2px 6px 1px rgba(0, 0, 0, .1),
+        -2px -2px 5px 1px var(--bgc-1);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+.tag-taxo-card:hover {
+    box-shadow:
+        1px 1px 2px 1px rgba(0, 0, 0, .1),
+        -1px -1px 1px 1px var(--bgc-1),
+        2px 2px 4px 2px rgba(100, 100, 100, 0.2) inset,
+        -2px -2px 4px 2px var(--bgc-1) inset;
+}
+.tag-taxo-text {
+    color: var(--color);
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+    transition: all 0.2s;
+    
+}
+.tag-taxo-card:hover .tag-taxo-text {
+    text-shadow: 1px 1px 3px rgba(var(--primary-oppo-rgb), 0.2);
+    color: var(--primary-oppo);
+}
+.folder-rear {
+    width: 100%;
+    height: 80%;
+    border: 2px solid var(--bgc-1);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: linear-gradient( rgba(240,240,240,.5),  rgba(240,240,240,1) 60% );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 2px 5px 2px rgba(50, 50, 50, .1);
+}
+.folder-front {
+    width: 100%;
+    height: 80%;
+    padding: 0 20px;
+    border: 2px solid var(--bgc-1);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: linear-gradient( rgba(240,240,240,.5),  rgba(240,240,240,1) 70% );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 100%;
+    transition: all 0.2s;
+}
+.taxo-text {
+    color: var(--color);
+    text-align: center;
+    transition: all 0.2s;
+}
+.jipian {
+    color: rgb(120, 120, 120);
+    font-size: small;
+    margin-top: 5px;
+}
+.taxo-card:hover .folder-front {
+    transform: perspective(300px) rotateX(-45deg); 
+}

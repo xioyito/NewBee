@@ -1,0 +1,256 @@
+baseURL = 'http://xxx.xxx/'
+languageCode = 'en-us'
+
+# website title
+# 网站标题
+title = 'NewBee'
+# theme
+# 主题
+theme = "NewBee"
+# default content of website
+# 网站默认语言
+defaultContentLanguage = "en"
+# whether to use robots.txt
+# 是否使用 robots.txt
+enableRobotsTXT = true
+
+# length of summary
+# 摘要的字数限制
+summaryLength = 50
+
+# If true, auto-detect Chinese/Japanese/Korean Languages in the content.
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+# 中日韩语言请改为 true
+hasCJKLanguage = false
+
+[author]
+    name = "xioyito"
+    description = "Be Water, My Friend."
+    # profile photo of author in author card
+    # 作者头像
+    image = "/images/author.jpeg"
+    # link of followme in author card and footer
+    # 作者卡片里 followme 和页脚作者的链接
+    link = "https://github.com/xioyito"
+
+# Taxonomies, Currently, only the following 3 taxonomies are supported
+# If you don't want one of them，delete it in [menus] instead here
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+    series = "series"
+    
+[params]
+    [params.site]
+        onlyOneLang = false
+        # style of theme: auto, light, dark
+        mode = 'auto'
+    # page configuration
+    # 页面配置  
+    [params.page]
+
+        # top image in home page, note that the "/" in path is necessary, the same applies below
+        # 主页的顶部图，路径开头”/“是必需的。下同
+        homeTopImg = "/images/home.jpg"
+        # title in home top image, support Markdown
+        # 主页标题，支持Markdown语法
+        homeTitle = "XIOYITO"
+        # font size(px)
+        # 主页标题字号（单位：px）
+        homeTitleFontSize = 40
+        # content in home top image, support Markdown
+        # 主页内容，支持Markdown语法
+        homeContent = "Be Water, My Friend"
+        # font size(px)
+        # 主页内容字号（单位：px）
+        homeContentFontSize = 20
+
+        # top image in categories terms page
+        # 分类页面的顶部图
+        categoryTopImg = "/images/categories.jpg"
+        # description of categories terms page
+        # 子标题
+        categoryDes = "description of categories page"
+
+        # top image in tags terms page
+        # 标签页面的顶部图
+        tagTopImg = "/images/tag.jpg"
+        # description of tags terms page
+        # 子标题
+        tagDes = "description of tags page"
+
+        # top image in allosts page
+        # 所有文章页面的顶部图
+        allPostsTopImg = "/images/allPosts.jpg"
+        # description of allposts page
+        # 子标题
+        allPostsDes = "description of allPosts page"
+
+        # top image in about page
+        # 关于页面的顶部图
+        aboutTopImg = "/images/about.jpg"
+        # description of about page
+        # 子标题
+        aboutDes = "description of about page"
+
+        # default image for a post without "image" param
+        # 当文章没有设置图片时，将用此图来替代
+        defaultPostImg = "/images/default.jpg"
+        
+        # 主页文章最大显示数量
+        maxHomePostCount = 5
+        # 相关文章最大显示数量
+        maxPageRelatedCount = 5
+        # 最新文章最大显示数量
+        maxPageNewestCount = 5
+
+    # Valine comment
+    # Valine评论（详情请移步：https://valine.js.org/）
+    [params.valine]
+        # 是否开启Valine评论系统
+        enable = false
+        # appid，具体请参考：https://valine.js.org/configuration.html#appId
+        appid = 'xxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxx'
+        # appKey，具体请参考：https://valine.js.org/configuration.html#appKey
+        appkey = 'xxxxxxxxxxxxxxxxxxxxxxxx'
+        # 输入框提示文字
+        placeholder = '输入你的评论'
+        # 头像，具体请参考：https://valine.js.org/avatar.html
+        avatar = 'robohash'
+        # 评论时要求的必须填写项，可选值：['nick']或['nick','mail']
+        requiredFields = ['nick']
+        # 文章访问量统计
+        visitor = true
+        # 单页最大评论数目
+        pageSize = 5
+
+    # footer
+    # 页面底部配置
+    [params.footer]
+        # whether to enable footer
+        enable = true
+        # copyright
+        copyRight = true
+        from = 2022
+        # wheher to enable count of visitor and view
+        visitor = true
+        # wheher to enable theme information
+        themeInfo = true
+
+
+[menus]
+    [[menus.main]]
+        # 名称
+        name = "Home"
+        # 路径
+        url = "/"
+        # order weight, more small more close to left, at least 1
+        # 排序的权重，越小越靠前（左），最小为1
+        weight = 1
+        # icon from FontAwesome in front of single entry
+        # 图标，本主题使用的图标来自FontAwesome
+        pre = "<i class='fa fa-home'></i>"
+    [[menus.main]]
+        name = "Posts"
+        url = "/posts"
+        weight = 2
+        pre = "<i class='fa fa-book'></i>"
+    [[menus.main]]
+        name = "Categories"
+        url = "/categories"
+        weight = 3
+        pre = "<i class='fa fa-folder-open'></i>"
+    [[menus.main]]
+        name = "Tags"
+        url = "/tags"
+        weight = 5
+        pre = "<i class='fa fa-tags'></i>"        
+    [[menus.main]]
+        name = "About"
+        url = "/about"
+        weight = 6
+        pre = "<i class='fa fa-info-circle'></i>"
+
+    # social, maxum 6
+    # 作者卡片社交链接，最多6个
+    [[menus.social]]
+        name = "GitHub"
+        url = "https://github.com/xioyito"
+        pre = "<i class='fa fa-github'></i>"
+        weight = 1
+    [[menus.social]]
+        name = "YouTube"
+        url = "https://www.youtube.com"
+        pre = "<i class='fa fa-youtube'></i>"
+        weight = 2
+
+    # sponsor, maxum 3
+    # 赞赏，最多支持3个
+    [[menus.sponsor]]
+        name = "Wechat"
+        url = "/images/sponsor/Wechat.jpeg"
+        weight = 1
+    [[menus.sponsor]]
+        name = "Alipay"
+        url = "/images/sponsor/Alipay.jpeg"
+        weight = 2
+
+# related configuration, see more: https://gohugo.io/content-management/related/
+# 相关文章的配置。详情请移步：https://gohugo.io/content-management/related/
+[related]
+    # 取值0-100之间，越小匹配到的文章越多，但准确性稍差
+    threshold = 0
+    # 允许包含最新的文章
+    includeNewer = true
+    # 设置为true时，可以在索引和查询中同时使用小写关键字。
+    # 这可能会在轻微的性能损失下提供更准确的结果。
+    # 也可以在下面的子项中分别设置此值。
+    toLower = false
+
+    [[related.indices]]
+        # 匹配类别
+        name = "categories"
+        # 一个整数权重，表示此参数相对于其他参数的重要性。
+        # 可以是0，有关闭这个索引的效果，甚至是负数。
+        # 使用不同的值进行测试，以查看最适合您的内容的值。
+        weight = 100
+        # 同上toLower
+        toLower = false
+
+    [[related.indices]]
+        name = "tags"
+        weight = 80
+        toLower = false
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
+
+# Markup related configuration in Hugo
+# Hugo 解析文档的配置
+[markup]
+    # syntax highlight, see more: https://gohugo.io/functions/highlight/
+    # 语法高亮，详情请移步：https://gohugo.io/functions/highlight/
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ''
+        lineAnchors = ''
+        lineNoStart = 1
+        # 显示每一行代码前的序号
+        lineNos = true
+        anchorLineNos = false
+        lineNumbersInTable = true
+        noClasses = false
+        noHl = false
+        hl_inline = false
+        # 代码高亮样式，更多样式请移步：https://xyproto.github.io/splash/docs/
+        style = 'monokailight'
+        tabWidth = 4
+
+    # enable the following code if there are html statements in your md file
+    # 如果md文件中有html语句，请启用以下代码
+    # [markup.goldmark]
+    #     [markup.goldmark.renderer]
+    #         unsafe = true
+  

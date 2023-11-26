@@ -1,0 +1,264 @@
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 1em 0;
+}
+.has-shadow {
+    box-shadow: 3px 5px 20px 1px rgba(100, 100, 100, 0.2);
+}
+.img-title {
+    font-size: 0.9em;
+    text-align: center;
+    color: rgb(130, 130, 130) !important;
+    margin: 10px 0;
+}
+.code-box{
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 4px 4px 4px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 1px 1px 3px 3px rgba(120, 120, 120, 0.1);
+    text-shadow: 0 0 0;
+}
+
+.code-header {
+    height: 30px;
+    margin-bottom: -4px;
+    line-height: 30px;
+    color: rgb(130, 130, 130);
+    display: flex; 
+}
+.pl-5 {
+    display: inline-block;
+    margin-left: -5px;
+}
+.code-content {
+    /* width: 100%; */
+    overflow: hidden;
+    margin-top: 4px;
+    border-radius: 9px;
+    box-shadow: 1px 1px 3px 1px rgba(100, 100, 100, 0.1) inset;
+    background-color: rgb(242, 242, 242);
+}
+.for-slidetoggle {
+    width: 100%;
+    padding-left: 10px;
+    
+}
+.for-slidetoggle span {
+    padding-left: 10px;
+}
+.code-box .fa::before {
+    color: rgb(130, 130, 130);
+}
+
+.for-copy {
+    padding: 0 10px;
+    cursor: pointer;
+    
+}
+.for-copy i::before {
+    transition: all 0.2s;
+}
+.for-copy:hover i::before {
+    color: var(--primary);
+}
+.note, .tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 0 4px 4px 4px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+}
+.note .fa {
+    color: var(--white-m);
+}
+.note-close {
+    display: none;
+}
+.note-header {
+    height: 30px;
+    padding: 0 10px;
+    margin-bottom: -4px;
+    line-height: 30px;
+    color: var(--white-m);
+    display: flex;
+    justify-content: space-between;
+}
+.note-header .fa-angle-down, .code-header .fa-angle-down {
+    transition: all 0.3s;
+}
+.for-slidetoggle span {
+    font-family: var(--font-sans-serif);
+}
+.title-note {
+    padding-left: 3px;
+}
+.note-content, .tabs-content {
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, .2);
+    background-color: var(--bgc-2);
+    line-height: 1.5em;
+}
+.note-content > p > code {
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 0;
+}
+.note-content a {
+    text-shadow: 1px 1px 3px var(--primary-shadow);
+}
+.note-content a:hover {
+    text-shadow: 1px 1px 3px var(--tip-shadow);
+}
+.note-content > p:first-child {
+    margin: 10px 0;
+}
+.default-content {
+    color: var(--default);
+    text-shadow: 1px 1px 3px var(--default-shadow);
+}
+.default-content a {
+    color: var(--default);
+    text-shadow: 1px 1px 3px var(--default-shadow);
+}
+.default-box, .default-content > p > code {
+    background-color: var(--default) !important;
+}
+.default-box li::marker {
+    color: var(--default);
+}
+
+.danger-content {
+    color: var(--danger);
+    text-shadow: 1px 1px 3px var(--danger-shadow);
+}
+.danger-content a {
+    color: var(--danger);
+    text-shadow: 1px 1px 3px var(--danger-shadow);
+}
+.danger-box, .danger-content > p > code {
+    background-color: var(--danger) !important;
+}
+.danger-box li::marker {
+    color: var(--danger);
+}
+
+.tip-content {
+    color: var(--tip);
+    text-shadow: 1px 1px 3px var(--tip-shadow);
+}
+.tip-content a {
+    color: var(--tip);
+    text-shadow: 1px 1px 3px var(--tip-shadow);
+}
+.tip-content a:hover {
+    color: var(--primary);
+    text-shadow: 1px 1px 3px var(--primary-shadow);
+}
+.tip-box, .tip-content > p > code {
+    background-color: var(--tip) !important;
+}
+.tip-box li::marker {
+    color: var(--tip);
+}
+
+.success-content {
+    color: var(--success);
+    text-shadow: 1px 1px 3px var(--success-shadow);
+}
+.success-content a {
+    color: var(--success);
+    text-shadow: 1px 1px 3px var(--success-shadow);
+}
+.success-box, .success-content > p > code {
+    background-color: var(--success) !important;
+}
+.success-box li::marker {
+    color: var(--success);
+}
+
+.warning-content {
+    color: var(--warning);
+    text-shadow: 1px 1px 3px var(--warning-shadow);
+}
+.warning-content a {
+    color: var(--warning);
+    text-shadow: 1px 1px 3px var(--warning-shadow);
+}
+.warning-box, .warning-content  code {
+    background-color: var(--warning) !important;
+}
+.warning-box li::marker {
+    color: var(--warning);
+}
+
+.primary-content {
+    color: var(--primary);
+    text-shadow: 1px 1px 3px var(--primary-shadow);
+}
+.primary-box, .primary-content > p > code {
+    background-color: var(--primary) !important;
+}
+.primary-box li::marker {
+    color: var(--primary);
+}
+/* position cant change here above*/
+.code-box code {
+    background-color: transparent !important;
+}
+.label {
+    padding: 1px 0.4em;
+    margin: 0 5px;
+    font-size: 0.9em;
+    font-family: var(--font-sans-serif);
+    border-radius: 5px;
+    white-space: nowrap;
+    color: var(--white-m);
+    background-color: var(--default);
+}
+.label a {
+    color: var(--white-m);
+    word-break: break-all;
+}
+.label-primary {
+    background-color: var(--primary) !important;
+}
+.label-danger {
+    background-color: var(--danger) !important;
+}
+.label-tip {
+    background-color: var(--tip) !important;
+}
+.label-success{
+    background-color: var(--success) !important;
+}
+.label-default{
+    background-color: var(--default) !important;
+}
+.label-warning {
+    background-color: var(--warning) !important;
+}
+
+/* mermaid */
+.mermaid {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+
+
+
+
